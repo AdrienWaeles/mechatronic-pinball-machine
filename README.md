@@ -1,2 +1,2 @@
 # pinball_Arduino
-Arduino pinball project. Realised in second year of engineering at Polytech Nice Sophia.
+Projet de pinball(flipper) avec Arduino, réalisé en Deuxième année Prépa Polytech Sophia 
