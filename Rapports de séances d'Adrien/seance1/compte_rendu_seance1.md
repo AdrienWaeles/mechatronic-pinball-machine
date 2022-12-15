@@ -26,8 +26,8 @@ Voici le fonctionnement de ce premier test en vidéo :
 https://www.youtube.com/watch?v=6iraHV_b1UE
 
 
-Résultat des tests et des recherches : le petit solénoïde 12V utilisé ne semble pas suffisant pour faire bouger avec assez de force les flippers, la barre risque de ne pas atteindre le haut du flipper. 
-Il semble qu'un solénoïde de 24V serait idéal.Cependant ce petit solénoïde peut être utilisé sans problème pour les slingshots qui nécessitent une force moins importante.
+Résultat des tests et des recherches : le petit solénoïde 12V utilisé ne semble pas suffisant pour faire bouger avec assez de force les flippers, la balle risque de ne pas atteindre le haut du flipper. 
+Il semble qu'un solénoïde de 24V serait idéal. Cependant ce petit solénoïde peut être utilisé sans problème pour les slingshots qui nécessitent une force moins importante.
 
 Remarque : d’après mes recherches, il est nécessaire d’ajouter une diode à chaque solénoïde car sans cela lorsque l’on envoie du courant au solénoïde puis qu’on coupe le courant pour qu’il revienne dans sa position initiale, le courant risque d’être renvoyé dans le sens inverse ce qui parasite les informations reçues par l’arduino et fait chauffer encore plus le solénoïde.
 
@@ -35,4 +35,4 @@ Finalement, j’ai commencé en fin de séance à réfléchir à l’utilisation
 ![imageflipper](programme_infrarouge.jpg )
 
 
-J’ai rapidement constaté qu’il ne sera pas possible d’utiliser la fonction de temporisation delay() dans notre algorithme sous peine de mettre tout le programme en attente. En effet, certains éléments tels que les flippers doivent pouvoir être utilisés à tout moment par le joueur et cela sans latence. Pour pallier à ce problème j’ai décidé d’utiliser la fonction millis() qui renvoie le temps écoulé en milliseconde depuis le début du programme. Ainsi j’enregistre dans une variable ce temps à chaque fois qu’un passage est détecté et je peux comparer le temps du dernier passage avec le temps actuel. Avant d’incrémenter le nombre de passages je vérifie que la dernière détection du capteur infrarouge date de plus de 100 millisecondes afin d’éviter qu’une balle ne passant pas assez pas assez rapidement devant le capteur soit comptabilisée plusieurs fois.
+J’ai rapidement constaté qu’il ne sera pas possible d’utiliser la fonction de temporisation delay() dans notre algorithme sous peine de mettre tout le programme en attente. En effet, certains éléments tels que les flippers doivent pouvoir être utilisés à tout moment par le joueur et cela sans latence. Pour pallier à ce problème j’ai décidé d’utiliser la fonction millis() qui renvoie le temps écoulé en millisecondes depuis le début du programme. Ainsi j’enregistre dans une variable ce temps à chaque fois qu’un passage est détecté et je peux comparer le temps du dernier passage avec le temps actuel. Avant d’incrémenter le nombre de passages je vérifie que la dernière détection du capteur infrarouge date de plus de 100 millisecondes afin d’éviter qu’une balle ne passant pas assez pas assez rapidement devant le capteur soit comptabilisée plusieurs fois.
