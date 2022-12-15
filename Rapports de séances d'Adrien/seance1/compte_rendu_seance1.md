@@ -1,4 +1,3 @@
-Compte rendu 1ère séance, Adrien Waeles-Devaux:
 Contenu de cette séance : Flippers imprimés en 3D, test de fonctionnement d’un solénoïde avec boutons et détection de passage d’une bille avec un capteur infrarouge
 
 
@@ -13,12 +12,12 @@ Nous avons modélisé en 3d deux pièces pour créer un prototype de flipper, pu
 Durant la séance :
 Test de fonctionnement du solénoïde JF-0730B (12V, 1A, déplacement de 10mm).
 Étant donné que le solénoïde nécessite d’être alimenté avec une tension de 12V, il nécessite une alimentation externe, afin de ne pas endommager la carte arduino, pour cela j’ai ajouté au circuit un relais commutateur. 
-Documentation du relais commutateur JQC-3FF-S-Z : 
+Documentation du relais commutateur JQC-3FF-S-Z : ![imageflipper](documentation_relais_commutateur.jpg)
 
 Le relais commutateur se comporte comme un interrupteur qui est commandé par l’arduino. Ainsi lorsque l’interrupteur est fermé le solénoïde sera alimenté par l’alimentation externe (ici alimentation 12V) et lorsque l’interrupteur est ouvert le solénoïde n’est plus alimenté. Pour ouvrir ou fermer l’interrupteur on envoie un signal numérique depuis l’Arduino. Ainsi on évite de faire trop chauffer le solénoide puisqu’il n’est alimenté que lorsque l’on appuie sur le bouton.
 
 Le programme réalisé est le suivant :
-![image](img.png)
+
 Voici le fonctionnement de ce premier test en vidéo :
 https://www.youtube.com/watch?v=6iraHV_b1UE
 
