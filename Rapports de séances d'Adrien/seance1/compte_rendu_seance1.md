@@ -1,3 +1,5 @@
+Compte rendu d'Adrien Waeles-Devaux
+
 Contenu de cette séance : Flippers imprimés en 3D, test de fonctionnement d’un solénoïde avec bouton et détection de passage d’une bille avec un capteur infrarouge.
 
 
