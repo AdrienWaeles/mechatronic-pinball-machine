@@ -7,20 +7,20 @@ int valeurInterrupteur = 1;
 int ancienneValeurInterrupteur = 1;
 
 void setup() {
-  pinMode(SLINGSHOT1, OUTPUT);
-  pinMode(INTERRUPTEUR1, INPUT_PULLUP);
+  pinMode(SLINGSHOT1, OUTPUT); // le solénoide sur slingshot est configuré en sortie
+  pinMode(INTERRUPTEUR1, INPUT_PULLUP); // l'interrupteur est configuré en entrée avec une résistance interne
   Serial.begin(9600);
   digitalWrite(SLINGSHOT1, HIGH);
 }
 
 void loop() {
-  valeurInterrupteur = digitalRead(INTERRUPTEUR1);
+  valeurInterrupteur = digitalRead(INTERRUPTEUR1); // On lit la valeur de l'interrupteur
   Serial.println(valeurInterrupteur);
   Serial.println(ancienneValeurInterrupteur);  
   if (valeurInterrupteur==LOW && ancienneValeurInterrupteur==HIGH){ //si le bouton est enfoncé et qu'il n'était pas déjà enfoncé à l'instant d'avant
     digitalWrite(SLINGSHOT1, LOW); //on active le solenoide
     delay(50);
-    digitalWrite(SLINGSHOT1, HIGH); // puis le solenoide se rétracte immédiatement
+    digitalWrite(SLINGSHOT1, HIGH); // puis le solenoide se rétracte presque immédiatement
   }
-  ancienneValeurInterrupteur=valeurInterrupteur;
+  ancienneValeurInterrupteur=valeurInterrupteur; //on mémorise la valeur de l'interrupteur actuelle dans une variable pour pouvoir la comparer avec les suivantes et détecter un changement de valeur
 }
