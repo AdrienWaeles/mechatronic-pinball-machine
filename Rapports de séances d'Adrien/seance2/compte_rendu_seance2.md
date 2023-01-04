@@ -1,4 +1,5 @@
 Avant la séance :
+
 À partir de la liste de composants établie au début du projet dans le cahier des charges, nous avons cherché les références des composants à acheter pour le pinball (notamment en faisant des recherches sur la force en newton et le voltage nécessaire pour appliquer assez de force sur la balle) et nous sommes rendus dans plusieurs magasins de bricolage afin de trouver des ressorts, élastiques, pour éviter des délais de réception trop long via internet.
 
 Après avoir reçu des élastiques et des billes adaptés au projet, j’ai créé un prototype d’un slingshot en perçant une planche et en y fixant des clous. Cette pièce située au-dessus des flippers permet de faire rebondir la balle sur un élastique lorsque celui-ci est touché afin de ramener la bille dans la zone de jeu. 
