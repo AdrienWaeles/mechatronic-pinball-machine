@@ -17,7 +17,7 @@ J’ai essayé différents micro interrupteurs afin de choisir les plus sensible
 
 Pour la création des cibles du pinball, nous avons modélisé sur Fusion 360 un support permettant d’y loger 3 micro-interrupteurs et 3 leds associées à chaque interrupteurs qui s’allumeront si un interrupteur est touché puis je l’ai imprimé en 3D.
 
-<img src="support_cibles_vue3d.jpg" width="300" height="300">
+<img src="support_cibles_vue3d.jpg" width="300">
 <img src="support_cibles_vue3ddessous.jpg" width="300" height="300">
 
 Finalement j’ai modélisé une poignée sur Blender. Cette poignée servira à créer le lanceur  manuel de balles constitué de celle-ci, d’un ressort et d’une tige.
