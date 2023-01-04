@@ -13,7 +13,7 @@ Le fonctionnement est le suivant, lorsque la bille vient tapper l’élastique c
 
 J’ai essayé différents micro interrupteurs afin de choisir les plus sensibles pour que le slingshot se déclenche même si la balle arrive dessus avec une faible vitesse. Pour avoir une bonne sensibilité il faut placer le bouton de façon à tendre légèrement l’élastique avec celui-ci. Finalement j’ai modélisé et imprimé une équerre permettant de fixer le solénoïde en dessous de la planche.
 
-![equerresolenoide](equerre_fixation_solenoide_)
+![equerresolenoide](equerre_fixation_solenoide_.jpg)
 
 Pour la création des cibles du pinball, nous avons modélisé sur Fusion 360 un support permettant d’y loger 3 micro-interrupteurs et 3 leds associées à chaque interrupteurs qui s’allumeront si un interrupteur est touché puis je l’ai imprimé en 3D.
 
