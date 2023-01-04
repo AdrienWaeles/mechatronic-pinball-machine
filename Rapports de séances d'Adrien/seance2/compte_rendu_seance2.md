@@ -1,4 +1,4 @@
-Avant la séance :
+**Avant la séance :**
 
 À partir de la liste de composants établie au début du projet dans le cahier des charges, nous avons cherché les références des composants à acheter pour le pinball (notamment en faisant des recherches sur la force en newton et le voltage nécessaire pour appliquer assez de force sur la balle) et nous sommes rendus dans plusieurs magasins de bricolage afin de trouver des ressorts, élastiques, pour éviter des délais de réception trop long via internet.
 
@@ -15,7 +15,7 @@ Finalement j’ai modélisé une poignée sur Blender. Cette poignée servira à
 
 
 
-Durant la séance :
+**Durant la séance :**
 Dans un premier temps, j’ai adapté le code réalisé lors de la première séance qui servait à déclencher les solénoïdes des flippers lorsque l’on appuyait sur les boutons. Le fonctionnement des slingshots et très similaires, la seule différence entre les 2 programmes est que pour les slingshots après le déclenchement du solénoïde celui-ci doit se rétracter immédiatement même si l’interrupteur reste enfoncé pendant plusieurs millisecondes (le code est disponible sur le github). 
 Puis nous avons fixé le solénoïde en dessous de la planche du prototype à l’aide de petites vis et de l’équerre préalablement imprimée en 3d. Le levier du solénoïde doit être placé un peu en retrait de l'élastique afin d’éviter que la bille ne frappe la pièce en plastique au lieu de l’élastique ce qui ne déclencherait pas les micro-interrupteurs.
 Finalement nous avons pu effectuer des tests sur le prototype avec une bille : https://youtu.be/Ld9HjYVpliU
