@@ -5,20 +5,20 @@
 Après avoir reçu des élastiques et des billes adaptés au projet, j’ai créé un prototype d’un slingshot en perçant une planche et en y fixant des clous. Cette pièce située au-dessus des flippers permet de faire rebondir la balle sur un élastique lorsque celui-ci est touché afin de ramener la bille dans la zone de jeu. 
 Elle est constituée d’un élastique tendu auquel sont collés des micro interrupteurs et sous la planche se trouve un solénoïde. 
 
-<img src="prototype_slingshot.jpg" width="500" height="500">
+<img src="prototype_slingshot.jpg" width="500">
 
 Le fonctionnement est le suivant, lorsque la bille vient tapper l’élastique celui ci exerce une pression qui va déclencher au moins un des 2 interrupteurs disposés de chaque côté de l’élastique, une fois le signal reçu on enclenche immédiatement le solénoïde pour tendre l’élastique dans l’autre sens avec un petite pièce en plastique passant à travers la planche afin de repousser la balle. Voici la pièce en question modélisé en 3d :
 
-<img src="bras_slingshot.jpg" width="300" height="300">
+<img src="bras_slingshot.jpg" width="300">
 
 J’ai essayé différents micro interrupteurs afin de choisir les plus sensibles pour que le slingshot se déclenche même si la balle arrive dessus avec une faible vitesse. Pour avoir une bonne sensibilité il faut placer le bouton de façon à tendre légèrement l’élastique avec celui-ci. Finalement j’ai modélisé et imprimé une équerre permettant de fixer le solénoïde en dessous de la planche.
 
-<img src="equerre_fixation_solenoide_.jpg" width="300" height="300">
+<img src="equerre_fixation_solenoide_.jpg" width="300">
 
 Pour la création des cibles du pinball, nous avons modélisé sur Fusion 360 un support permettant d’y loger 3 micro-interrupteurs et 3 leds associées à chaque interrupteurs qui s’allumeront si un interrupteur est touché puis je l’ai imprimé en 3D.
 
 <img src="support_cibles_vue3d.jpg" width="300">
-<img src="support_cibles_vue3ddessous.jpg" width="300" height="300">
+<img src="support_cibles_vue3ddessous.jpg" width="300">
 
 Finalement j’ai modélisé une poignée sur Blender. Cette poignée servira à créer le lanceur  manuel de balles constitué de celle-ci, d’un ressort et d’une tige.
 
