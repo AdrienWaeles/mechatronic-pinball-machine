@@ -22,15 +22,17 @@ Pour la création des cibles du pinball, nous avons modélisé sur Fusion 360 un
 
 Finalement j’ai modélisé une poignée sur Blender. Cette poignée servira à créer le lanceur  manuel de balles constitué de celle-ci, d’un ressort et d’une tige.
 
-![imagepoignee](poignee_blender_vue3d.jpg)
-![imagepoignee](poignee_blender_vuedecote.jpg)
-
+<img src="poignee_blender_vue3d.jpg" width="300">
+<img src="poignee_blender_vuedecote.jpg" width="300">
 
 
 **Durant la séance :**
 
 Dans un premier temps, j’ai adapté le code réalisé lors de la première séance qui servait à déclencher les solénoïdes des flippers lorsque l’on appuyait sur les boutons. Le fonctionnement des slingshots et très similaires, la seule différence entre les 2 programmes est que pour les slingshots après le déclenchement du solénoïde celui-ci doit se rétracter immédiatement même si l’interrupteur reste enfoncé pendant plusieurs millisecondes (le code est disponible sur le github). 
+
 Puis nous avons fixé le solénoïde en dessous de la planche du prototype à l’aide de petites vis et de l’équerre préalablement imprimée en 3d. Le bras du solénoïde doit être placé un peu en retrait de l'élastique afin d’éviter que la bille ne frappe la pièce en plastique au lieu de l’élastique ce qui ne déclencherait pas les micro-interrupteurs.
+
 Finalement nous avons pu effectuer des tests sur le prototype avec une bille : https://youtu.be/Ld9HjYVpliU
+
 Comme on peut le voir lorsque que le micro-interrupteur est bien placé, le choc de la bille sur l’élastique déclenche bien le slingshot et cela même de manière assez sensible. Le prototype semble donc fonctionner cependant le slingshot ne renvoie pas la balle très fort et cela en raison notamment de la course du solénoïde de seulement 10mm qui ne tend pas suffisamment l’élastique. Pour améliorer cela on pourra éventuellement par la suite tester avec un autre solénoïde ou changer la pièce par un système de levier.
 
