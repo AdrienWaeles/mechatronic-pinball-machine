@@ -5,7 +5,7 @@
 Après avoir reçu des élastiques et des billes adaptés au projet, j’ai créé un prototype d’un slingshot en perçant une planche et en y fixant des clous. Cette pièce située au-dessus des flippers permet de faire rebondir la balle sur un élastique lorsque celui-ci est touché afin de ramener la bille dans la zone de jeu. 
 Elle est constituée d’un élastique tendu auquel sont collés des micro interrupteurs et sous la planche se trouve un solénoïde. 
 
-![imageprototype](prototype_slingshot.jpg)
+<img src="prototype_slingshot.jpg" width="100" height="100">
 
 Le fonctionnement est le suivant, lorsque la bille vient tapper l’élastique celui ci exerce une pression qui va déclencher au moins un des 2 interrupteurs disposés de chaque côté de l’élastique, une fois le signal reçu on enclenche immédiatement le solénoïde pour tendre l’élastique dans l’autre sens avec un petite pièce en plastique passant à travers la planche afin de repousser la balle. Voici la pièce en question modélisé en 3d :
 
