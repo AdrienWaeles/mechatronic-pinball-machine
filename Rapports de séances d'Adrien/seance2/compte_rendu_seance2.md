@@ -38,3 +38,5 @@ Il a fallu ainsi réaliser de nombreux tests pour trouver le positionnement opti
 
 Comme on peut le voir lorsque que le micro-interrupteur est bien placé, le choc de la bille sur l’élastique déclenche bien le slingshot et cela même si la bille arrive avec une vitesse peu élevée sur le slingshot. Le prototype semble donc fonctionner cependant le slingshot ne renvoie pas la balle avec beaucoup de force et cela en raison notamment de la course du solénoïde de seulement 10mm qui ne tend pas suffisamment l’élastique. Pour améliorer cela on pourra éventuellement par la suite tester avec un autre solénoïde (ayant une course plus grande ou plus de force pour tendre l'élastique plus efficacement) ou changer la pièce par un système de levier.
 
+En fin de séance, j'ai réfléchis à la meilleure manière de fixer les micro-interrupteurs et recherché des vis adaptées afin de pouvoir finaliser le prototype du slingshot. Puis nous avons commencé à imaginer la conception du lanceur de billes en cherchant une tige en bois adaptée aux ressorts que nous avions trouvé.
+
