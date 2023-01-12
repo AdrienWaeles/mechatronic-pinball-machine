@@ -32,6 +32,6 @@ Finalement j’ai modifié le fichier 3d de la poignée utilisée pour le lanceu
 <img src="poignee+tige.jpg" width="300">
 
 
-Après la séance, j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newtons). J’ai pu le tester avec l’alimentation de 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyé au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
+Après la séance, j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newtons). J’ai pu le tester avec l’alimentation de 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyée au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
 
 
