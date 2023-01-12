@@ -1,4 +1,4 @@
-En arrivant à cette séance, nous avions reçu de nouveaux solénoïdes: (modèle KK-0630B, 24V, 8 Newtons, 400 mA, 10 mm de course) plus puissants que les solénoïdes que nous utilisions pour les slingshots. Ces solénoïdes seront utilisés pour créer nos 3 bumpers. Ce sont des pièces que l’on retrouve sur tous les flippers qui sont situées en haut de la table de jeu disposées en triangle et qui permettent de marquer des points. Leur fonctionnement est le suivant, lorsque la bille touche un bumper, le joueur va marquer des points et la bille va être renvoyée dans la direction opposée grâce à un mécanisme qui s'abaisse sur la bille et remonte immédiatement ensuite (voir schéma ci-dessous).
+En arrivant à cette séance, nous avions reçu de nouveaux solénoïdes: (modèle KK-0630B, 24V, 8 Newton, 400 mA, 10 mm de course) plus puissants que les solénoïdes que nous utilisions pour les slingshots. Ces solénoïdes seront utilisés pour créer nos 3 bumpers. Ce sont des pièces que l’on retrouve sur tous les flippers qui sont situées en haut de la table de jeu disposées en triangle et qui permettent de marquer des points. Leur fonctionnement est le suivant, lorsque la bille touche un bumper, le joueur va marquer des points et la bille va être renvoyée dans la direction opposée grâce à un mécanisme qui s'abaisse sur la bille et remonte immédiatement ensuite (voir schéma ci-dessous).
 
 <img src="schema_explicatif_bumpers.jpg" width="300">
 
@@ -32,6 +32,6 @@ Finalement j’ai modifié le fichier 3d de la poignée utilisée pour le lanceu
 <img src="poignee+tige.jpg" width="300">
 
 
-Après la séance, j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newtons). J’ai pu le tester avec l’alimentation de 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyée au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
+Après la séance, j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newton). J’ai pu le tester avec l’alimentation de 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyée au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
 
 
