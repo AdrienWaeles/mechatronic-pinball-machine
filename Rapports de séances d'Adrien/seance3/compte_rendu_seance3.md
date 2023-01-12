@@ -1,5 +1,6 @@
 En arrivant à cette séance, nous avions reçu de nouveaux solénoïdes: (modèle KK-0630B, 24V, 8 Newtons, 400 mA, 10 mm de course) plus puissants que les solénoïdes que nous utilisions pour les slingshots. Ces solénoïdes seront utilisés pour créer nos 3 bumpers. Ce sont des pièces que l’on retrouve sur tous les flippers qui sont situées en haut de la table de jeu disposées en triangle et qui permettent de marquer des points. Leur fonctionnement est le suivant, lorsque la bille touche un bumper, le joueur va marquer des points et la bille va être renvoyée dans la direction opposée grâce à un mécanisme qui s'abaisse sur la bille et remonte immédiatement ensuite (voir schéma ci-dessous).
 
+<img src="schema_explicatif_bumpers.jpg" width="300">
 
 Ceux-ci sont disposés assez proches les uns des autres de manière à ce que la bille fasse des aller retours d’un bumper à un autre plusieurs fois afin de marquer des points à la suite. 
 
