@@ -1,0 +1,18 @@
+Nous avons reçu de nouveaux solénoïdes: (modèle KK-0630B, 24V, 8 Newtons, 400 mA, 10 mm de course) plus puissants que les solénoïdes que nous utilisions pour les slingshots. Ces solénoïdes seront utilisés pour créer nos 3 bumpers. Ce sont des pièces que l’on retrouve sur tous les flippers qui sont situées en haut de la table de jeu disposées en triangle et qui permettent de marquer des points. Leur fonctionnement est le suivant, lorsque la bille touche un bumper, le joueur va marquer des points et la bille va être renvoyée dans la direction opposée grâce à un mécanisme qui s'abaisse sur la bille et remonte immédiatement ensuite (voir schéma ci dessous)
+
+
+Ceux-ci sont disposés assez proches de manière à ce que la bille fasse des aller retours d’un bumper à un autre plusieurs fois afin de marquer des points à la suite. Ainsi durant cette séance nous avons effectué des recherches sur les différents mécanismes possibles pour les fabriquer. Pour les réaliser, nous avons décider d’utiliser un solénoide placé verticalement sous la planche (maintenu par une équerre) et attaché à une pièce plastique passant à travers la planche qui va s'abaisser sur la balle lorsqu’il y a un contact. Pour détecter ce contact, nous pensons utiliser du scotch de cuivre (utilisé comme conducteur) collé en dessous des bumpers et créer un petit anneau métallique attaché à la partie haute du bumper. Ainsi quand la balle touchera à la fois le scotch de cuivre et l’anneau métallique, la bille fermera le circuit  et l’on pourra ajouter des points au joueur et enclencher le solénoide pour renvoyer la balle. 
+
+Nous avons mis un certain temps à trouver une alimentation pour ces nouveaux solénoïdes, en effet la première alimentation utilisée indiquait une tension de 24V alors que sa tension réelle mesurée avec un multimètre était de 60V. Nous avons finalement trouvé une alimentation délivrant 24V, cependant il y a un mauvais contact dans le connecteur d’alimentation, nous devrons trouver une solution à ce problème d’ici la prochaine séance.
+
+Ces solénoides affichaient une course de 10mm mais ne provoquaient qu’un mouvement de 5mm, pour régler cela il suffisait de retirer un des 2 écrous et caoutchouc présents sur la tige du solénoide et qui restreignait la course du piston.
+
+J’ai ensuite pu tester le fonctionnement d’un bumper. Voici une petite vidéo montrant  simplement comment celui-ci fonctionnera (pour le moment le solénoïde est déclenché manuellement) : https://www.youtube.com/shorts/0AeFL3rPPoE.
+D’ici la prochaine séance, je vais essayer d’imprimer des pièces en plastiques permettant de fixer ce solénoïde sous la planche.
+
+En fin de séance, j’ai décidé du placement des micro-interrupteurs sur le prototype du slingshot et trouvé des vis à bois adaptées permettant de viser directement les micro-interrupteurs sur la planche sans nécessairement avoir besoin de perçer des trous
+
+Finalement en rentrant chez moi j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newtons). J’ai pu le tester avec l’alimentation 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyé au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
+
+Finalement j’ai modifié le fichier 3d de la poignée utilisée pour la zone de lancement manuelle pour y ajouter une tige. Nous avions initialement prévu de coller à la poignée une tige en bois mais n’ayant pas trouvé de tige aux bonnes dimensions nous décidons de l’imprimer en plastique sur la même pièce que la poignée. 
+Photo :
