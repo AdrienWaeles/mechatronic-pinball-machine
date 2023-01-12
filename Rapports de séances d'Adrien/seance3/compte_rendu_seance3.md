@@ -13,10 +13,12 @@ Nous avons aussi rencontré une petit difficulté avec les nouveaux solénoïdes
 J’ai ensuite pu tester et imaginer le fonctionnement d’un bumper à l’aide d’un de ces solénoïdes. Voici le résultat avec cette petite vidéo montrant simplement comment celui-ci fonctionnera (pour le moment le solénoïde est déclenché manuellement). Le circuit électronique est toujours le même que pour le solénoïde des slingshots à l’exception que l’alimentation utilisée fournit du 24V au lieu de 12V) : https://www.youtube.com/shorts/0AeFL3rPPoE.
 Pour les prochaines séances, je vais essayer d’imprimer des pièces en plastiques permettant de fixer ces solénoïdes sous la planche et d’adapter les modélisations 3D des bumpers à nos solénoïdes pour pouvoir effectuer des premiers tests.
 
-En fin de séance, j’ai décidé du placement des micro-interrupteurs sur le prototype du slingshot et trouvé des vis à bois adaptées permettant de viser directement les micro-interrupteurs sur la planche sans nécessairement avoir besoin de perçer des trous
-
-Finalement en rentrant chez moi j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newtons). J’ai pu le tester avec l’alimentation de 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyé au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
+En fin de séance, j’ai décidé du placement des micro-interrupteurs sur le prototype du slingshot et trouvé des vis à bois adaptées permettant de viser directement les micro-interrupteurs sur la planche sans nécessairement avoir besoin de perçer des trous.
 
 Finalement j’ai modifié le fichier 3d de la poignée utilisée pour le lanceur manuel de billes afin d’y ajouter une tige qui rentre dans le ressort. Nous avions initialement prévu de coller à la poignée une tige en bois mais n’ayant pas trouvé de tige aux bonnes dimensions et pour avoir un ensemble poignée + tige plus robuste nous allons l’imprimer en plastique sur la même pièce que la poignée. Le petit cube au bout de la tige permettra d’y emboîter une autre pièce qui va frapper la bille. Remarque : la pièce sera peut être encore modifiée pour la rendre plus facile à imprimer en 3D et éviter l’impression de supports. Voici la nouvelle poignée modélisée en 3d : 
 
 <img src="poignee+tige.jpg" width="300">
+
+Après la séance, j’ai reçu un solénoïde qui servira à faire bouger les flippers (modèle KK64B, 24V, 2A, 20mm de course, 65Newtons). J’ai pu le tester avec l’alimentation de 24V et voici le résultat en vidéo ( le code utilisé est le même que celui de la première séance (disponible sur le github) : lorsque le bouton est appuyé une tension est envoyé au solénoïde pour l’activer jusqu’à ce que le bouton soit relâché). https://www.youtube.com/shorts/n7QumtdJi2Y
+
+
