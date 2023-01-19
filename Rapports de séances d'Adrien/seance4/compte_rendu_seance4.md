@@ -1,4 +1,6 @@
-Avant la séance :
+**Avant la séance :**
+
+
 Pour commencer j’ai fixé un des 2 micro-interrupteurs du slingshot (pièce constituée d’un élastique destinée à renvoyer la bille dans la direction opposée, voir compte rendus précédents) sur la planche du prototype réalisé lors des séances précédentes. 
 
 <img src="slingshot_fixation_microInterrupteur.jpg" width="300">
@@ -25,7 +27,7 @@ Remarque : l’équerre sera modifiée par la suite étant donné en raison d’
 
 Voici la démonstration en vidéo : https://youtube.com/shorts/1k2h37szUpM
 
-Durant la séance :
+**Durant la séance :**
 Après avoir présenté l’avancée de notre projet lors d’un oral de 10 minutes. Nous avons commencé à réaliser le système permettant de détecter le contact de la bille sur le bumper. Pour cela, nous avons coupé une fine plaque de métal au Fablab aux dimensions du bumper qui sera encastrée dans la blanche juste en dessous de celui-ci. Nous avons trouvé un fil rigide que nous allons insérer dans une rainure sur l’extrémité haute de la pièce du bumper. Ainsi quand la bille roulera sur la plaque métallique et qu’elle sera en contact en même temps avec le fil le bumper sera déclenché et l’arduino recevra un signal permettant d’ajouter des points au joueur.
 J’ai pu remarquer que le mouvement vertical de la pièce conique du bumper imprimée en 3d est freiné par la planche, puisque les pattes de la pièce conique ne sont pas assez longues. J’ai alors modifié la modélisation 3d pour prolonger celles-ci afin que le bumper puisse avoir une position initiale plus haute pour que le solénoïde puisse effectuer sa course en entier.
 J’en ai profité pour ajouter la rainure qui permettra d’y insérer le bout de métal. 
