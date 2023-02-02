@@ -34,7 +34,7 @@ J’ai également modélisé une équerre permettant de fixer le solénoïde sou
 
 
 Voici le test du flipper dans une courte vidéo :
-https://youtube.com/shorts/JcDkgeMB18o?feature=share
+https://youtube.com/shorts/JcDkgeMB18o
 
 
 J’ai ensuite ajouté une encoche circulaire dans la pièce de modélisation du bumper sur Blender qui permet d'y insérer un fil électrique sur lequel la bille va faire contact. J'ai également dû modifier la hauteur de la pièce pour que la bille soit bien en contact avec la planche et le fil du bumper. 
@@ -44,7 +44,7 @@ J’ai ensuite ajouté une encoche circulaire dans la pièce de modélisation du
 
 Comme expliqué dans les comptes rendus précédent le slingshot (pièce dotée d'un élastique qui va renvoyer la bille dans la zone de jeu en tendant l'élastique)  ne renvoyait pas la bille assez fort en raison de la faible course du solénoïde utilisé (10mm) et de sa force peu élevée (8 Newtons). 
 Suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement. Le levier aura donc une course plus grande et une force plus élevée. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai réalisé plusieurs trous pour tester l’emplacement optimal de la barre sur laquelle le levier va effectuer son pivot et pour déterminer la longueur du levier. Voici le résultat après de nombreux essais et modifications de la pièce imprimée à la lime et à la perceuse:
-https://youtube.com/shorts/K7FTkk97wYo?feature=share
+https://youtube.com/shorts/K7FTkk97wYo
 
 J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
 
