@@ -9,6 +9,7 @@ La fonction affiche Score(int score) permet d’afficher simplement n’importe 
 <img src="test_lcd.jpg" width="300">
 
 
+
 Pendant les vacances de Noël, j’ai travaillé sur la fabrication des flippers. Pour les modéliser j’ai utilisé les dimensions réelles d’un flipper. J’ai décidé de diviser le mécanisme en 3 pièces : le flipper qui est la pièce frappant la balle muni d'une tige hexagonale qui vient s'emboîter dans la pièce suivante.
 
 <img src="flipper_modelisation.jpg" width="300">
