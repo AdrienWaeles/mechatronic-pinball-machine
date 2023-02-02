@@ -23,7 +23,7 @@ Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans 
 
 <img src="attachebras_flipper_modélisation.jpg" width="300">
 
-Voici une vue de dessous la planche de l’ensemble solénoide + attache_bras + bras de flipper : 
+Voici une vue de la planche de dessous de l’ensemble solénoide + attache_bras + bras de flipper : 
 
 <img src="flipper_mecanisme+solenoide.jpeg" width="300">
 
