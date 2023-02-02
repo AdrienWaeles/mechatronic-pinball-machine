@@ -2,7 +2,7 @@ Avant la séance :
 Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'actualiser le nombre de points. L'écran est branché à un module I2C ainsi il ne suffit que de 2 câbles de communication branchés aux entrées analogiques de l'arduino en plus de son alimentation: (sur une carte Arduino Uno la broche SDA est connectée au port analogique A4 de la carte et la broche SCL au port A5). Au début l’écran ne semblait pas fonctionner, aucun message ne s'affichait, mais il suffisait de tourner la petite vis au dos pour ajuster le contraste. Voici un programme simple de test :
 Voici le code :
 
-<img src="code_test_lcd.jpg" width="800">
+<img src="code_test_lcd.jpg" width="700">
 
 La fonction affiche Score(int score) permet d’afficher simplement n’importe quel score à l’écran. Elle est appelée dans le void setup avec la valeur 0 car toute partie commence avec 0 points. Pour effectuer des tests j’ai écrit une boucle for dans le void loop qui incrémente un nombre de points de 100 toutes les secondes jusqu'à 10000. Cette fonction pourra être optimisée par la suite.
 
@@ -24,23 +24,34 @@ Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans 
 
 Voici une vue de dessous la planche de l’ensemble solénoide + attache_bras + bras de flipper : 
 
-PHOTO
+<img src="flipper_mecanisme+solenoide.jpeg" width="300">
 
 J’ai également modélisé une équerre permettant de fixer le solénoïde sous la planche. J'ai rencontré des difficultés pour placer correctement le solénoïde, en effet celui-ci doit être positionné précisément pour que l’axe de la pièce imprimée en 3d soit bien droit, sans cela le solénoïde se bloque et ne revient pas en position initiale grâce à son ressort. Afin de régler le positionnement du solénoïde plus facilement j’ai décidé de remplacer les trous circulaires sur la modélisation de l’équerre pour les remplacer par des rainures. Il suffira alors d’utiliser des rondelles sous les vis pour s’assurer que la pièce soit fixe. Ainsi je peux désormais monter ou descendre le solénoïde sur la planche en déplaçant les vis dans les rainures. J'ai pu alors fixer le solénoïde sur la planche en y perçant un trou et en fixant l'équerre. 
-VIDEO
+https://youtube.com/shorts/JcDkgeMB18o?feature=share
+
 
 J’ai ensuite ajouté une encoche circulaire dans la pièce de modélisation du bumper sur Blender qui permet d'y insérer un fil électrique sur lequel la bille va faire contact. J'ai également dû modifier la hauteur de la pièce pour que la bille soit bien en contact avec la planche et le fil du bumper. 
-PHOTO
+
+<img src="bumper_encoche_fil.jpeg " width="300">
 
 
 Comme expliqué dans les comptes rendus précédent le slingshot (pièce dotée d'un élastique qui va renvoyer la bille dans la zone de jeu en tendant l'élastique)  ne renvoyait pas la bille assez fort en raison de la faible course du solénoïde utilisé (10mm) et de sa force peu élevée (8 Newtons). 
 Suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement. Le levier aura donc une course plus grande et une force plus élevée. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai réalisé plusieurs trous pour tester l’emplacement optimal de la barre sur laquelle le levier va effectuer son pivot et pour déterminer la longueur du levier. Voici le résultat après de nombreux essais et modifications de la pièce imprimée à la lime et à la perceuse:
-VIDEO
-J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
-PHOTO
-PHOTO
+https://youtube.com/shorts/K7FTkk97wYo?feature=share
 
-Etant donné qu’il il a fallu passer un temps énorme sur les prototypes du slingshot, bumper et du flipper pour créer les pièces aux bonnes dimensions et surtout les placer correctement sur la planche. J’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision pour l’installation des composants sur la planche finale et la réalisation des gravures, perçages et le découpage des bordures. Pour cela j’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes et sur des recherches de schémas pour déterminer la position exacte de chaque composant en vérifiant que la bille puisse atteindre tous les éléments sans se coincer. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette. PHOTO
+J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
+
+<img src="equerre_slingshot.jpg" width="300">
+
+<img src="levier slingshot.jpg " width="300">
+
+
+Etant donné qu’il il a fallu passer un temps énorme sur les prototypes du slingshot, bumper et du flipper pour créer les pièces aux bonnes dimensions et surtout les placer correctement sur la planche. J’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision pour l’installation des composants sur la planche finale et la réalisation des gravures, perçages et le découpage des bordures. Pour cela j’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes et sur des recherches de schémas pour déterminer la position exacte de chaque composant en vérifiant que la bille puisse atteindre tous les éléments sans se coincer. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette.
+
+<img src="maquette_flipper_dessus.jpg" width="300">
+
+<img src="maquette_flipper_dessous.jpg" width="300">
+
 
 J’ai également profité de ces vacances pour terminer la modélisation de la poignée sur blender, afin d’avoir une poignée adaptée à notre flipper et qui permette une bonne prise en main.  Cette poignée est liée à une tige autour de laquelle on y place un ressort. Cependant l’imprimer avec sa tige en une seule pièce aurait nécessité beaucoup de support à l’impression. J’ai donc divisé la pièce en 3 parties avec filetage pour éviter supports et cela permet également d’insérer la tige dans son futur support sur la planche afin que le ressort soit coincé entre le rebord de la planche et la pièce plastique visée au bout de la poignée. Le filament utilisé est du PLA imitation bois d’où la forte ressemblance avec du bois. Voici les pièces modélisées imprimées en 3D avant montage : PHOTO. 
 Et voici le tout assemblé (sans utiliser de vis ou de colle puisque tout se visse parfaitement grâce aux filetages).
