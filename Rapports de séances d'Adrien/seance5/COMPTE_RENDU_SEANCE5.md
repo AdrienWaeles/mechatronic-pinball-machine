@@ -46,7 +46,7 @@ Comme expliqué dans les comptes rendus précédent le slingshot (pièce dotée 
 Suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement. Le levier aura donc une course plus grande et une force plus élevée qu'un simple bras poussant la bille. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai effectué plusieurs trous pour tester l’emplacement optimal de la barre sur laquelle le levier va effectuer son pivot et pour déterminer la longueur du levier. Voici le résultat après de nombreux essais et modifications de la pièce imprimée en la ponçant à la lime pour agrandir certaines encoches et en effectuant des trous avec une perceuse:
 https://youtube.com/shorts/K7FTkk97wYo
 
-J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. J'ai aussi utilisé le système rainures à la place de simples trous comme pour le flipper afin de pouvoir le positionner au bon emplacement plus facilement avec des vis et rondelles.
+J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. 
 Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
 
 <img src="equerre_slingshot.jpg" width="300">
@@ -54,7 +54,7 @@ Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
 <img src="levier slingshot.jpg " width="300">
 
 
-Etant donné qu’il il a fallu passer un temps énorme sur les prototypes du slingshot, bumper et du flipper pour créer les pièces aux bonnes dimensions et surtout les placer correctement sur la planche. J’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision pour l’installation des composants sur la planche finale et la réalisation des gravures, perçages et le découpage des bordures. Pour cela j’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes et sur des recherches de schémas pour déterminer la position exacte de chaque composant en vérifiant que la bille puisse atteindre tous les éléments sans se coincer. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette.
+Etant donné qu’il il a fallu passer un temps énorme sur les prototypes du slingshot, bumper et du flipper pour créer les pièces aux bonnes dimensions et surtout les placer correctement sur la planche. J’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision pour l’installation des composants sur la planche finale. Pour cela j’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes et sur des recherches de schémas pour déterminer la position exacte de chaque composant en vérifiant que la bille puisse atteindre tous les éléments sans se coincer. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette.
 
 <img src="maquette_flipper_dessus.jpg" width="300">
 
