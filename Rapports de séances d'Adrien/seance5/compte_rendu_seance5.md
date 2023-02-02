@@ -2,25 +2,25 @@ Avant la séance :
 Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'actualiser le nombre de points. L'écran est branché à un module I2C ainsi il ne suffit que de 2 câbles de communication branchés aux entrées analogiques de l'arduino en plus de son alimentation: (sur une carte Arduino Uno la broche SDA est connectée au port analogique A4 de la carte et la broche SCL au port A5). Au début l’écran ne semblait pas fonctionner, aucun message ne s'affichait, mais il suffisait de tourner la petite vis au dos pour ajuster le contraste. Voici un programme simple de test :
 Voici le code :
 
-<img src="code_test_lcd" width="300">
+<img src="code_test_lcd.jpg" width="300">
 
 La fonction affiche Score(int score) permet d’afficher simplement n’importe quel score à l’écran. Elle est appelée dans le void setup avec la valeur 0 car toute partie commence avec 0 points. Pour effectuer des tests j’ai écrit une boucle for dans le void loop qui incrémente un nombre de points de 100 toutes les secondes jusqu'à 10000. Cette fonction pourra être optimisée par la suite.
 
-<img src="test_lcd" width="300">
+<img src="test_lcd.jpg" width="300">
 
 
 Pendant les vacances de Noël, j’ai travaillé sur la fabrication des flippers. Pour les modéliser j’ai utilisé les dimensions réelles d’un flipper. J’ai décidé de diviser le mécanisme en 3 pièces : le flipper qui est la pièce frappant la balle muni d'une tige hexagonale qui vient s'emboîter dans la pièce suivante.
 
-<img src="flipper_modelisation" width="300">
+<img src="flipper_modelisation.jpg" width="300">
 
 La 2ème pièce est un “bras” de flipper, elle est située sous la planche et va permettre de transformer le mouvement de translation du solénoïde en mouvement de rotation. Elle est reliée au flipper par une 3ème pièce qui tourne autour de son axe.
 
-<img src="bras_flipper_modelisation" width="300">
+<img src="bras_flipper_modelisation.jpg" width="300">
 
 La 3eme pièce permet de relier le solénoïde au bras du flipper.
 Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans l'impression 3d pour que cette pièce soit prisonnière dans la 2eme et puisse tourner autour.  Cela permet d’éviter l’ajout de vis supplémentaires. Cette pièce est essentielle car je ne pouvais pas attacher directement le solénoïde qui se déplace linéairement à une pièce qui effectue un mouvement de rotation.
 
-<img src="attachebras_flipper_modélisation" width="300">
+<img src="attachebras_flipper_modélisation.jpg" width="300">
 
 Voici une vue de dessous la planche de l’ensemble solénoide + attache_bras + bras de flipper : 
 
