@@ -4,7 +4,7 @@ Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'a
 
 <img src="code_test_lcd.jpg" width="700">
 
-La fonction affiche Score(int score) permet d’afficher simplement n’importe quel score à l’écran. Elle est appelée dans le void setup avec la valeur 0 car toute partie commence avec 0 points. Pour effectuer des tests j’ai écrit une boucle for dans le void loop qui incrémente un nombre de points de 100 toutes les secondes jusqu'à 10000. Cette fonction pourra être optimisée par la suite.
+La fonction afficheScore(int score) permet d’afficher simplement n’importe quel score à l’écran. Elle est appelée dans le void setup avec la valeur 0 car toute partie commence avec 0 points. Pour effectuer des tests j’ai écrit une boucle for dans le void loop qui incrémente un nombre de points de 100 toutes les secondes jusqu'à 10000. Cette fonction pourra être optimisée par la suite.
 
 <img src="test_lcd.jpg" width="300">
 
@@ -14,12 +14,12 @@ Pendant les vacances de Noël, j’ai travaillé sur la fabrication des flippers
 
 <img src="flipper_modelisation.jpg" width="300">
 
-La 2ème pièce est un “bras” de flipper, elle est située sous la planche et va permettre de transformer le mouvement de translation du solénoïde en mouvement de rotation. Elle est reliée au flipper par une 3ème pièce qui tourne autour de son axe.
+La 2ème pièce est un “bras” de flipper, elle est située sous la planche et va permettre de transformer le mouvement de translation du solénoïde en mouvement de rotation. Elle contient un trou hexagonal pour y insérer la pièce du flipper. Elle est reliée au solénoide par une 3ème pièce qui tourne autour de son axe.
 
 <img src="bras_flipper_modelisation.jpg" width="300">
 
 La 3eme pièce permet de relier le solénoïde au bras du flipper.
-Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans l'impression 3d pour que cette pièce soit prisonnière dans la 2eme et puisse tourner autour.  Cela permet d’éviter l’ajout de vis supplémentaires. Cette pièce est essentielle car je ne pouvais pas attacher directement le solénoïde qui se déplace linéairement à une pièce qui effectue un mouvement de rotation.
+Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans l'impression 3d pour que cette pièce soit prisonnière dans la 2eme et puisse tourner autour.  Cela permet d’éviter l’ajout de vis supplémentaires. Cette pièce est essentielle car je ne pouvais pas attacher facilement directement le solénoïde qui se déplace linéairement à une pièce qui effectue un mouvement de rotation.
 
 <img src="attachebras_flipper_modélisation.jpg" width="300">
 
@@ -27,7 +27,7 @@ Voici une vue de la planche de dessous de l’ensemble solénoide + attache_bras
 
 <img src="flipper_mecanisme+solenoide.jpeg" width="300">
 
-J’ai également modélisé une équerre permettant de fixer le solénoïde sous la planche. J'ai rencontré des difficultés pour placer correctement le solénoïde, en effet celui-ci doit être positionné précisément pour que l’axe de la pièce imprimée en 3d soit bien droit, sans cela le solénoïde se bloque et ne revient pas en position initiale grâce à son ressort. Afin de régler le positionnement du solénoïde plus facilement j’ai décidé de remplacer les trous circulaires sur la modélisation de l’équerre pour les remplacer par des rainures. Il suffira alors d’utiliser des rondelles sous les vis pour s’assurer que la pièce soit correctement fixée. Ainsi je peux désormais monter ou descendre le solénoïde sur la planche en déplaçant les vis dans les rainures. J'ai pu alors fixer le solénoïde sur la planche en y perçant un trou et en vissant l'équerre. 
+J’ai également modélisé une équerre permettant de fixer le solénoïde sous la planche. J'ai rencontré des difficultés pour placer correctement le solénoïde, en effet celui-ci doit être positionné précisément pour que l’axe de la pièce imprimée en 3d ne subisse aucune force supplémentaire, sans cela le solénoïde se bloque et ne revient pas en position initiale grâce à son ressort. Afin de régler le positionnement du solénoïde plus facilement j’ai décidé de remplacer les trous circulaires sur la modélisation de l’équerre pour les remplacer par des rainures. Il suffira alors d’utiliser des rondelles sous les vis pour s’assurer que la pièce soit correctement fixée. Ainsi je peux désormais monter ou descendre le solénoïde sur la planche en déplaçant les vis dans les rainures. J'ai pu alors fixer le solénoïde sur la planche en y perçant un trou et en vissant l'équerre. 
 
 <img src="flipper_equerre.jpg" width="300">
 
@@ -42,8 +42,8 @@ J’ai ensuite ajouté une encoche circulaire dans la pièce de modélisation du
 <img src="bumper_encoche_fil.jpeg " width="300">
 
 
-Comme expliqué dans les comptes rendus précédent le slingshot (pièce dotée d'un élastique qui va renvoyer la bille dans la zone de jeu en tendant l'élastique)  ne renvoyait pas la bille assez fort en raison de la faible course du solénoïde utilisé (10mm) et de sa force peu élevée (8 Newtons). 
-Suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement. Le levier aura donc une course plus grande et une force plus élevée. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai effectué plusieurs trous pour tester l’emplacement optimal de la barre sur laquelle le levier va effectuer son pivot et pour déterminer la longueur du levier. Voici le résultat après de nombreux essais et modifications de la pièce imprimée à la lime et à la perceuse:
+Comme expliqué dans les comptes rendus précédent le slingshot (pièce dotée d'un élastique qui va renvoyer la bille dans la zone de jeu en tendant l'élastique) ne renvoyait pas la bille assez fort en raison de la faible course du solénoïde utilisé (10mm) et de sa force peu élevée (8 Newton). 
+Suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement. Le levier aura donc une course plus grande et une force plus élevée qu'un simple bras poussant la bille. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai effectué plusieurs trous pour tester l’emplacement optimal de la barre sur laquelle le levier va effectuer son pivot et pour déterminer la longueur du levier. Voici le résultat après de nombreux essais et modifications de la pièce imprimée en la ponçant à la lime pour agrandir certaines encoches et en effectuant des trous avec une perceuse:
 https://youtube.com/shorts/K7FTkk97wYo
 
 J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. J'ai aussi utilisé le système rainures à la place de simples trous comme pour le flipper afin de pouvoir le positionner au bon emplacement plus facilement avec des vis et rondelles.
@@ -61,7 +61,7 @@ Etant donné qu’il il a fallu passer un temps énorme sur les prototypes du sl
 <img src="maquette_flipper_dessous.jpg" width="300">
 
 
-J’ai également profité de ces vacances pour terminer la modélisation de la poignée sur blender, afin d’avoir une poignée adaptée à notre flipper et qui permette une bonne prise en main.  Cette poignée est liée à une tige autour de laquelle on y place un ressort. Cependant l’imprimer avec sa tige en une seule pièce aurait nécessité beaucoup de support à l’impression. J’ai donc divisé la pièce en 3 parties avec filetage pour éviter l'ajout de supports et cela permet également d’insérer la tige dans son futur cadre en bois sur la planche afin que le ressort soit coincé entre le rebord de la planche et la pièce plastique visée au bout de la poignée. Le filament utilisé est du PLA imitation bois d’où la forte ressemblance avec du bois. Voici les pièces modélisées imprimées en 3D avant montage :
+J’ai également profité de ces vacances pour terminer la modélisation de la poignée sur blender, afin d’avoir une poignée adaptée à notre flipper et qui permette une bonne prise en main.  Cette poignée est liée à une tige autour de laquelle on y place un ressort. Cependant l’imprimer avec sa tige en une seule pièce aurait nécessité beaucoup de supports à l’impression. J’ai donc divisé la pièce en 3 parties avec filetage pour éviter l'ajout de supports et cela permet également d’insérer la tige dans son futur cadre en bois sur la planche afin que le ressort soit coincé entre le rebord de la planche et la pièce plastique visée au bout de la poignée. Le filament utilisé est du PLA imitation bois d’où la forte ressemblance avec du bois. Voici les pièces modélisées imprimées en 3D avant montage :
 
 <img src="poignee_demontee.jpeg" width="300">
 
