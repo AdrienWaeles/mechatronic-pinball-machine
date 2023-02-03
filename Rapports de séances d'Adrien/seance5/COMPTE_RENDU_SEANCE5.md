@@ -57,9 +57,7 @@ Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
 
 Etant donné qu’il il a fallu passer un temps énorme sur les prototypes pour placer correctement les composants sur la planche. J’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision sur la version finale. J’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes pour déterminer la position exacte de chaque composant. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette.
 
-<img src="maquette_flipper_dessus.jpg" width="200">
-
-<img src="maquette_flipper_dessous.jpg" width="200">
+<img src="maquette_flipper_dessus.jpg" width="200"> <img src="maquette_flipper_dessous.jpg" width="200">
 
 
 Finalement j'ai profité de ces vacances pour terminer la modélisation de la poignée sur blender, afin d’avoir une poignée adaptée avec une bonne prise en main.  Cette poignée est liée à une tige autour de laquelle on y place un ressort. Cependant l’imprimer avec sa tige en une seule pièce aurait nécessité beaucoup de supports à l’impression. J’ai donc divisé la pièce en 3 parties avec filetage pour éviter l'ajout de supports et cela permet également d’insérer la tige dans son futur cadre en bois sur la planche. Le filament utilisé est du PLA imitation bois d’où la forte ressemblance avec du bois. Voici les pièces modélisées imprimées en 3D avant montage :
