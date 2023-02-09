@@ -1,10 +1,11 @@
 **Avant la séance :**
 
-Avant cette séance, nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la planche du haut du flipper à effectuer à la graveuse laser. 
+Nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la planche du haut du flipper à effectuer à la graveuse laser. 
 
 Ces trous permettent notamment de fixer nos bumpers, et de graver des carrés permettant de positionner 3 plaques métalliques carrées à ras de la surface de la planche qui permettront de détecter si la bille roule en dessous d’un bumper grâce un circuit fermé. Le grand trou permet de positionner une plaque de plexiglass sous laquelle se trouvera un capteur infrarouge permettant de détecter un passage de bille.
 
-<img src="haut_flipper_inskcape.png" width="300">
+<img src="haut_flipper_inskcape.png" width="300"
+ (réalisé par Redha sur Inkscape)
  
 
 Pour rappel, étant donné que notre planche de jeu de dimensions 414 x 800 x 5mm est trop grande pour rentrer dans la graveuse laser directement, nous avions décidé d’y coller dessus 3 petites planches de 3mm afin de pouvoir graver celles- ci. 
