@@ -1,5 +1,6 @@
 Avant la séance : 
 Avant cette séance, nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la planche du haut du flipper à effectuer à la graveuse laser. Ces trous permettent notamment de fixer nos bumpers, et de graver des carrés permettant de positionner 3 plaques métalliques carrées à ras de la surface de la planche qui permettront de détecter si la bille roule en dessous d’un bumper grâce un circuit fermé. Le grand trou permet de positionner une plaque de plexiglass sous laquelle se trouvera un capteur infrarouge permettant de détecter un passage de bille.
+<img src="haut_flipper_inskcape.png" width="300">
  
 
 Pour rappel, étant donné que notre planche de jeu de dimensions 414 x 800 x 5mm est trop grande pour rentrer dans la graveuse laser directement, nous avions décidé d’y coller dessus 3 petites planches de 3mm afin de pouvoir graver celles- ci. 
@@ -7,24 +8,36 @@ Redha s’est occupé de la réalisation des fichiers svg de la partie haute et 
 
 J’ai ensuite créé un fichier vectoriel pour graver la planche du milieu du flipper avec un dessin en assemblant des images trouvées en ligne. Pour cela j’ai converti des images en svg puis je les ai importées dans inkscape en les positionnant et en les redimensionnant en fonction de la taille totale de la planche.
 
+<img src="gravure_gameofthrones_inkscape.png" width="300">
+
 Nous avons décidé de thématiser votre flipper avec pour thème la série Game of Thrones et nous étions donc obligés d’anticiper la décoration par la gravure de cette planche car une fois collée sur la planche épaisse il sera impossible d’effectuer de nouvelles gravures.
 
 Et voici le résultat final de la gravure de la partie haute du flipper avec le positionnement d’une des plaques métalliques : 
 
 
+<img src="planchehaut+planchemilieu.png" width="300">
+
 
 J’ai également déterminé la position exacte de tous les éléments en bas du flipper sur la maquette sketchup. 
 J’ai dû adapter le modèle précédent du levier pour le slingshot (pièce dotée d’un élastique renvoyant la bille en zone de jeu) puisque le système de levier prenait trop de place ce qui ne permettait pas d’installer des rangées à gauche et à droite des slingshots. J’ai donc réduit l’épaisseur d’une partie du levier en m’assurant que le levier exerce toujours autant de force sur l’élastique et tout en conservant une pièce rigide. Voici la comparaison entre l’ancienne et la nouvelle modélisation :
 
-Et j’ai également dû modifier la modélisation du slingshot pour l’agrandir afin d'être sûr que le levier puisse effectuer sa course.
-Finalement j’ai placé le trou dans lequel le levier va effectuer sa course à travers la planche.
+<img src="slingshot_barre_ancienneversion.png" width="300">
+<img src="slingshot_barre_nouvelleversion.png" width="300">
+
+Et j’ai également dû modifier la modélisation du slingshot pour l’agrandir afin d'être sûr que le levier puisse effectuer sa course. Voici la pièce imprimée en 3D :
+<img src="tendeurslingshot_impression3D.png" width="300">
+
+Finalement j’ai placé le trou dans lequel le levier va effectuer sa course à travers la planche sur la maquette 3D du flipper.
+<img src="positionnement_trouslingshot_maquette" width="300">
+
 
 J’ai également modélisé et imprimé les délimiteurs de rangées : 
-
+<img src="separateurs_colonnes" width="300">
 
 
 
 Pendant la séance :
+
 Certaines parties du contour étant arrondies, il aurait été difficile de les réaliser directement à la main en gardant la précision des arrondis. Nous avons décidé de réaliser ces parties du contour par découpe laser. Pour cela j’ai utilisé les pièces modélisées sur la maquette 3D sur Sketchup, je les ai séparé de la maquette et je les ai exportées en STL. Voici les pièces exportées modélisées dans sketchup.
 
 Ensuite je les ai importées dans Blender pour les transformer en fichiers 2D vectoriels. Pour cela j’ai utilisé l’extension “outline_to_svg” qui permet de faire un rendu 2D d’une pièce en 3D en positionnant une caméra de rendu dans la vue voulue. Il fallait également simplifier la géométrie des différents arrondis pour que le résultat soit exploitable. Et voici le résultat :
