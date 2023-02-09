@@ -22,8 +22,8 @@ Et voici le résultat final de la gravure de la partie haute du flipper avec le 
 J’ai également déterminé la position exacte de tous les éléments en bas du flipper sur la maquette sketchup. 
 J’ai dû adapter le modèle précédent du levier pour le slingshot (pièce dotée d’un élastique renvoyant la bille en zone de jeu) puisque le système de levier prenait trop de place ce qui ne permettait pas d’installer des rangées à gauche et à droite des slingshots. J’ai donc réduit l’épaisseur d’une partie du levier en m’assurant que le levier exerce toujours autant de force sur l’élastique et tout en conservant une pièce rigide. Voici la comparaison entre l’ancienne et la nouvelle modélisation :
 
-<img src="slingshot_barre_ancienneversion.png" width="300">
-<img src="slingshot_barre_nouvelleversion.png" width="300">
+<img src="slingshot_barre_ancienneversion.png" width="200">
+<img src="slingshot_barre_nouvelleversion.png" width="200">
 
 Et j’ai également dû modifier la modélisation du slingshot pour l’agrandir afin d'être sûr que le levier puisse effectuer sa course. Voici la pièce imprimée en 3D :
 <img src="tendeurslingshot_impression3D.png" width="300">
