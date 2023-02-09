@@ -1,4 +1,5 @@
-Avant la séance : 
+**Avant la séance : **
+
 Avant cette séance, nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la planche du haut du flipper à effectuer à la graveuse laser. Ces trous permettent notamment de fixer nos bumpers, et de graver des carrés permettant de positionner 3 plaques métalliques carrées à ras de la surface de la planche qui permettront de détecter si la bille roule en dessous d’un bumper grâce un circuit fermé. Le grand trou permet de positionner une plaque de plexiglass sous laquelle se trouvera un capteur infrarouge permettant de détecter un passage de bille.
 
 <img src="haut_flipper_inskcape.png" width="300">
@@ -34,11 +35,12 @@ Finalement j’ai placé le trou dans lequel le levier va effectuer sa course à
 
 
 J’ai également modélisé et imprimé les délimiteurs de rangées : 
+
 <img src="separateurs_colonnes.png" width="300">
 
 
 
-Pendant la séance :
+**Pendant la séance :**
 
 Certaines parties du contour étant arrondies, il aurait été difficile de les réaliser directement à la main en gardant la précision des arrondis. Nous avons décidé de réaliser ces parties du contour par découpe laser. Pour cela j’ai utilisé les pièces modélisées sur la maquette 3D sur Sketchup, je les ai séparé de la maquette et je les ai exportées en STL. Voici les pièces exportées modélisées dans sketchup.
 
