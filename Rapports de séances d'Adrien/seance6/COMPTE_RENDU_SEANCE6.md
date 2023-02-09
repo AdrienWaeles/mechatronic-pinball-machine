@@ -4,7 +4,7 @@ Nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscap
 
 Ces trous permettent notamment de fixer nos bumpers, et de graver des carrés permettant de positionner 3 plaques métalliques carrées à ras de la surface de la planche qui permettront de détecter si la bille roule en dessous d’un bumper grâce un circuit fermé. Le grand trou permet de positionner une plaque de plexiglass sous laquelle se trouvera un capteur infrarouge permettant de détecter un passage de bille.
 
-<img src="haut_flipper_inskcape.png" width="300"
+<img src="haut_flipper_inskcape.png" width="300">
  (réalisé par Redha sur Inkscape)
  
 
