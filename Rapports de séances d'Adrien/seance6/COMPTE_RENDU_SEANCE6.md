@@ -2,7 +2,7 @@
 
 Nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la partie haute du flipper afin d'utiliser une découpeuse laser.
 
-Ces trous permettent notamment de fixer nos bumpers et les gravures en forme de carrés de positionner 3 plaques métalliques à ras de la surface de la planche qui permettront de détecter si la bille roule en dessous d’un bumper. 
+Ces trous permettent notamment de fixer nos bumpers et les gravures en forme de carrés de positionner 3 plaques métalliques à ras de la surface de la planche pour détecter si la bille roule en dessous d’un bumper. 
 Le grand trou rectangulaire permet de positionner une plaque de plexiglass sous laquelle se trouvera un capteur infrarouge permettant de détecter un passage de bille.
 
 <img src="haut_flipper_inskcape.png" width="300">
@@ -57,7 +57,7 @@ Ensuite je les ai importées dans Blender pour les transformer en fichiers 2D ve
 Etant donné que la graveuse laser du fablab est limitée à la découpe de planches de 5 mm maximum. Nous allons découper chaque pièce du contour en 4 exemplaires sur des planches de 5 mm. Puis il faudra coller les 4 morceaux de 5mm les uns sur les autres pour avoir une bordure d’une épaisseur totale de 20mm.
 
 
-J’ai dessiné l'emplacement des différents capteurs infrarouges, pour créer des trous sur la planche afin d'insérer des plaques de plexiglass et Redha les a tracés sur Inkscape. (Les emplacements sont désignés par des cercles sur l'image de la maquette en bas du compte rendu).
+J’ai dessiné l'emplacement des différents capteurs infrarouges, afin d'insérer des plaques de plexiglass à ces emplacements et Redha les a tracés sur Inkscape. (Les emplacements sont désignés par des cercles sur l'image de la maquette en bas du compte rendu).
 
 Il y en a 5 sur la planche, dont 3 qui sont positionnées aux sorties du jeu, et permettent de détecter si le joueur à perdu la bille. En effet on distingue si la bille sort au centre du flipper (le joueur n’a pas réussi à la réceptionner) et les pertes de billes sur les extrémités du flipper qui ne sont pas la faute du joueur. Cela peut permettre par exemple d’offrir un nouvel essai au joueur si une bille est perdue sans l’intervention du joueur quelques secondes après l’avoir lancée. C’est ce que l’on retrouve sur certains vrais flippers avec le message “bille sauvée” et l’ajout d’un nouvel essai. 
 
