@@ -25,9 +25,11 @@ J’ai dû adapter le modèle précédent du levier pour le slingshot (pièce do
 <img src="slingshot_barre_ancienneversion.png" width="300"><img src="slingshot_barre_nouvelleversion.png" width="350">
 
 Et j’ai également dû modifier la modélisation du slingshot pour l’agrandir afin d'être sûr que le levier puisse effectuer sa course. Voici la pièce imprimée en 3D :
+
 <img src="tendeurslingshot_impression3D.png" width="300">
 
 Finalement j’ai placé le trou dans lequel le levier va effectuer sa course à travers la planche sur la maquette 3D du flipper.
+
 <img src="positionnement_trouslingshot_maquette.png" width="300">
 
 
@@ -40,12 +42,16 @@ Pendant la séance :
 
 Certaines parties du contour étant arrondies, il aurait été difficile de les réaliser directement à la main en gardant la précision des arrondis. Nous avons décidé de réaliser ces parties du contour par découpe laser. Pour cela j’ai utilisé les pièces modélisées sur la maquette 3D sur Sketchup, je les ai séparé de la maquette et je les ai exportées en STL. Voici les pièces exportées modélisées dans sketchup.
 
+<img src="modeles3D_bordures.png" width="300">
+
 Ensuite je les ai importées dans Blender pour les transformer en fichiers 2D vectoriels. Pour cela j’ai utilisé l’extension “outline_to_svg” qui permet de faire un rendu 2D d’une pièce en 3D en positionnant une caméra de rendu dans la vue voulue. Il fallait également simplifier la géométrie des différents arrondis pour que le résultat soit exploitable. Et voici le résultat :
+
+<img src="inkscape_bordures.png" width="300">
 
 
 Etant donné que la graveuse laser du fablab est désormais limitée à la découpe de planches de 5 mm maximum en raison de la perte de puissance du laser de la machine. Nous allons découper chaque pièce du contour en 4 exemplaires sur des planches de 5 mm. Puis il faudra coller les 4 morceaux de 5mm les uns sur les autres pour avoir une bordure d’une épaisseur totale de 20mm.
 
-J’ai ensuite dessiné l'emplacement des différents capteurs infrarouges qui seront utilisés sur la planche de jeu afin de positionner les trous dans lesquels nous allons insérer des plaques de plexiglass et Redha les a tracés sur Inkscape, nous avons ensuite pu les graver dans nos planches. 
+J’ai ensuite dessiné l'emplacement des différents capteurs infrarouges qui seront utilisés sur la planche de jeu afin de positionner les trous dans lesquels nous allons insérer des plaques de plexiglass et Redha les a tracés sur Inkscape, nous avons ensuite pu les graver dans nos planches. (Les emplacements sont désignés par des cercles sur l'image de la maquette en bas du compte rendu).
 
 Il y en a 5 sur la planche, dont 3 qui sont positionnées au sorties du jeu, et permettent de détecter si le joueur à perdu la bille. En effet on distingue si la bille sort au centre du flipper (le joueur n’a pas réussi à la réceptionner) et les pertes de billes sur les extrémités du flipper qui ne sont pas la faute du joueur. Cela peut permettre par exemple d’offrir un nouvel essai au joueur si une bille est perdue sans l’intervention du joueur quelques secondes après l’avoir lancée. C’est ce que l’on retrouve sur certains vrais flippers avec le message “bille sauvée” et l’ajout d’un nouvel essai. 
 
@@ -53,3 +59,5 @@ Les deux autres trous sont placés sur la partie haute du flipper, ils sont situ
 
 Finalement j’ai ainsi pu avancer la modélisation de la maquette qui a permis de positionner les éléments à découper et graver au laser et permettra de placer avec précision tous les composants sur la planche. 
 A gauche de la maquette on peut voir l’assemblage des3 fichiers vectoriels que nous avons réalisés et qui ont permis d’effectuer les gravures et perçages dans nos 3 fines planches.
+
+<img src="maquette_flipper+dessinsInkscape.png" width="300">
