@@ -29,11 +29,11 @@ Et j’ai également dû modifier la modélisation du slingshot pour l’agrandi
 <img src="tendeurslingshot_impression3D.png" width="300">
 
 Finalement j’ai placé le trou dans lequel le levier va effectuer sa course à travers la planche sur la maquette 3D du flipper.
-<img src="positionnement_trouslingshot_maquette" width="300">
+<img src="positionnement_trouslingshot_maquette.png" width="300">
 
 
 J’ai également modélisé et imprimé les délimiteurs de rangées : 
-<img src="separateurs_colonnes" width="300">
+<img src="separateurs_colonnes.png" width="300">
 
 
 
