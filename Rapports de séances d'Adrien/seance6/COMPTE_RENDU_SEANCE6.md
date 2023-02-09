@@ -66,4 +66,4 @@ Les deux autres trous sont placés sur la partie haute du flipper, ils sont situ
 Finalement j’ai ainsi pu avancer la modélisation de la maquette qui a permis de positionner les éléments à découper et graver au laser.
 A gauche de la maquette on peut voir l’assemblage des 3 fichiers vectoriels que nous avons réalisés et qui ont permis d’effectuer les gravures et perçages dans nos 3 fines planches.
 
-<img src="maquette_flipper+dessinsInkscape.png" width="300">
+<img src="maquette_flipper+dessinsInkscape.png" width="400">
