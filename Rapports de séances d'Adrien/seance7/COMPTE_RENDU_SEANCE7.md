@@ -67,7 +67,7 @@ Finalement dans inkscape, après avoir corrigé quelques erreurs d’exportation
 
 Et le résultat final après découpe et gravure au laser:
 
-<img src="rouefortune_gravure.png" width="300">
+<img src="rouefortune_gravure.jpg" width="300">
 
 
 Puis j’ai mis à jour la maquette sketchup en y ajoutant la roue de fortune avec l’image svg créée pour m’assurer du résultat : 
