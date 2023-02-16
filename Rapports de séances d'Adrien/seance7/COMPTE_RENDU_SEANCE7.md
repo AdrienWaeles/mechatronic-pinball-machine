@@ -5,6 +5,7 @@ Cette fois-ci nous avons découpé les pièces restantes du contour, qui sont 5 
 Pour cela nous avons reporté les différentes mesures des contours de la maquette Sketchup sur nos morceaux de bois au crayon gris.
 Sur cette capture d’écran de notre maquette on peut voir en haut à droite les pièces arrondies fabriquées à la séance précédente et en dessous les 5 morceaux de bois découpés juste avant cette séance : 
 
+<img src="maquette_sketchup_bordures.png" width="300">
 
 Il a fallu donc découper des morceaux de largeur 10mm de différentes longueurs et d’une hauteur de 20 mm. Puis pour des raisons de sécurité, les découpes ont été effectuées par un professeur au FabLab à la scie circulaire sur table.
 
@@ -12,11 +13,13 @@ Etant donné que certaines pièces arrondies ont légèrement brûlé lors de la
 
 Voici le résultat avec toutes les pièces du contour disposées sur la planche (rien n’est encore vissé ou collé pour le moment, cela sera fait pendant la semaine des vacances) : 
 
-
+<img src="planche_avec_bordures.png" width="300">
 
 Ensuite, j’ai utilisé le logiciel Fritzing afin de réaliser un schéma du câblage du Flipper afin de s’assurer de tout brancher correctement et de gagner du temps le jour du câblage. 
 Pour le moment j’ai cherché et importé tous les composants dans le logiciel et les ai disposés selon leurs emplacements sur notre flipper et j’ai branché les solénoïdes aux relais. Cependant, nous nous sommes aperçus que les brancher en série risque d’engendrer une perte de puissance (3 solénoïdes pouvant être activés en même temps dans le pire des cas), il faudra alors les brancher en parallèle.
 
+
+<img src="cablage_projetflipper_fritzing.png" width="300">
 
 Comme chaque flipper est unique par sa décoration et ses éléments de jeu, je souhaitais intégrer un élément à notre flipper qui le distingue d’un pinball classique. J’ai alors imaginé un élément inspiré du jeu “la roue de la fortune” permettant de remporter lorsqu’elle s’active un bonus déterminé aléatoirement. 
 
@@ -50,14 +53,24 @@ Points x2 / Points x3 : bonus multipliant les nouveaux points gagnés par le jou
 
 J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisque je le maitrise bien mieux que Inkscape. Les cases sont séparées avec un angle de 60° par des rectangles de 2 mm de largeur. J’ai placé 6 carrés de côté 20 mm qui permettront de laisser passer les nano pixels.
 
+<img src="rouefortune_blender.png" width="300">
+
 Pour ce qui est du texte j’ai utilisé une police d’écriture liée au thème du flipper. J’ai ensuite utilisé une extension nommée ‘freestyle svg export’ activable directement dans les paramètres du logiciel. Celle-ci permet d’exporter les contours d’un modèle 3D selon une vue en vecteurs dans un fichier svg. Pour l’utiliser il suffit de placer une caméra de rendu dans la vue désirée puis de lancer un rendu image avec l’extension activée.
 Finalement dans inkscape, après avoir corrigé quelques erreurs d’exportation en svg avec l’aide de Redha Abderrahmane, j’ai ajouté un remplissage de couleur noir à l’intérieur des lettres puis des dessins vectoriels trouvés sur internet sur chaque case.
 
-
+<img src="rouedelafortune_avecdeco_inkscape.png" width="300">
+<img src="roueintermediaire_inkscape.png" width="300">
 
 Et le résultat final après découpe et gravure au laser:
+
+<img src="rouefortune_gravure.png" width="300">
+
+
 Puis j’ai mis à jour la maquette sketchup en y ajoutant la roue de fortune avec l’image svg créée pour m’assurer du résultat : 
 
+<img src="maquette_sketchup_rouefortune.png" width="300">
 
 Finalement j’ai commencé à réfléchir à un support qui viendra se visser avec le reste des éléments sur la roue pour la fixer au-dessus d’un rebord du flipper.
-Il me reste à faire la modélisation de la pièce finale au propre.. 
+Il me reste à faire la modélisation de la pièce finale au propre.
+
+<img src="esquisse_supportroue.png" width="300">
