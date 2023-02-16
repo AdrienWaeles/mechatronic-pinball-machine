@@ -52,10 +52,14 @@ Pour cela j’ai commencé par effectuer une esquisse sur papier pour détermine
 <img src="rouefortune_croquis.jpg" width="300">
 
 Voici les bonus choisis : 
-Multi-Billes : déclenche un élément sur le plateau qui va relâcher 3 autres billes simultanément permettant au joueur de jouer avec plusieurs billes à la fois et donc de marquer plus de points.
-Points x2 / Points x3 : bonus multipliant les nouveaux points gagnés par le joueur par 2 ou 3 pendant un certain temps (le bonus sera par exemple désactivé au bout de 30 secondes).
-3 000 points / 10 000 points : ajoute 3000 ou 10 000 points au score du joueur. Il sera possible dans le code de réduire la probabilité que l’on tombe sur la case 10 000 pour conserver la rareté de ce bonus important.
-+1 bille : rajoute un essai au joueur en lui offrant une bille supplémentaire qu’il pourra lancer depuis la zone de lancement une fois que les autres billes auront été perdues.
+
+- Multi-Billes : déclenche un élément sur le plateau qui va relâcher 3 autres billes simultanément permettant au joueur de jouer avec plusieurs billes à la fois et donc de marquer plus de points.
+
+- Points x2 / Points x3 : bonus multipliant les nouveaux points gagnés par le joueur par 2 ou 3 pendant un certain temps (le bonus sera par exemple désactivé au bout de 30 secondes).
+
+- 3 000 points / 10 000 points : ajoute 3000 ou 10 000 points au score du joueur. Il sera possible dans le code de réduire la probabilité que l’on tombe sur la case 10 000 pour conserver la rareté de ce bonus important.
+
+- +1 bille : rajoute un essai au joueur en lui offrant une bille supplémentaire qu’il pourra lancer depuis la zone de lancement une fois que les autres billes auront été perdues.
 
 J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisque je le maitrise bien mieux que Inkscape. Les cases sont séparées avec un angle de 60° par des rectangles de 2 mm de largeur. J’ai placé 6 carrés de côté 20 mm qui permettront de laisser passer les nano pixels.
 
