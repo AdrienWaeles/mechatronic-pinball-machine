@@ -71,5 +71,6 @@ Et le résultat final après découpe et gravure au laser:
 
 
 Puis j’ai mis à jour la maquette sketchup en y ajoutant la roue de fortune avec l’image svg créée pour m’assurer du résultat : 
+<img src="maquette_sketchup_rouefortune.png" width="300">
 
 Finalement j’ai commencé à modéliser un support qui viendra se visser avec le reste des éléments sur la roue pour la fixer au-dessus d’un rebord du flipper.
