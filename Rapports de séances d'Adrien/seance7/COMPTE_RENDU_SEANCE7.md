@@ -46,7 +46,8 @@ Le tout sera fixé sur le rebord haut du flipper grâce à un support imprimé e
 
 Cette séance m’a permis de créer les pièces de bois de la roue de la fortune. 
 Pour cela j’ai commencé par effectuer une esquisse sur papier pour déterminer le nombre de cases de la roue, l’emplacement des leds et les bonus que j’y inscrirai (j’ai donc cherché le mode de comptabilisation de points d’un vrai flipper, pour avoir un mode de fonctionnement qui s’en rapproche et donc octroyer des bonus cohérent avec le reste du jeu).
-<img src="rouefortune_croquis.jpeg" width="300">
+
+<img src="rouefortune_croquis.jpg" width="300">
 
 Voici les bonus choisis : 
 Multi-Billes : déclenche un élément sur le plateau qui va relâcher 3 autres billes simultanément permettant au joueur de jouer avec plusieurs billes à la fois et donc de marquer plus de points.
