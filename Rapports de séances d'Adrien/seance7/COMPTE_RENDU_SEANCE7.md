@@ -14,7 +14,7 @@ Etant donné que certaines pièces arrondies ont légèrement brûlé lors de la
 
 Voici le résultat avec toutes les pièces du contour disposées sur la planche (rien n’est encore vissé ou collé pour le moment, cela sera fait pendant la semaine des vacances) : 
 
-<img src="planche_avec_bordures.png" width="300">
+<img src="planche_avec_bordures.jpg" width="300">
 
 Ensuite, j’ai utilisé le logiciel Fritzing afin de réaliser un schéma du câblage du Flipper afin de s’assurer de tout brancher correctement et de gagner du temps le jour du câblage. 
 Pour le moment j’ai cherché et importé tous les composants dans le logiciel et les ai disposés selon leurs emplacements sur notre flipper et j’ai branché les solénoïdes aux relais. Cependant, nous nous sommes aperçus que les brancher en série risque d’engendrer une perte de puissance (3 solénoïdes pouvant être activés en même temps dans le pire des cas), il faudra alors les brancher en parallèle.
