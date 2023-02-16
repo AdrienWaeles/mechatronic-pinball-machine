@@ -62,8 +62,8 @@ J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisq
 Pour ce qui est du texte j’ai utilisé une police d’écriture liée au thème du flipper. J’ai ensuite utilisé une extension nommée ‘freestyle svg export’ activable directement dans les paramètres du logiciel. Celle-ci permet d’exporter les contours d’un modèle 3D selon une vue en vecteurs dans un fichier svg. Pour l’utiliser il suffit de placer une caméra de rendu dans la vue désirée puis de lancer un rendu image avec l’extension activée.
 Finalement dans inkscape, après avoir corrigé quelques erreurs d’exportation en svg avec l’aide de Redha Abderrahmane, j’ai ajouté un remplissage de couleur noir à l’intérieur des lettres puis des dessins vectoriels trouvés sur internet sur chaque case.
 
-<img src="rouedelafortune_avecdeco_inkscape.png" width="300">
-<img src="roueintermediaire_inkscape.png" width="300">
+<img src="rouedelafortune_avecdeco_inkscape.png" width="400">
+<img src="roueintermediaire_inkscape.png" width="100">
 
 Et le résultat final après découpe et gravure au laser:
 
