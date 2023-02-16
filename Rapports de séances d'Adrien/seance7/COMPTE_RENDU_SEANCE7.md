@@ -63,7 +63,7 @@ Pour ce qui est du texte j’ai utilisé une police d’écriture liée au thèm
 Finalement dans inkscape, après avoir corrigé quelques erreurs d’exportation en svg avec l’aide de Redha Abderrahmane, j’ai ajouté un remplissage de couleur noir à l’intérieur des lettres puis des dessins vectoriels trouvés sur internet sur chaque case.
 
 <img src="rouedelafortune_avecdeco_inkscape.png" width="400">
-<img src="roueintermediaire_inkscape.png" width="100">
+<img src="roueintermediaire_inkscape.png" width="150">
 
 Et le résultat final après découpe et gravure au laser:
 
