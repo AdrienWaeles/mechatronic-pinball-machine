@@ -47,7 +47,7 @@ Le tout sera fixé sur le rebord haut du flipper grâce à un support imprimé e
 **Pendant la séance :**
 
 Cette séance m’a permis de créer les pièces de bois de la roue de la fortune. 
-Pour cela j’ai commencé par effectuer une esquisse sur papier pour déterminer le nombre de cases de la roue, l’emplacement des leds et les bonus que j’y inscrirai (j’ai donc cherché le mode de comptabilisation de points d’un vrai flipper, pour avoir un mode de fonctionnement qui s’en rapproche et donc octroyer des bonus cohérent avec le reste du jeu).
+Pour cela j’ai commencé par effectuer une esquisse sur papier pour déterminer le nombre de cases de la roue, l’emplacement des leds et les bonus que j’y inscrirai (j’ai donc cherché le mode de comptabilisation de points d’un vrai flipper).
 
 <img src="rouefortune_croquis.jpg" width="300">
 
