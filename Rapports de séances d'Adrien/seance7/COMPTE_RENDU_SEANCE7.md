@@ -77,4 +77,4 @@ Puis j’ai mis à jour la maquette sketchup en y ajoutant la roue de fortune av
 Finalement j’ai commencé à réfléchir à un support qui viendra se visser avec le reste des éléments sur la roue pour la fixer au-dessus d’un rebord du flipper.
 Il me reste à faire la modélisation de la pièce finale au propre.
 
-<img src="esquisse_supportroue.png" width="100">
+<img src="esquisse_supportroue.png" width="150">
