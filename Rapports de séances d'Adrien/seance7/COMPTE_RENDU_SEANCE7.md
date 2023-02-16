@@ -37,9 +37,12 @@ Voici le résultat en vidéo :
 https://youtube.com/shorts/hx9wgBHNqKs?feature=share
 
 
+
 J’ai choisi de réaliser un assemblage de planches de bois découpées au laser en 3 planches de 3 mm. 
 La première partie est celle visible par le joueur, c’est un cercle de 140mm sur laquelle sont inscrits les bonus à remporter et elle comporte 6 trous pour y placer les nano pixels. 
+
 La 2ème est un simple cercle de la même taille sur lequel je vais coller chaque nano pixel en face de son trou présent sur la première pièce. Entre ces deux pièces, toujours avec la découpeuse laser j’ai fabriqué un 3ème cercle plus petit (100mm de diamètre) qui sera collé entre les deux et permettra de laisser la place pour passer les câbles reliant les 6 nano pixels en série.
+
 Le tout sera fixé sur le rebord haut du flipper grâce à un support imprimé en 3D dans lequel je réaliserai un trou pour y passer les 3 câbles de branchement.
 
 
