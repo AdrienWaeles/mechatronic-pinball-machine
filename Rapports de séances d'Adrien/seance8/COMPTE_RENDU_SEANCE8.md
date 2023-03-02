@@ -3,7 +3,7 @@
 Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper. 
 Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures précédemment fabriquées.
 
-<img src="planche_flipper.jpg" width="200">
+<img src="planche_flipper.jpg" width="250">
 
 Pour déterminer l’inclinaison optimale de notre pinball nous avons utilisé un inclinomètre numérique. La plupart des pinball ont une inclinaison comprise entre 3° et 6°, après avoir testé différentes inclinaisons avec des cales de bois, nous avons choisi une inclinaison de 4°. J’ai ensuite mesuré et dessiné au crayon le support permettant d'incliner le pinball sur des morceaux de bois afin de les découper.
 
