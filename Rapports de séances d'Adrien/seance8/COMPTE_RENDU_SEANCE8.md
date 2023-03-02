@@ -2,7 +2,7 @@ Avant la séance :
 
 Lors de la séance précédente nous avions préparé nos planches finales et toutes les bordures du flipper. Nous avons profité des vacances pour nous rendre au Fablab afin d’assembler notre flipper, pour cela nous avons commencé par coller les 3 fines planches et visser les bordures sur les côtés.
 
-<img src="maquette_sketchup_bordures.png" width="300">
+<img src="planche_flipper.jpg" width="300">
 
 Nous avons ainsi fabriqué la zone de lancement : 
 
