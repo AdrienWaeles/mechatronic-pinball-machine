@@ -1,22 +1,25 @@
 **Avant la séance :**
 
-Lors de la séance précédente nous avions préparé nos planches finales et toutes les bordures du flipper. Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper, pour cela avec l’aide de Frédéric Juan nous avons commencé par coller les 3 fines planches découpées au laser sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures du flipper.
+Lors de la séance précédente nous avions préparé nos planches finales et toutes les bordures du flipper. Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper. 
+Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches (découpées au laser) sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures du flipper.
 
 <img src="planche_flipper.jpg" width="300">
 
 Pour déterminer l’inclinaison optimale de notre pinball nous avons utilisé un inclinomètre numérique. La plupart des pinball ont une inclinaison comprise entre 3° et 6°, après avoir testé différentes inclinaisons avec des cales de bois, nous avons choisi une inclinaison de 4°. J’ai ensuite mesuré et dessiné au crayon le support permettant d'incliner le pinball sur des morceaux de bois afin de les découper.
 
-Il a fallu effectuer un trou dans la bordure inférieure pour y insérer la poignée (modélisée en 3d avec un filetage pour pouvoir la démonter afin de l’insérer dans le trou), cependant étant donné la force exercée par le ressort il a fallu la renforcer par une bordure plus haute.
-Pour amener la bille dans la zone de lancement lorsqu’elle est perdue par le joueur, nous avons vissé un solénoïde sous la planche grâce à une équerre et attaché à celui- ci un bras imprimé en 3D que j’ai modélisé. Ainsi lorsque celui-ci s'activera (donc quand la bille sera détectée par un capteur infrarouge de sortie de jeu), le bras du solénoïde poussera la bille pour l’envoyer au-dessus de la tige de la poignée de lancement. 
+Il a fallu également effectuer un trou dans la bordure inférieure pour y insérer la poignée (modélisée en 3d avec un filetage pour pouvoir la démonter afin de l’insérer dans le trou). Cependant étant donné la force exercée par le ressort sur la bordure il a fallu la renforcer par un morceau de bois plus haut à cet endroit.
+
+Pour ramener la bille dans la zone de lancement lorsqu’elle est perdue par le joueur, nous avons vissé un solénoïde sous la planche grâce à une équerre et attaché à celui- ci un bras imprimé en 3D que j’ai modélisé. Ainsi lorsque celui-ci s'activera (donc quand la bille sera détectée par un capteur infrarouge de sortie de jeu), le bras du solénoïde poussera la bille pour l’envoyer au-dessus de la tige de la poignée de lancement. 
 
 <img src="lanceur.jpg" width="300">
 
-Voici le test de toute la zone de lancement :
+Voici le test de toute la zone de lancement en vidéo  :
 
 https://youtu.be/IZiwfpQI0ls
 
 
-Préalablement, j’avais imprimé en 3D toutes les pièces modélisées, testées et ajustées lors des séances précédentes afin d’avoir tout le nécessaire pour l’assemblage de notre pinball. J’ai notamment dû modifier l’épaisseur de la surface supérieure des tendeurs à élastiques des slingshots car la pièce se courbait en raison de la force de tension exercée par l’élastique sur la pièce. 
+Avant d’aller au Fablab, j’avais préalablement imprimé en 3D toutes les pièces modélisées, testées et ajustées lors des séances précédentes afin d’avoir tout le nécessaire pour l’assemblage de notre pinball. 
+J’ai notamment dû modifier l’épaisseur de la surface supérieure des tendeurs à élastiques des slingshots (pièces renvoyant la bille dans la direction opposée) car les pièces se courbaient en raison de la force de tension exercée par l’élastique  sur celles ci.
 Il a fallu limer certaines pièces afin de s’assurer que la mécanique des pièces en mouvement (bumpers, flippers et slingshots) s’effectue sans trop de frottements. J’ai également taraudé de nombreuses pièces imprimées pour pouvoir les fixer directement en vissant dans du plastique. 
 
 Il a fallu plusieurs heures pour régler les flippers (pièces frappant la balle contrôlées par le joueur) avec la bonne inclinaison sans bloquer le mouvement des solénoïdes qui les contrôlent. En effet, ceux-ci doivent être parfaitement disposés pour que le mouvement de rotation puisse s’effectuer correctement sans trop de frottements. Pour cela j’ai imprimé une pièce donnant l’inclinaison utilisée dans la plupart des pinball (pièce noire sur photo ci dessous). Après de nombreux réglages il y restait des blocages dans le mécanisme, j’ai donc dû limer les pièces plastiques afin de rajouter du jeu mécanique pour que les mouvements soient moins contraints.
@@ -24,8 +27,8 @@ Il a fallu plusieurs heures pour régler les flippers (pièces frappant la balle
 <img src="reglage_flippers.jpg" width="300">
 
 
-Une fois toutes les pièces plastiques fixées, nous avons calibré la sensibilité de nos capteurs infrarouges grâce aux vis de réglages situées sur ceux-ci. Cela demande beaucoup de temps car les vis de réglages sont très sensibles .
-Puis j'ai vissé les capteurs infrarouges sous la planche. Pour les positionner de façon à ce que les leds émettrices et réceptrices soient très proche de la plaque de plexiglass afin que lorsque la bille roule sur celle-ci, elle soit détectée, j’ai modélisé un support à la bonne hauteur sur lequel j’ai ajouté 3 trous pour que les résistances et les leds du circuit intégré du capteur s’emboîtent à l’intérieur sans être endommagées. Voici la pièce modélisée : 
+Une fois toutes les pièces plastiques fixées, nous avons calibré la sensibilité de nos capteurs infrarouges grâce aux vis de réglages situées sur ceux-ci. 
+Puis je les ai vissé sous la planche. Il a fallu les positionner de façon à ce que les leds émettrices et réceptrices soient très proche de la plaque de plexiglass afin que lorsque la bille roule sur celle-ci, elle soit bien détectée. J’ai modélisé un support à la bonne hauteur sur lequel j’ai ajouté 3 trous pour que les résistances et les leds du circuit intégré du capteur s’emboîtent à l’intérieur sans être endommagées. Voici la pièce modélisée : 
 
 <img src="modelisation_supportIR.jpg" width="320"><img src="capteurIR+support.jpg" width="240">
 <img src="fixation_supportIR.jpg" width="200">
@@ -48,7 +51,7 @@ Pour les fixer j’ai modélisé et imprimé 4 supports permettant de les surél
 
 Durant le temps restant avant la séance j’ai réfléchi au câblage des composants électroniques en continuant et en adaptant le schéma électronique commencé à la séance précédente sur le logiciel Fritzing. J’ai ensuite fixé les différents composants sous la planche et j’ai câblé le convertisseur entre le connecteur d’alimentation et l’arduino (après l’avoir réglé avec un multimètre pour qu’il transforme la tension de 24V en une tension de 5V en sortie).
 
-Finalement j’ai modélisé en 3D l'entrée de la rampe. J’ai effectué différents tests pour déterminer l’inclinaison de celle-ci afin que la bille ait assez de vitesse pour monter en haut de celle-ci. J’ai également dû effectuer un arrondi adapté en haut de la rampe pour éviter que celle-ci ne revienne en arrière. Étant donné que le capteur infrarouge permettant de comptabiliser un passage dans la rampe dans le score est devant l’entrée de la rampe, il risque d’être déclenché lors d’un simple passage à proximité de celle-ci. J’ai donc ajouté à la rampe 2 barrières d’une longueur de 20 mm afin d’éviter de comptabiliser par erreur un passage dans la rampe. 
+Finalement j’ai modélisé en 3D l'entrée de la rampe. J’ai effectué différents tests pour déterminer l’inclinaison de celle-ci afin que la bille ait assez de vitesse pour monter en haut de celle-ci. Il restera à courber du fil électrique pour effectuer la suite de la rampe sur laquelle la bille va rouler. Étant donné que le capteur infrarouge permettant de comptabiliser un passage dans la rampe dans le score est à l’entrée de la rampe, il risque d’être déclenché lors d’un simple passage devant celle-ci. J’ai donc ajouté à la rampe 2 barrières d’une longueur de 20 mm afin d’éviter de comptabiliser par erreur un passage dans la rampe. 
 De plus, si la bille repasse devant le capteur infrarouge un très bref instant après le premier passage, cela signifie que le joueur n’a pas réussi à l’envoyer en haut de la rampe et donc on n’ajoutera pas de points.
 
 <img src="modelisation_rampe.jpg" width="300">
@@ -57,10 +60,6 @@ De plus, si la bille repasse devant le capteur infrarouge un très bref instant 
 Voici l’avancée du pinball avant la séance : 
 
 <img src="flipper_vuedehaut.jpg" width="300">
-
-Remarque : un slingshot à été dévissé sur la photo car nous sommes en train de souder les fils sur les microswitch.
-
-CIBLES !!!
 
 **Pendant la séance :**
 
