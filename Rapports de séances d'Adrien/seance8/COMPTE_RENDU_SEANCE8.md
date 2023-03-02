@@ -20,7 +20,7 @@ https://youtu.be/IZiwfpQI0ls
 
 Avant d’aller au Fablab, j’avais préalablement imprimé en 3D toutes les pièces modélisées, testées et ajustées lors des séances précédentes afin d’avoir tout le nécessaire pour l’assemblage de notre pinball. 
 J’ai notamment dû modifier l’épaisseur de la surface supérieure des tendeurs à élastiques des slingshots (pièces renvoyant la bille dans la direction opposée) car les pièces se courbaient en raison de la force de tension exercée par l’élastique  sur celles ci.
-Il a fallu limer certaines pièces afin de s’assurer que le mouvement des pièces mécaniques (bumpers, flippers et slingshots) s’effectue sans trop de frottements. J’ai également taraudé de nombreuses pièces imprimées pour pouvoir les visser. 
+Il a fallu limer certaines pièces afin de s’assurer que le mouvement des pièces mécaniques (bumpers, flippers et slingshots) s’effectue sans trop de frottements.
 
 Il a fallu plusieurs heures pour régler les flippers (pièces frappant la balle contrôlées par le joueur) avec la bonne inclinaison sans bloquer le mouvement des solénoïdes qui les contrôlent. En effet, ceux-ci doivent être parfaitement disposés pour que le mouvement de rotation puisse s’effectuer correctement sans trop de frottements. J’ai imprimé une pièce donnant l’inclinaison utilisée dans la plupart des pinball (pièce noire sur photo ci dessous). Après de nombreux réglages il y restait des blocages dans le mécanisme, j’ai donc dû limer les pièces plastiques afin de rajouter du jeu mécanique pour que les mouvements soient moins contraints.
 
