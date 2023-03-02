@@ -7,7 +7,7 @@ Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par co
 
 Pour déterminer l’inclinaison optimale de notre pinball nous avons utilisé un inclinomètre numérique. La plupart des pinball ont une inclinaison comprise entre 3° et 6°, après avoir testé différentes inclinaisons avec des cales de bois, nous avons choisi une inclinaison de 4°. J’ai ensuite mesuré et dessiné au crayon le support permettant d'incliner le pinball sur des morceaux de bois afin de les découper.
 
-Il a fallu également effectuer un trou dans la bordure inférieure pour y insérer la poignée (modélisée en 3d avec un filetage pour pouvoir la démonter afin de l’insérer dans le trou). Cependant étant donné la force exercée par le ressort sur la bordure il a fallu la renforcer par un morceau de bois plus haut à cet endroit.
+Il a fallu également effectuer un trou dans la bordure inférieure pour y insérer la poignée (modélisée en 3d avec un filetage pour pouvoir la démonter afin de l’insérer dans le trou). Cependant étant donné la force exercée par le ressort sur la bordure nous avons dû la renforcer par un morceau de bois plus haut à cet endroit.
 
 Pour ramener la bille dans la zone de lancement lorsqu’elle est perdue par le joueur, nous avons vissé un solénoïde sous la planche et attaché à celui- ci un bras imprimé en 3D que j’ai modélisé. Ainsi lorsque celui-ci s'activera (donc quand la bille sera détectée par un capteur infrarouge de sortie de jeu), le bras du solénoïde poussera la bille pour l’envoyer au-dessus de la tige de la poignée de lancement. 
 
@@ -22,7 +22,7 @@ Avant d’aller au Fablab, j’avais préalablement imprimé en 3D toutes les pi
 J’ai notamment dû modifier l’épaisseur de la surface supérieure des tendeurs à élastiques des slingshots (pièces renvoyant la bille dans la direction opposée) car les pièces se courbaient en raison de la force de tension exercée par l’élastique  sur celles ci.
 Il a fallu limer certaines pièces afin de s’assurer que le mouvement des pièces mécaniques (bumpers, flippers et slingshots) s’effectue sans trop de frottements.
 
-Il a fallu plusieurs heures pour régler les flippers (pièces frappant la balle contrôlées par le joueur) avec la bonne inclinaison sans bloquer le mouvement des solénoïdes qui les contrôlent. En effet, ceux-ci doivent être parfaitement disposés pour que le mouvement de rotation puisse s’effectuer correctement sans trop de frottements. J’ai imprimé une pièce donnant l’inclinaison utilisée dans la plupart des pinball (pièce noire sur photo ci dessous). Après de nombreux réglages il y restait des blocages dans le mécanisme, j’ai donc dû limer les pièces plastiques afin de rajouter du jeu mécanique pour que les mouvements soient moins contraints.
+J'ai passé plusieurs heures à régler les flippers (pièces frappant la balle contrôlées par le joueur) avec la bonne inclinaison. En effet, ceux-ci doivent être parfaitement disposés pour que le mouvement de rotation puisse s’effectuer correctement sans trop de frottements. J’ai imprimé une pièce donnant l’inclinaison utilisée dans la plupart des pinball (pièce noire sur photo ci dessous). Après de nombreux réglages il restait des blocages dans le mécanisme, j’ai donc dû limer les pièces plastiques afin de rajouter du jeu mécanique pour que les mouvements soient moins contraints.
 
 <img src="reglage_flippers.jpg" width="300">
 
