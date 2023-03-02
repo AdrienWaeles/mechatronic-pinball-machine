@@ -1,4 +1,4 @@
-Avant la séance :
+**Avant la séance :**
 
 Lors de la séance précédente nous avions préparé nos planches finales et toutes les bordures du flipper. Nous avons profité des vacances pour nous rendre au Fablab afin d’assembler notre flipper, pour cela nous avons commencé par coller les 3 fines planches et visser les bordures sur les côtés.
 
@@ -54,7 +54,8 @@ Voici l’avancée du pinball avant la séance :
 
 Remarque : un slingshot à été dévissé sur la photo car nous sommes en train de souder les fils sur les microswitch.
 
-Pendant la séance : 
+**Pendant la séance :**
+
 Étant donné le peu de temps restant avant la date de présentation finale du projet, puisque tous les composants principaux maintenant fixés fonctionnent correctement mécaniquement, nous avons décidé de se consacrer pleinement en équipe au câblage des composants sous la planche afin d’être sûr de pouvoir présenter une version fonctionnelle. Pour cela nous avons commencé par câbler tous les solénoïdes en parallèle afin d’avoir la même tension pour chaque solénoïde. 
 Pour relier toutes les masses entre elles nous avons utilisé 2 connecteurs wago à leviers. Un pour le haut du flipper et un pour le bas du flipper ,les deux étant reliés par un câble afin d’avoir une masse commune. 
 
@@ -72,7 +73,8 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 <img src="flipper_cablage_dessous.jpg" width="300">
 
 
-Étapes finales à réaliser :
+**Étapes finales à réaliser :**
+
 Il nous reste désormais à terminer le câblage en branchant nos 8 capteurs infrarouges, les 2 boutons des flippers, les 4 microswitch des slingshots + 3 pour les cibles, l’écran, la roue de la fortune et un ruban neopixel de décoration. 
 Coller les cibles sur les microswitch et les assembler sur le support puis les fixer sur la planche.
 Modifier l’inclinaison de la bordure inférieure ramenant la bille en zone de lancement.
