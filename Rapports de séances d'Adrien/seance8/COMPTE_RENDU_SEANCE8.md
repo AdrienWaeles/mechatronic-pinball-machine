@@ -66,7 +66,7 @@ Pour relier toutes les masses des solénoïdes entre elles nous avons utilisé 2
 
 Cela permet d’éviter de perdre du temps à effectuer des soudures et de pouvoir facilement débrancher un fil en cas de problème.
 
-L’autre fil de chaque solénoïde est branché à un relais sur la broche Normally Open qui reçoit en sortie du 24V via l’alimentation.
+L’autre fil de chaque solénoïde est branché à un relais sur la broche Normally Open qui reçoit lorsque le circuit est fermé du 24V via l’alimentation.
 
 
 Nous avons écrit un petit programme activant 3 solénoïdes en simultané afin de vérifier que tout fonctionne correctement. 
