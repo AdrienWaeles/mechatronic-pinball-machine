@@ -3,7 +3,7 @@
 Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper. 
 Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures précédemment fabriquées.
 
-<img src="planche_flipper.jpg" width="300">
+<img src="planche_flipper.jpg" width="200">
 
 Pour déterminer l’inclinaison optimale de notre pinball nous avons utilisé un inclinomètre numérique. La plupart des pinball ont une inclinaison comprise entre 3° et 6°, après avoir testé différentes inclinaisons avec des cales de bois, nous avons choisi une inclinaison de 4°. J’ai ensuite mesuré et dessiné au crayon le support permettant d'incliner le pinball sur des morceaux de bois afin de les découper.
 
@@ -30,8 +30,8 @@ Il a fallu plusieurs heures pour régler les flippers (pièces frappant la balle
 Une fois toutes les pièces plastiques fixées, nous avons calibré la sensibilité de nos capteurs infrarouges. 
 Puis je les ai vissé sous la planche. Il a fallu les positionner de façon à ce que les leds émettrices et réceptrices soient très proche de la plaque de plexiglass afin que lorsque la bille roule sur celle-ci, elle soit bien détectée. J’ai modélisé un support à la bonne hauteur sur lequel j’ai ajouté 3 trous pour que les résistances et les leds du circuit intégré du capteur s’emboîtent à l’intérieur sans être endommagées. Voici la pièce modélisée : 
 
-<img src="modelisation_supportIR.jpg" width="220"><img src="capteurIR+support.jpg" width="140">
-<img src="fixation_supportIR.jpg" width="100">
+<img src="modelisation_supportIR.jpg" width="320"><img src="capteurIR+support.jpg" width="240">
+<img src="fixation_supportIR.jpg" width="200">
 
 
 Précédemment j’avais également fabriqué par découpe et gravure laser un élément propre à notre flipper : la roue de la fortune.”  Cet élément du jeu permet de gagner un bonus au hasard indiqué par le clignotement d’une led associée au bonus en question. J’ai du alors découper un ruban de néo pixels afin de les disposer de façon circulaire dans les trous prévus et ensuite ressouder tous les néo pixels entre eux afin de pouvoir toujours les alimenter et contrôler avec seulement 3 fils.
