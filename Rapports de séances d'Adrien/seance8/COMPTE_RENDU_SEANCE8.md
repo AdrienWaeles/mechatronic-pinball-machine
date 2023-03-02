@@ -36,7 +36,7 @@ Pour les fixer j’ai modélisé et imprimé 4 supports permettant de les surél
 
 <img src="trous_slingshot.jpg" width="300">
 <img src="slingshot_placement_microswitch_1.jpg" width="300">
-<img src=”slingshot_placement_microswitch_2.jpg" width="300">
+<img src="slingshot_placement_microswitch_2.jpg" width="300">
 
 Durant le temps restant avant la séance j’ai réfléchis au cablâge des composants électroniques en continuant et en adaptant le schéma électronique commencé à la séance précédente sur le logiciel Fritzing. J’ai ensuite fixé les différents composants sous la planche et j’ai câblé le convertisseur entre le connecteur d’alimentation et l’arduino (après l’avoir réglé avec un multimètre pour qu’il transforme la tension de 24V en une tension de 5V en sortie).
 
