@@ -1,7 +1,7 @@
 **Avant la séance :**
 
 Lors de la séance précédente nous avions préparé nos planches finales et toutes les bordures du flipper. Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper. 
-Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches (découpées au laser) sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures du flipper.
+Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures du flipper.
 
 <img src="planche_flipper.jpg" width="300">
 
