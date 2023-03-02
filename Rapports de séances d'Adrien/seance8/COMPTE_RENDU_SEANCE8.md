@@ -34,19 +34,20 @@ Puis je les ai vissé sous la planche. Il a fallu les positionner de façon à c
 <img src="fixation_supportIR.jpg" width="200">
 
 
-Précédemment j’avais également fabriqué par découpe et gravure laser un élément propre à notre flipper : la roue de la fortune.”  Cet élément du jeu permet de gagner un bonus au hasard indiqué par le clignotement d’une led associée au bonus en question. J’ai du alors découper un ruban de néo pixels afin de les disposer de façon circulaire dans les trous prévus et ensuite ressouder tous les néo pixels entre eux afin de pouvoir toujours les alimenter et contrôler avec seulement 3 fils.
+Précédemment j’avais également fabriqué par découpe et gravure laser un élément propre à notre flipper : la roue de la fortune. Cet élément du jeu permet de gagner un bonus au hasard indiqué par le clignotement d’une led associée au bonus en question. J’ai du alors découper un ruban de néo pixels afin de les disposer de façon circulaire dans les trous prévus et ensuite ressouder tous les néo pixels entre eux afin de pouvoir toujours les alimenter et contrôler avec seulement 3 fils.
 
 <img src="rouefortune_cablage.jpg" width="300">
 
 Une autre étape très délicate dans l’assemblage de nos pièces était de fixer les micro interrupteurs permettant de détecter un impact sur l’élastique des slingshot. Tout d’abord j’ai testé différents microswitch afin de choisir les plus sensibles possibles.
 Ensuite il a fallu les placer sous les slingshots. Comme constaté lors de la réalisation des prototypes, ils doivent être positionnés de façon à ce que la lamelle subisse une pression initiale exercée par l’élastique afin qu’ils se déclenchent au moindre contact. La pièce du slingshot ne permettant pas de régler facilement la position de ceux-ci, j’ai décidé de créer une autre pièce temporaire en copiant celle-ci et en ajoutant un trou à l’intérieur afin de pouvoir y passer des doigts pour placer l’interrupteur.
+
 <img src="modelisation_slingshot_positionnement.jpg" width="300">
 
 Pour les fixer j’ai modélisé et imprimé 4 supports permettant de les surélever à la bonne hauteur. Une fois la position optimale déterminée j’ai tracé le contour de ceux-ci sur la planche au crayon pour perçer des trous permettant de les visser.
 
 <img src="trous_slingshot.jpg" width="200"><img src="slingshot_placement_microswitch_1.jpg" width="250"><img src="slingshot_placement_microswitch_2.jpg" width="310">
 
-Durant le temps restant avant la séance j’ai j’ai fixé les différents composants électroniques sous la planche. Tout en réglant le convertisseur avec un multimètre pour qu’il transforme la tension de 24V en une tension de 5V en sortie afin d'alimenter l'arduino et les composants nécessitant 5V.
+Durant le temps restant avant la séance j’ai fixé les différents composants électroniques sous la planche. Tout en réglant le convertisseur avec un multimètre pour qu’il transforme la tension de 24V en une tension de 5V en sortie afin d'alimenter l'arduino et les composants nécessitant 5V.
 
 Finalement j’ai modélisé en 3D l'entrée de la rampe. J’ai effectué différents tests pour déterminer son inclinaison afin que la bille puisse atteindre le haut de celle-ci. Il restera à courber du fil électrique pour effectuer la suite de la rampe sur laquelle la bille va rouler. Étant donné que le capteur infrarouge, permettant de comptabiliser un passage sur la rampe dans le score, risque d’être déclenché lors d’un simple passage devant celle-ci. J’ai donc ajouté à la rampe 2 barrières d’une longueur de 20 mm afin d’éviter de comptabiliser par erreur un passage sur la rampe. 
 De plus, si la bille repasse devant le capteur infrarouge un très bref instant après le premier passage, cela signifie que le joueur n’a pas réussi à l’envoyer en haut de la rampe et donc on n’ajoutera pas de points.
@@ -71,8 +72,8 @@ L’autre fil de chaque solénoïde est branché à un relais sur la broche Norm
 Nous avons écrit un petit programme activant 3 solénoïdes en simultané afin de vérifier que tout fonctionne correctement. 
 Puis un autre code pour activer les solénoïdes un par un toutes les secondes et vérifier qu’ils fonctionnent tous. 
 Nous nous sommes alors aperçu que 2 solénoïdes ne fonctionnaient pas correctement. Nous devons donc encore vérifier les soudures et le branchement de ceux-ci.
-Finalement j’ai aussi commencé à ajouter des attaches câbles afin de regrouper les fils passant au même endroit pour avoir un câblage plus ordonné et pouvoir nous y retrouver plus facilement.
 
+Finalement j’ai aussi commencé à ajouter des attaches câbles afin de regrouper les fils passant au même endroit pour avoir un câblage plus ordonné et pouvoir nous y retrouver plus facilement.
 Voici le dessous de la planche avec le câblage en cours d’installation (il reste encore de nombreux fils à brancher et à mieux ordonner les câbles)
 
 <img src="flipper_cablage_dessous.jpg" width="300">
