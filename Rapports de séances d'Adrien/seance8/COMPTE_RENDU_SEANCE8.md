@@ -18,7 +18,7 @@ Voici le test de toute la zone de lancement en vidéo  :
 https://youtu.be/IZiwfpQI0ls
 
 
-Avant d’aller au Fablab, j’avais préalablement imprimé en 3D toutes les pièces modélisées, testées et ajustées lors des séances précédentes afin d’avoir tout le nécessaire pour l’assemblage de notre pinball. 
+Afin d’avoir tout le nécessaire pour l’assemblage de notre pinball, j'ai imprimé en 3D toutes les pièces modélisées et testées lors des séances précédentes 
 J’ai notamment dû modifier l’épaisseur de la surface supérieure des tendeurs à élastiques des slingshots (pièces renvoyant la bille dans la direction opposée) car les pièces se courbaient en raison de la force de tension exercée par l’élastique  sur celles ci.
 Il a fallu limer certaines pièces afin de s’assurer que le mouvement des pièces mécaniques (bumpers, flippers et slingshots) s’effectue sans trop de frottements.
 
@@ -38,9 +38,8 @@ Précédemment j’avais également fabriqué par découpe et gravure laser un �
 
 <img src="rouefortune_cablage.jpg" width="300">
 
-Une autre étape très délicate dans l’assemblage de nos pièces était de fixer les micro interrupteurs permettant de détecter un impact sur l’élastique des slingshot. Tout d’abord j’ai testé plusieurs marques de microswitch afin de choisir les plus sensibles possibles. Une fois ce choix effectué, j’en ai testé une vingtaine afin de sélectionner ceux qui se déclenchent avec le moins de force possible. 
-Ensuite il a fallu les placer sous les slingshots. Comme constaté lors de la réalisation des prototypes, ils doivent être positionnés de façon à ce que la lamelle subisse une pression initiale exercée par l’élastique afin qu’ils se déclenchent au moindre contact mais en faisant attention à ce que celui-ci ne reste pas bloqué en position enfoncée. La pièce du slingshot ne permettant pas de régler facilement la position de ceux-ci, j’ai décidé de créer une copie de celle-ci en ajoutant un trou à l’intérieur afin de pouvoir y passer des doigts pour placer l’interrupteur. Cette pièce étant utilisée uniquement le temps de déterminer l’emplacement des interrupteurs.
-
+Une autre étape très délicate dans l’assemblage de nos pièces était de fixer les micro interrupteurs permettant de détecter un impact sur l’élastique des slingshot. Tout d’abord j’ai testé différents microswitch afin de choisir les plus sensibles possibles.
+Ensuite il a fallu les placer sous les slingshots. Comme constaté lors de la réalisation des prototypes, ils doivent être positionnés de façon à ce que la lamelle subisse une pression initiale exercée par l’élastique afin qu’ils se déclenchent au moindre contact. La pièce du slingshot ne permettant pas de régler facilement la position de ceux-ci, j’ai décidé de créer une autre pièce temporaire en copiant celle-ci et en ajoutant un trou à l’intérieur afin de pouvoir y passer des doigts pour placer l’interrupteur.
 <img src="modelisation_slingshot_positionnement.jpg" width="300">
 
 Pour les fixer j’ai modélisé et imprimé 4 supports permettant de les surélever à la bonne hauteur. Une fois la position optimale déterminée j’ai tracé le contour de ceux-ci sur la planche au crayon pour perçer des trous permettant de les visser.
