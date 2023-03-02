@@ -30,8 +30,8 @@ Il a fallu plusieurs heures pour régler les flippers (pièces frappant la balle
 Une fois toutes les pièces plastiques fixées, nous avons calibré la sensibilité de nos capteurs infrarouges. 
 Puis je les ai vissé sous la planche. Il a fallu les positionner de façon à ce que les leds émettrices et réceptrices soient très proche de la plaque de plexiglass afin que lorsque la bille roule sur celle-ci, elle soit bien détectée. J’ai modélisé un support à la bonne hauteur sur lequel j’ai ajouté 3 trous pour que les résistances et les leds du circuit intégré du capteur s’emboîtent à l’intérieur sans être endommagées. Voici la pièce modélisée : 
 
-<img src="modelisation_supportIR.jpg" width="320"><img src="capteurIR+support.jpg" width="240">
-<img src="fixation_supportIR.jpg" width="200">
+<img src="modelisation_supportIR.jpg" width="220"><img src="capteurIR+support.jpg" width="140">
+<img src="fixation_supportIR.jpg" width="100">
 
 
 Précédemment j’avais également fabriqué par découpe et gravure laser un élément propre à notre flipper : la roue de la fortune.”  Cet élément du jeu permet de gagner un bonus au hasard indiqué par le clignotement d’une led associée au bonus en question. J’ai du alors découper un ruban de néo pixels afin de les disposer de façon circulaire dans les trous prévus et ensuite ressouder tous les néo pixels entre eux afin de pouvoir toujours les alimenter et contrôler avec seulement 3 fils.
@@ -54,8 +54,7 @@ Durant le temps restant avant la séance j’ai j’ai fixé les différents com
 Finalement j’ai modélisé en 3D l'entrée de la rampe. J’ai effectué différents tests pour déterminer son inclinaison afin que la bille puisse atteindre le haut de celle-ci. Il restera à courber du fil électrique pour effectuer la suite de la rampe sur laquelle la bille va rouler. Étant donné que le capteur infrarouge, permettant de comptabiliser un passage sur la rampe dans le score, risque d’être déclenché lors d’un simple passage devant celle-ci. J’ai donc ajouté à la rampe 2 barrières d’une longueur de 20 mm afin d’éviter de comptabiliser par erreur un passage sur la rampe. 
 De plus, si la bille repasse devant le capteur infrarouge un très bref instant après le premier passage, cela signifie que le joueur n’a pas réussi à l’envoyer en haut de la rampe et donc on n’ajoutera pas de points.
 
-<img src="modelisation_rampe.jpg" width="300">
-<img src="entreerampe.jpg" width="300">
+<img src="modelisation_rampe.jpg" width="300"><img src="entreerampe.jpg" width="300">
 
 Voici l’avancée du pinball avant la séance : 
 
