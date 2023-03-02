@@ -18,9 +18,9 @@ Il a fallu plusieurs heures pour régler les flippers avec la bonne inclinaison 
 
 Ensuite j’ai fixé les capteurs infrarouges sous la planche. Pour les positionner de façon à ce que les leds émettrices et réceptrices soient très proche de la plaque de plexiglass afin que lorsque la bille roule sur celle-ci, elle soit détectée, j’ai modélisé un support à la bonne hauteur sur lequel j’ai ajouté 3 trous pour que les résistances et les leds du circuit intégré du capteur s’emboîtent à l’intérieur sans être endommagées. Voici la pièce modélisée : 
 
-<img src="modelisation_supportIR.jpg" width="300">
-<img src="capteurIR+support.jpg" width="300">
-<img src="fixation_supportIR.jpg" width="300">
+<img src="modelisation_supportIR.jpg" width="200">
+<img src="capteurIR+support.jpg" width="200">
+<img src="fixation_supportIR.jpg" width="200">
 
 
 Précédemment j’avais également fabriqué par découpe et gravure laser un élément propre à notre flipper : la “roue de la fortune.”  Cet élément du jeu permet de gagner un bonus au hasard indiqué par les la led associée à la case en question. J’ai du alors découper un ruban de néo pixels afin de les disposer de façon circulaire dans les trous prévus et ensuite ressouder tous les néo pixels entre eux afin de pouvoir toujours les alimenter et contrôler avec seulement 3 fils.
