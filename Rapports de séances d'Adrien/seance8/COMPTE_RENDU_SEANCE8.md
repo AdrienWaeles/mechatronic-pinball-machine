@@ -75,9 +75,16 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 
 **Étapes finales à réaliser :**
 
-Il nous reste désormais à terminer le câblage en branchant nos 8 capteurs infrarouges, les 2 boutons des flippers, les 4 microswitch des slingshots + 3 pour les cibles, l’écran, la roue de la fortune et un ruban neopixel de décoration. 
-Coller les cibles sur les microswitch et les assembler sur le support puis les fixer sur la planche.
-Modifier l’inclinaison de la bordure inférieure ramenant la bille en zone de lancement.
-Fixer l’écran et la roue de la fortune sur le flipper
-Finaliser la partie programmation, nous avions déjà réalisé des programmes pour tester chaque composant indépendamment, il faut désormais réaliser le programme complet permettant d’automatiser le fonctionnement d’une partie.
-Finir la fabrication de la rampe et la placer sur le flipper.
+- Il nous reste désormais à terminer le câblage en branchant nos 8 capteurs infrarouges, les 2 boutons des flippers, les 4 microswitch des slingshots + 3 pour les cibles, l’écran, la roue de la fortune et un ruban neopixel de décoration. 
+
+- Coller les cibles sur les microswitch et les assembler sur le support puis les fixer sur la planche.
+
+- Modifier l’inclinaison de la bordure inférieure ramenant la bille en zone de lancement.
+
+- Fixer l’écran et la roue de la fortune sur le flipper
+
+- Finaliser la partie programmation, nous avions déjà réalisé des programmes pour tester chaque composant indépendamment, il faut désormais réaliser le programme complet permettant d’automatiser le fonctionnement d’une partie.
+
+- Finir la fabrication de la rampe et la placer sur le flipper.
+
+- Finitions et correction d’éventuels bugs
