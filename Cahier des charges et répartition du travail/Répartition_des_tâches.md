@@ -2,6 +2,7 @@ Programme des 8 séances hebdomadaires dédiées au projet :
 Ce programme est susceptible de varier légèrement en fonction du délai de livraison des pièces commandées et des difficultés rencontrées.
 
 
+
 **Séance 1:**
 Choix d’une planche à découper aux dimensions voulues. 
 * Adrien : Création des contours du Flipper, test de positionnement d'un prototype de flipper pour y installer les moteurs lors de la séance suivante. Prise en main des capteurs infrarouges.
@@ -35,5 +36,6 @@ Choix d’une planche à découper aux dimensions voulues.
 * Redha : Début de décoration, débogage du code.
 
 **Séance 8:**
+
 Débogage, finitions et décorations.
 
