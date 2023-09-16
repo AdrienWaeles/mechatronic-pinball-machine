@@ -1,6 +1,6 @@
 # Cahier des charges du projet Flipper #
 
-Notre objectif est de fabriquer un Flipper (Pinball en anglais) à l’aide d’une carte Arduino, de moteurs et de capteurs en moins de trois mois dans le cadre des cours de Robotique de notre prépa intégrée. 
+Notre objectif est de fabriquer un Flipper (Pinball en anglais) à l’aide d’une carte Arduino, de moteurs et de capteurs en moins de trois mois.
 
 Le principe de ce jeu est de marquer le plus de points possible en dirigeant une ou plusieurs billes métalliques sur un plateau vers des cibles interactives. Nous souhaitons intégrer les principaux composants d’un Flipper dans une version moins encombrante avec des composants abordables afin de rendre ce jeu accessible au plus grand nombre dans un projet open source. Ceci nous permettra de renforcer nos connaissances par la pratique, en apprenant à utiliser une grande variété d'outils et de composants, mais aussi d'acquérir des compétences en gestion de projets.
 
