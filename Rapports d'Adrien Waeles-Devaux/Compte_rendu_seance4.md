@@ -3,7 +3,7 @@
 
 Pour commencer j’ai fixé un des 2 micro-interrupteurs du slingshot (pièce constituée d’un élastique destinée à renvoyer la bille dans la direction opposée, voir compte rendus précédents) sur la planche du prototype réalisé lors des séances précédentes. 
 
-<img src="slingshot_fixation_microInterrupteur.jpg" width="300">
+<img src="Images des rapports/Images séance 4/slingshot_fixation_microInterrupteur.jpg" width="300">
 
 Cela a nécessité beaucoup de minutie car si la lamelle du micro-interrupteur n’est pas assez tendue par l’élastique, l’impact de la bille ne le déclenche pas (à moins de l’envoyer avec une très grande vitesse). 
 Et si elle est trop tendue, la lamelle ne revient plus à sa position initiale après l’impact en raison de la pression exercée par l’élastique (le bouton de l’interrupteur est alors constamment enfoncé). 
@@ -17,15 +17,15 @@ Après de nombreux tests pour fixer le micro-interrupteur de manière optimale v
 
 J’ai ensuite réalisé un prototype d’un bumper à l’aide d’un solénoide (KK-0630B, 24V, 600mA, 10mm de course, 8Newtons) sur la planche de prototypage que j’avais utilisé pour créer le slingshot. Pour cela je me suis aidé de ce design : https://www.thingiverse.com/thing:3286052. Le bumper est constitué de deux pièces, le cône qui s’abaisse sur la balle et une pièce fixe qui permet de maintenir le cône droit, dans lequel la première pièce va coulisser.
 
-<img src="bumper_prototype.jpg" width="300">
+<img src="Images des rapports/Images séance 4/bumper_prototype.jpg" width="300">
 
 J’ai importé ces pièces dans un logiciel de modélisation 3D, et j’ai modifié l’écartement entre les 2 pattes qui viennent se serrer sur le solénoïde pour pouvoir y fixer le nôtre, qui est bien plus petit que celui utilisé par le créateur des fichiers 3D.
 
-<img src="bumper_cone_modelisation3d.jpg" width="300">
+<img src="Images des rapports/Images séance 4/bumper_cone_modelisation3d.jpg" width="300">
 
 Le fonctionnement est le même que celui expliqué dans le compte rendu de la séance 3 : la pièce conique qui est attachée au solénoïde va s'abaisser sur la balle pour la pousser dans la direction opposée. Pour fixer le bumper à la planche, j’ai percé un trou dans le prototype et à partir des dimensions mesurées, j’ai modélisé et imprimé une équerre qui permet de fixer le solénoïde sous la planche. 
 
-<img src="équerre_solenoide.jpg" width="300">
+<img src="Images des rapports/Images séance 4/équerre_solenoide.jpg" width="300">
 
 Remarque : l’équerre sera modifiée par la suite étant donné en raison d’une erreur d’orientation de la pièce lors de la modélisation.
 
@@ -40,8 +40,8 @@ J’en ai profité pour ajouter la rainure qui permettra d’y insérer le bout 
 
 Finalement, je me suis intéressé au fonctionnement d’un écran lcd qui permettra d’afficher le score du joueur tout au long de la partie et éventuellement des messages relatifs au déroulement de la partie. L’écran lcd utilisé est “QAPASS 1602A”. Étant donné que nous avons besoin de garder un grand nombre de broches libres pour les nombreux composants de notre flipper, afin de réduire le nombre de connexions que nécessite un afficheur LCD, nous utilisons une interface série I2C (modèle HW-061) qui fait le lien entre l’arduino et l’afficheur. 
 
-<img src="i2c-module_documentation.jpg " width="300">
+<img src="Images des rapports/Images séance 4/i2c-module_documentation.jpg " width="300">
 
 Afin de connecter cette interface à l’écran, j’y ai soudé une bande de broches dans laquelle j’ai inséré les 16 connecteurs de l’interface. Le programme pour faire fonctionner l’écran et y afficher le nombre de points sera réalisé avant la prochaine séance.
 
-<img src="module_i2c+lcd_branchement.jpeg " width="300">
+<img src="Images des rapports/Images séance 4/module_i2c+lcd_branchement.jpeg " width="300">
