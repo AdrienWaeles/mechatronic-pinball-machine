@@ -26,21 +26,21 @@ Comme chaque flipper est unique par sa décoration et ses éléments de jeu, je 
 
 Cette roue pourra être déclenchée par exemple lorsque toutes les cibles du jeu ont été touchées ou après que le joueur ait emprunté plusieurs rampes à la suite.
 
-Pour fabriquer cette roue, j’utilise 6 nano pixels qui ont l’avantage d’avoir une colorimétrie RGB et d’éclairer avec une forte intensité tout en nécessitant seulement 3 fils pour tous les nano pixels. Ils vont permettre d’éclairer les différentes cases de la roue en fonction du bonus remporté. 
-Je vais cependant faire face à une contrainte puisque nous n’avons pas de ruban circulaire de nano pixels. Je dois donc en découper 6 du ruban, les disposer en cercle puis les relier à nouveau entre eux en y soudant des fils afin de pouvoir toujours contrôler les 6 nano pixels avec un seul fil (en plus des 2 fils d’alimentation).
+Pour fabriquer cette roue, j’utilise 6 néo pixels qui ont l’avantage d’avoir une colorimétrie RGB et d’éclairer avec une forte intensité tout en nécessitant seulement 3 fils pour tous les néo pixels. Ils vont permettre d’éclairer les différentes cases de la roue en fonction du bonus remporté. 
+Je vais cependant faire face à une contrainte puisque nous n’avons pas de ruban circulaire de néo pixels. Je dois donc en découper 6 du ruban, les disposer en cercle puis les relier à nouveau entre eux en y soudant des fils afin de pouvoir toujours contrôler les 6 néo pixels avec un seul fil (en plus des 2 fils d’alimentation).
 
 
 J’ai réalisé une petite animation avec un code Arduino pour avoir le résultat suivant : les leds vont s’allumer et s’éteindre successivement de façon à avoir un effet de lumière qui tourne autour de la roue. Puis cette animation va s’arrêter sur une led qui va clignoter pour indiquer le bonus remporté. 
 
-J’ai également rajouté un buzzer qui effectue un son à chaque fois qu’une led s’allume. Pour que les nano pixels ne soient pas éblouissants, il est préférable de mettre des valeurs comprises entre 0 et 30 dans le code couleur RGB. 
+J’ai également rajouté un buzzer qui effectue un son à chaque fois qu’une led s’allume. Pour que les néo pixels ne soient pas éblouissants, il est préférable de mettre des valeurs comprises entre 0 et 30 dans le code couleur RGB. 
 Voici le résultat en vidéo :
 https://youtube.com/shorts/hx9wgBHNqKs?feature=share
 
 
 
 J’ai choisi de réaliser un assemblage de planches de bois découpées au laser en 3 planches de 3 mm. 
-La première partie est celle visible par le joueur, c’est un cercle de 140mm sur laquelle sont inscrits les bonus à remporter et elle comporte 6 trous pour y placer les nano pixels. 
-La 2ème est un simple cercle de la même taille sur lequel je vais coller chaque nano pixel en face de son trou présent sur la première pièce. Entre ces deux pièces, toujours avec la découpeuse laser j’ai fabriqué un 3ème cercle plus petit (100mm de diamètre) qui sera collé entre les deux et permettra de laisser la place pour passer les câbles reliant les 6 nano pixels en série.
+La première partie est celle visible par le joueur, c’est un cercle de 140mm sur laquelle sont inscrits les bonus à remporter et elle comporte 6 trous pour y placer les néo pixels. 
+La 2ème est un simple cercle de la même taille sur lequel je vais coller chaque néo pixel en face de son trou présent sur la première pièce. Entre ces deux pièces, toujours avec la découpeuse laser j’ai fabriqué un 3ème cercle plus petit (100mm de diamètre) qui sera collé entre les deux et permettra de laisser la place pour passer les câbles reliant les 6 néo pixels en série.
 
 Le tout sera fixé sur le rebord haut du flipper grâce à un support imprimé en 3D dans lequel je réaliserai un trou pour y passer les 3 câbles de branchement.
 
@@ -63,7 +63,7 @@ Voici les bonus choisis :
 
 - +1 bille : rajoute un essai au joueur en lui offrant une bille supplémentaire qu’il pourra lancer depuis la zone de lancement une fois que les autres billes auront été perdues.
 
-J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisque je le maitrise bien mieux que Inkscape. Les cases sont séparées avec un angle de 60° par des rectangles de 2 mm de largeur. J’ai placé 6 carrés de côté 20 mm qui permettront de laisser passer les nano pixels.
+J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisque je le maitrise bien mieux que Inkscape. Les cases sont séparées avec un angle de 60° par des rectangles de 2 mm de largeur. J’ai placé 6 carrés de côté 20 mm qui permettront de laisser passer les néo pixels.
 
 <img src="Images des rapports/Images séance 7/rouefortune_blender.png" width="300">
 
