@@ -30,7 +30,7 @@ Dans un premier temps, j’ai adapté le code réalisé lors de la première sé
 
 Puis nous avons fixé le solénoïde en dessous de la planche du prototype à l’aide de petites vis et de l’équerre préalablement imprimée en 3d (le solénoide sera mieux fixé à la planche par la suite, ceci reste un prototype). 
 
-<img src="Images des rapports/Images séance 2/.jpg" width="300">
+<img src="Images des rapports/Images séance 2/equerre_fixation_solenoide.jpg" width="300">
 
 Le bras du solénoïde doit être placé un peu en retrait de l'élastique afin d’éviter que la bille ne frappe la pièce en plastique au lieu de l’élastique ce qui ne déclencherait pas les micro-interrupteurs mais tout en restant le plus proche de celui-ci pour que le mouvement du solénoïde tende l'élastique au maximum.
 
