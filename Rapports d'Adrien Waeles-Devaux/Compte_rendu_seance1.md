@@ -5,7 +5,7 @@ Contenu de cette séance : Flippers imprimés en 3D, test de fonctionnement d’
 Avant la séance : 
 Nous avons modélisé en 3d deux pièces pour créer un prototype de flipper, puis je les ai imprimé en 3D afin de pouvoir effectuer des tests le jour de la séance et adapter les pièces en conséquence. La première pièce ci-dessous étant le flipper gauche qui sert à renvoyer la balle sur la planche.  La deuxième pièce (la plus petite sera cachée sous la planche et fixée au moteur), elle permet de transformer le mouvement linéaire d’un solénoïde en un mouvement de rotation. Il faudra ajuster prochainement les dimensions et la forme de cette dernière pièce pour l’adapter au solénoïde choisi.
 
-<img src="flipper_sketch3d.jpg" width="300">
+<img src="Images des rapports/Images séance 1/flipper_sketch3d.jpg" width="300">
 
 <img src="flipper_impression3d.jpg" width="300">
 
