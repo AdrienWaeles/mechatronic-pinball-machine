@@ -92,3 +92,5 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 - Finir la fabrication de la rampe et la placer sur le flipper.
 
 - Finitions et correction d’éventuels bugs
+
+La suite du projet est consultable dans le rapport final de présentation.
