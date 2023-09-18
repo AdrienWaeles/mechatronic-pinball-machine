@@ -28,7 +28,11 @@ J’ai ainsi dû adapter le modèle précédent du levier du slingshot (pièce d
 
 <img src="Images des rapports/Images séance 6/slingshot_barre_ancienneversion.png" width="300"><img src="Images des rapports/Images séance 6/slingshot_barre_nouvelleversion.png" width="350">
 
-Et j’ai également dû modifier la modélisation de la pièce tendant l'élastique du slingshot pour l’agrandir afin d'être sûr que le levier puisse effectuer sa course entièrement sans que l'élastique empêche celui ci de revenir en position initiale, la course du levier est ainsi comprise entre l'avant et l'arrière de l'élastique du slingshot. Voici la pièce finale imprimée en 3D :
+Et j’ai également dû modifier la modélisation de la pièce tendant l'élastique du slingshot pour l’agrandir afin d'être sûr que le levier puisse effectuer sa course entièrement sans que l'élastique empêche celui ci de revenir en position initiale, la course du levier est ainsi comprise entre l'avant et l'arrière de l'élastique du slingshot. 
+
+<img src="Images des rapports/Images séance 6/slingshotgauche_tendeurmodelisation.png" width="300">
+
+Voici la pièce finale imprimée en 3D :
 
 <img src="Images des rapports/Images séance 6/tendeurslingshot_impression3D.png" width="300">
 
