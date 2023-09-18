@@ -7,7 +7,7 @@ Nous avons modélisé en 3d deux pièces pour créer un prototype de flipper, pu
 
 <img src="Images des rapports/Images séance 1/flipper_sketch3d.jpg" width="300">
 
-<img src="flipper_impression3d.jpg" width="300">
+<img src="Images des rapports/Images séance 1/flipper_impression3d.jpg" width="300">
 
 
 
