@@ -95,4 +95,4 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 
 
 
-La suite du projet est consultable dans le rapport final de présentation trouvable dans le dossier documentation.
+La suite du projet est consultable dans le rapport final de présentation disposé dans le dossier Documentation du GitHub.
