@@ -3,7 +3,7 @@ Dans le cadre des cours de robotique de 2ème année de classe préparatoire int
 Ce GitHub rassemble nos rapports d'avancée hebdomadaire ainsi que tous les fichiers créés pour concevoir ce flipper.
 
 
-<img src="Flipper-version_actuelle.jpg" width="250">
+<img src="Documentation/Flipper-version_actuelle.jpg" width="250">
 
 
 **Vidéo de présentation du projet** : https://youtu.be/dcDQBHgphmI
