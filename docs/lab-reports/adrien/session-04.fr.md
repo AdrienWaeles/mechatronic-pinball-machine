@@ -15,7 +15,7 @@ Il a fallu surélever légèrement le micro-interrupteur de la planche pour que 
 Après de nombreux tests pour fixer le micro-interrupteur de manière optimale voici le résultat : https://youtube.com/shorts/6lyibMg2PRw
 
 
-J’ai ensuite réalisé un prototype d’un bumper à l’aide d’un solénoide (KK-0630B, 24V, 600mA, 10mm de course, 8Newtons) sur la planche de prototypage que j’avais utilisé pour créer le slingshot. Pour cela je me suis aidé de ce design : https://www.thingiverse.com/thing:3286052. Le bumper est constitué de deux pièces, le cône qui s’abaisse sur la balle et une pièce fixe qui permet de maintenir le cône droit, dans lequel la première pièce va coulisser.
+J’ai ensuite réalisé un prototype d’un bumper à l’aide d’un solénoide (KK-0630B, 24V, 10mm de course, 8Newtons) sur la planche de prototypage que j’avais utilisé pour créer le slingshot. Pour cela je me suis aidé de ce design : https://www.thingiverse.com/thing:3286052. Le bumper est constitué de deux pièces, le cône qui s’abaisse sur la balle et une pièce fixe qui permet de maintenir le cône droit, dans lequel la première pièce va coulisser.
 
 <img src="assets/session-04/bumper_prototype.jpg" width="300">
 
