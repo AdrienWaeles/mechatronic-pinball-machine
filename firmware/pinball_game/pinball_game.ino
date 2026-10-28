@@ -3,7 +3,7 @@
 // - Slingshots and bumpers fire a solenoid when the ball hits their switch or contact ring.
 // - Infrared sensors detect the ball in the top lanes and when it drains between the flippers;
 //   a drained ball is sent back to the launch lane by a solenoid.
-// - A target lights its LED and scores points.
+// - Two targets score points and light their LED for a moment.
 // - The score and the remaining balls are shown on a 16x2 I2C LCD.
 // - Above WHEEL_SCORE_THRESHOLD points, a NeoPixel wheel of fortune gives a random bonus once per game.
 //
@@ -36,7 +36,7 @@ const uint8_t LOWER_BUMPER_RING_PIN = 26;
 const uint8_t UPPER_LEFT_BUMPER_RING_PIN = 24;
 const uint8_t UPPER_RIGHT_BUMPER_RING_PIN = 22;
 
-// Targets (LOW when hit). Target 1 is wired but not used in this version of the game.
+// Targets (LOW when hit)
 const uint8_t TARGET1_PIN = 31;
 const uint8_t TARGET2_PIN = 37;
 const uint8_t TARGET1_LED_PIN = 33;
@@ -114,8 +114,18 @@ int previousRightSlingshotSwitch = HIGH;
 unsigned long lastDrainTime = 0;
 unsigned long lastMiddleLaneTime = 0;
 unsigned long lastSideLaneTime = 0;
-unsigned long lastTarget2HitTime = 0;
-bool target2LedOn = false;
+
+struct Target {
+  uint8_t switchPin;
+  uint8_t ledPin;
+  unsigned long lastHitTime;
+  bool ledOn;
+};
+
+Target targets[] = {
+  {TARGET1_PIN, TARGET1_LED_PIN, 0, false},
+  {TARGET2_PIN, TARGET2_LED_PIN, 0, false},
+};
 
 // ---------------------------------------------------------------------------
 // Display
@@ -166,6 +176,24 @@ void flashWheelLed(uint8_t led, unsigned long pauseMs) {
   delay(pauseMs);
   wheel.setPixelColor(led, 0, 0, 0);
   wheel.show();
+}
+
+// ---------------------------------------------------------------------------
+// Targets
+// ---------------------------------------------------------------------------
+
+// Scores a hit and lights the target LED, then turns the LED off after TARGET_LED_ON_MS.
+void updateTarget(Target &target) {
+  if (digitalRead(target.switchPin) == LOW && millis() - target.lastHitTime >= TARGET_DEBOUNCE_MS) {
+    addPoints(TARGET_POINTS);
+    digitalWrite(target.ledPin, HIGH);
+    target.ledOn = true;
+    target.lastHitTime = millis();
+  }
+  if (target.ledOn && millis() - target.lastHitTime >= TARGET_LED_ON_MS) {
+    digitalWrite(target.ledPin, LOW);
+    target.ledOn = false;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -256,12 +284,11 @@ void setup() {
   pinMode(UPPER_LEFT_BUMPER_RING_PIN, INPUT_PULLUP);
   pinMode(UPPER_RIGHT_BUMPER_RING_PIN, INPUT_PULLUP);
 
-  pinMode(TARGET1_PIN, INPUT_PULLUP);
-  pinMode(TARGET2_PIN, INPUT_PULLUP);
-  pinMode(TARGET1_LED_PIN, OUTPUT);
-  pinMode(TARGET2_LED_PIN, OUTPUT);
-  digitalWrite(TARGET1_LED_PIN, LOW);
-  digitalWrite(TARGET2_LED_PIN, LOW);
+  for (const Target &target : targets) {
+    pinMode(target.switchPin, INPUT_PULLUP);
+    pinMode(target.ledPin, OUTPUT);
+    digitalWrite(target.ledPin, LOW);
+  }
 
   pinMode(DRAIN_SENSOR_PIN, INPUT);
   pinMode(LEFT_OUTLANE_SENSOR_PIN, INPUT);
@@ -338,16 +365,8 @@ void loop() {
     displayBallsLeft();
   }
 
-  // Target: score and light its LED, then turn the LED off after TARGET_LED_ON_MS
-  if (digitalRead(TARGET2_PIN) == LOW && millis() - lastTarget2HitTime >= TARGET_DEBOUNCE_MS) {
-    addPoints(TARGET_POINTS);
-    digitalWrite(TARGET2_LED_PIN, HIGH);
-    target2LedOn = true;
-    lastTarget2HitTime = millis();
-  }
-  if (target2LedOn && millis() - lastTarget2HitTime >= TARGET_LED_ON_MS) {
-    digitalWrite(TARGET2_LED_PIN, LOW);
-    target2LedOn = false;
+  for (Target &target : targets) {
+    updateTarget(target);
   }
 
   // Wheel of fortune bonus, once per game
