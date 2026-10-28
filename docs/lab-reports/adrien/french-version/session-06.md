@@ -1,5 +1,7 @@
 # Séance 6
 
+[🇬🇧 English version](../session-06.md)
+
 ## Avant la séance
 Nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la partie haute du flipper afin d'utiliser une découpeuse laser.
 

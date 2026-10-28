@@ -1,5 +1,7 @@
 # Séance 8
 
+[🇬🇧 English version](../session-08.md)
+
 ## Avant la séance
 Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper. 
 Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures précédemment fabriquées.

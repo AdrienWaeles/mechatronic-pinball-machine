@@ -1,5 +1,7 @@
 # Séance 5
 
+[🇬🇧 English version](../session-05.md)
+
 ## Avant la séance
 Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'actualiser le nombre de points. L'écran est branché à un module I2C ainsi il suffit de 2 câbles de communication branchés aux entrées analogiques de l'Arduino en plus de son alimentation: (sur une carte Arduino Uno la broche SDA est connectée au port analogique A4 de la carte et la broche SCL au port A5). Au début l’écran ne semblait pas fonctionner, aucun message ne s'affichait, mais il suffisait de tourner la petite vis au dos pour ajuster le contraste. Voici un programme simple de test :
 
@@ -15,7 +17,7 @@ Pendant les vacances de Noël, j’ai travaillé sur la fabrication des flippers
 
 <img src="../assets/session-05/flipper_modelisation.jpg" width="300">
 
-La 2ème pièce est un “bras” de flipper, elle est située sous la planche et va permettre de transformer le mouvement de translation du solénoïde en mouvement de rotation. Elle est reliée au solénoide par une 3ème pièce qui tourne autour de son axe.
+La 2ème pièce est un “bras” de flipper, elle est située sous la planche et va permettre de transformer le mouvement de translation du solénoïde en mouvement de rotation. Elle est reliée au solénoïde par une 3ème pièce qui tourne autour de son axe.
 
 <img src="../assets/session-05/bras_flipper_modelisation.jpg" width="300">
 
@@ -24,7 +26,7 @@ Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans 
 
 <img src="../assets/session-05/attachebras_flipper_modélisation.jpg" width="300">
 
-Voici une vue de la planche de dessous de l’ensemble solénoide + attache_bras + bras de flipper : 
+Voici une vue de la planche de dessous de l’ensemble solénoïde + attache_bras + bras de flipper : 
 
 <img src="../assets/session-05/flipper_mecanisme+solenoide.jpeg" width="300">
 
@@ -49,7 +51,7 @@ Voici le résultat après de nombreux essais et modifications de la pièce impri
 https://youtube.com/shorts/K7FTkk97wYo
 
 J’ai finalement remodifié la pièce imprimée en tenant compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. 
-Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
+Voici l’équerre du solénoïde du slingshot modélisée ainsi que le levier :
 
 <img src="../assets/session-05/equerre_slingshot.jpg" width="300">
 

@@ -1,5 +1,7 @@
 # Séance 7
 
+[🇬🇧 English version](../session-07.md)
+
 ## Avant la séance
 Nous avons finalisé la réalisation des bordures du flipper. Lors de la séance précédente nous avions déjà réalisé les bordures arrondies en transformant des modèles 3D en un fichier 2D svg utilisable avec la découpeuse laser. Pour rappel, chaque pièce devant mesurer 20mm de hauteur et la découpeuse laser étant actuellement limitée à des planches d’une épaisseur de 5mm, il a fallu coller 4 planches de 5 mm les unes sur les autres pour chaque pièce. 
 

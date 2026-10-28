@@ -1,5 +1,7 @@
 # Séance 2
 
+[🇬🇧 English version](../session-02.md)
+
 ## Avant la séance
 À partir de la liste de composants établie au début du projet dans le cahier des charges, nous avons cherché les références des composants à acheter pour le pinball, notamment en faisant des recherches sur la force en newtons et la tension nécessaire pour exercer suffisamment de force sur la balle (voir liste des composants). Puis nous nous sommes rendus dans plusieurs magasins de bricolage afin de trouver des ressorts et élastiques, pour pouvoir avancer le projet. Le ressort permettra de fabriquer le lanceur manuel de bille.
 
@@ -26,15 +28,15 @@ Finalement j’ai modélisé en 3d une poignée sur Blender. Cette poignée serv
 
 
 ## Durant la séance
-Dans un premier temps, j’ai adapté le code réalisé lors de la première séance qui servait à déclencher les solénoïdes des flippers avec boutons. Le fonctionnement des slingshots est en effet très similaire, la seule différence entre les 2 programmes est que pour les slingshots après le déclenchement du solénoïde celui-ci doit se rétracter immédiatement même si l’interrupteur reste enfoncé pendant plusieurs millisecondes. Ainsi dans le programme, le solénoide est déclenché seulement lorsque la valeur renvoyée par l'interrupteur passe de l'état HIGH à LOW (mais pas l'inverse car le solénoide ne doit pas se réenclencher lorsque l'interrupteur est relâché). (le code commenté est disponible sur le github). 
+Dans un premier temps, j’ai adapté le code réalisé lors de la première séance qui servait à déclencher les solénoïdes des flippers avec boutons. Le fonctionnement des slingshots est en effet très similaire, la seule différence entre les 2 programmes est que pour les slingshots après le déclenchement du solénoïde celui-ci doit se rétracter immédiatement même si l’interrupteur reste enfoncé pendant plusieurs millisecondes. Ainsi dans le programme, le solénoïde est déclenché seulement lorsque la valeur renvoyée par l'interrupteur passe de l'état HIGH à LOW (mais pas l'inverse car le solénoïde ne doit pas se réenclencher lorsque l'interrupteur est relâché). (le code commenté est disponible sur le github). 
 
-Puis nous avons fixé le solénoïde en dessous de la planche du prototype à l’aide de petites vis et de l’équerre préalablement imprimée en 3d (le solénoide sera mieux fixé à la planche par la suite, ceci reste un prototype). 
+Puis nous avons fixé le solénoïde en dessous de la planche du prototype à l’aide de petites vis et de l’équerre préalablement imprimée en 3d (le solénoïde sera mieux fixé à la planche par la suite, ceci reste un prototype). 
 
 <img src="../assets/session-02/equerre_fixation_solenoide.jpg" width="300">
 
 Le bras du solénoïde doit être placé un peu en retrait de l'élastique afin d’éviter que la bille ne frappe la pièce en plastique au lieu de l’élastique ce qui ne déclencherait pas les micro-interrupteurs mais tout en restant le plus proche de celui-ci pour que le mouvement du solénoïde tende l'élastique au maximum.
 
-Il a fallu ainsi réaliser de nombreux tests pour trouver le positionnement optimal du bras du solénoïde et des micro-interrupteurs et la tension de l'élastique à appliquer pour que la balle déclenche correctement l'interrupteur (il y en aura 2 sur la version finale) et que le solénoide tende suffisamment l'élastique. Le prototype nous permet ainsi de vérifier que tout fonctionne et de déterminer le placement de chaque élément du slingshot afin de fabriquer plus tard une pièce avec les bonnes mesures. Voici une démonstration du prototype avec une bille : https://youtu.be/Ld9HjYVpliU
+Il a fallu ainsi réaliser de nombreux tests pour trouver le positionnement optimal du bras du solénoïde et des micro-interrupteurs et la tension de l'élastique à appliquer pour que la balle déclenche correctement l'interrupteur (il y en aura 2 sur la version finale) et que le solénoïde tende suffisamment l'élastique. Le prototype nous permet ainsi de vérifier que tout fonctionne et de déterminer le placement de chaque élément du slingshot afin de fabriquer plus tard une pièce avec les bonnes mesures. Voici une démonstration du prototype avec une bille : https://youtu.be/Ld9HjYVpliU
 
 Comme on peut le voir lorsque le micro-interrupteur est bien placé, le choc de la bille sur l’élastique déclenche bien le slingshot et cela même si la bille arrive avec une vitesse peu élevée sur le slingshot. Le prototype semble donc fonctionner cependant le slingshot ne renvoie pas la balle avec beaucoup de force et cela en raison notamment de la course du solénoïde de seulement 10mm qui ne tend pas suffisamment l’élastique. Pour améliorer cela on pourra éventuellement par la suite tester avec un autre solénoïde (ayant une course plus grande ou plus de force pour tendre l'élastique plus efficacement) ou changer la pièce par un système de levier.
 
