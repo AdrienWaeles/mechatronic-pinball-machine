@@ -1,5 +1,6 @@
-**Avant la séance :**
+# Séance 5
 
+## Avant la séance
 Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'actualiser le nombre de points. L'écran est branché à un module I2C ainsi il ne suffit que de 2 câbles de communication branchés aux entrées analogiques de l'arduino en plus de son alimentation: (sur une carte Arduino Uno la broche SDA est connectée au port analogique A4 de la carte et la broche SCL au port A5). Au début l’écran ne semblait pas fonctionner, aucun message ne s'affichait, mais il suffisait de tourner la petite vis au dos pour ajuster le contraste. Voici un programme simple de test :
 
 <img src="assets/session-05/code_test_lcd.jpg" width="500">
@@ -72,8 +73,7 @@ Cette poignée m’a demandé beaucoup de temps car Fusion 360 n’est pas très
 
 
 
-**Pendant la séance :**
-
+## Pendant la séance
 Pour commencer il a fallu découper la planche du jeu aux dimensions 414 x 800 x 0.5 cm qui correspondent à celles définies lors de l’élaboration de la maquette 3d. Cependant comme expliqué dans le compte rendu précédent, pour les bumpers nous avons besoin d’incruster de fines plaques métalliques à ras de la planche (permettant de détecter si la bille est à la fois en contact avec la plaque et le fil électrique du bumper), et notre planche est trop longue pour rentrer entièrement dans la découpeuse laser. Avec les conseils des gérants du FabLab nous avons décidé de coller 3 petites planches de bois d’une épaisseur de 3mm sur la grande planche afin de pouvoir graver chacune des planches au laser pour ensuite venir les coller sur la grande planche les unes à côté des autres.
 
 

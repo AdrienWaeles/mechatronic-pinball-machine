@@ -1,5 +1,6 @@
-**Avant la séance :**
+# Séance 6
 
+## Avant la séance
 Nous avons finalisé la réalisation d’un fichier vectoriel en svg sur Inkscape délimitant nos gravures et découpes pour la partie haute du flipper afin d'utiliser une découpeuse laser.
 
 Ces trous permettent notamment de fixer nos bumpers et les gravures en forme de carrés de positionner 3 plaques métalliques à ras de la surface de la planche pour détecter si la bille roule en dessous d’un bumper. 
@@ -47,8 +48,7 @@ J’ai également modélisé et imprimé les délimiteurs de rangées :
 
 
 
-**Pendant la séance :**
-
+## Pendant la séance
 Certaines parties du contour étant arrondies, il aurait été difficile de les réaliser directement à la main avec précision. Nous avons décidé de réaliser ces parties du contour par découpe laser. Pour cela j’ai utilisé les pièces modélisées sur la maquette 3D, je les ai séparées de la maquette et je les ai exportées en STL. Voici les pièces en question modélisées sur Sketchup.
 
 <img src="assets/session-06/modeles3D_bordures.png" width="300">

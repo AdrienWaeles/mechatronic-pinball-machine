@@ -1,5 +1,6 @@
-**Avant la séance :**
+# Séance 8
 
+## Avant la séance
 Nous avons profité des vacances pour passer quelques jours au Fablab afin d’assembler notre flipper. 
 Pour cela avec l’aide de Frédéric Juan du Fablab nous avons commencé par coller les 3 fines planches sur la grande planche de jeu afin d’avoir l’emplacement de tous les trous à percer. Puis nous avons vissé toutes les bordures précédemment fabriquées.
 
@@ -58,8 +59,7 @@ Voici l’avancée du pinball avant la séance :
 
 <img src="assets/session-08/flipper_vuedehaut.jpg" width="300">
 
-**Pendant la séance :**
-
+## Pendant la séance
 Étant donné le peu de temps restant avant la date de présentation finale puisque tous les composants principaux maintenant fixés fonctionnent correctement mécaniquement, nous avons décidé de se consacrer pleinement en équipe au câblage des composants afin d’être sûr de pouvoir présenter une version fonctionnelle. Pour cela nous avons commencé par câbler tous les solénoïdes en parallèle afin d’avoir la même tension pour chaque solénoïde. 
 Pour relier toutes les masses des solénoïdes entre elles nous avons utilisé 2 connecteurs wago à leviers. Un pour le haut du flipper et un pour le bas du flipper ,les deux étant reliés par un câble afin d’avoir une masse commune. 
 <img src="assets/session-08/connecteurWago.jpg" width="300">
@@ -79,8 +79,7 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 <img src="assets/session-08/flipper_cablage_dessous.jpg" width="300">
 
 
-**Étapes finales à réaliser :**
-
+## Étapes finales à réaliser
 - Il nous reste désormais à terminer le câblage en branchant nos 8 capteurs infrarouges, les 2 boutons des flippers, les 7 microswitch des slingshots et cibles, l’écran, la roue de la fortune.
 
 - Coller les cibles sur les microswitch, les assembler puis fixer le support sur la planche.
@@ -95,4 +94,4 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 
 
 
-La suite du projet est consultable dans le rapport final de présentation disposé dans le dossier Documentation du GitHub.
+La suite du projet est consultable dans le [rapport final](../../final-report.fr.pdf).
