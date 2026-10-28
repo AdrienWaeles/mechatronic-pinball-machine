@@ -96,4 +96,4 @@ Voici le dessous de la planche avec le câblage en cours d’installation (il re
 
 
 
-La suite du projet est consultable dans le [rapport final](../../../final-report.fr.pdf).
+La suite du projet est consultable dans le [rapport final](../../../french-version/final-report.pdf).
