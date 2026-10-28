@@ -25,7 +25,7 @@ J’ai importé ces pièces dans un logiciel de modélisation 3D, et j’ai modi
 
 Le fonctionnement est le même que celui expliqué dans le compte rendu de la séance 3 : la pièce conique qui est attachée au solénoïde va s'abaisser sur la balle pour la pousser dans la direction opposée. Pour fixer le bumper à la planche, j’ai percé un trou dans le prototype et à partir des dimensions mesurées, j’ai modélisé et imprimé une équerre qui permet de fixer le solénoïde sous la planche. 
 
-<img src="assets/session-04/équerre_solénoïde.jpg" width="300">
+<img src="assets/session-04/équerre_solenoide.jpg" width="300">
 
 Remarque : l’équerre sera modifiée par la suite en raison d’une erreur d’orientation de la pièce lors de la modélisation.
 
