@@ -1,403 +1,359 @@
+// Pinball game controller for an Arduino Mega 2560.
+//
+// - Slingshots and bumpers fire a solenoid when the ball hits their switch or contact ring.
+// - Infrared sensors detect the ball in the top lanes and when it drains between the flippers;
+//   a drained ball is sent back to the launch lane by a solenoid.
+// - A target lights its LED and scores points.
+// - The score and the remaining balls are shown on a 16x2 I2C LCD.
+// - Above WHEEL_SCORE_THRESHOLD points, a NeoPixel wheel of fortune gives a random bonus once per game.
+//
+// Solenoids are driven through relay modules that are active LOW.
+
 #include <Adafruit_NeoPixel.h>
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
 
-// ECRAN
-#include "Wire.h"
-#include "LiquidCrystal_I2C.h"
+// ---------------------------------------------------------------------------
+// Pins
+// ---------------------------------------------------------------------------
 
-LiquidCrystal_I2C LCD(0x27,16,2); // définit le type d'écran lcd 16 x 2
+// Solenoids (active LOW)
+const uint8_t LAUNCH_SOLENOID_PIN = 48;  // sends a drained ball back to the launch lane
+const uint8_t LEFT_SLINGSHOT_PIN = 42;
+const uint8_t RIGHT_SLINGSHOT_PIN = 44;
+const uint8_t LOWER_BUMPER_PIN = 46;
+const uint8_t UPPER_LEFT_BUMPER_PIN = 52;
+const uint8_t UPPER_RIGHT_BUMPER_PIN = 50;
+const uint8_t SOLENOID_PINS[] = {LAUNCH_SOLENOID_PIN, LEFT_SLINGSHOT_PIN, RIGHT_SLINGSHOT_PIN,
+                                 LOWER_BUMPER_PIN, UPPER_LEFT_BUMPER_PIN, UPPER_RIGHT_BUMPER_PIN};
 
+// Slingshot microswitches (LOW when pressed)
+const uint8_t LEFT_SLINGSHOT_SWITCH_PIN = A1;
+const uint8_t RIGHT_SLINGSHOT_SWITCH_PIN = A0;
 
-// Solenoides :
-const int SOLENOIDE_LANCEMENT = 48;
-const int SLINGSHOTG = 42; // slingshot gauche
-const int SLINGSHOTD = 44; //slingshot droit
-const int BUMPER_BAS = 46;
-const int BUMPER_HAUTG = 52; // bumper gauche supérieur
-const int BUMPER_HAUTD = 50; // bumper droit supérieur
-const int solenoides[6] = { SOLENOIDE_LANCEMENT, SLINGSHOTG, SLINGSHOTD, BUMPER_BAS, BUMPER_HAUTG, BUMPER_HAUTD}; // liste contenant tous les pattes de branchement des solénoides
+// Bumper contact rings (LOW when the ball touches the ring)
+const uint8_t LOWER_BUMPER_RING_PIN = 26;
+const uint8_t UPPER_LEFT_BUMPER_RING_PIN = 24;
+const uint8_t UPPER_RIGHT_BUMPER_RING_PIN = 22;
 
-// Micro switches des slingshots :
-const int SWITCH_SLINGSHOTG = A1;
-const int SWITCH_SLINGSHOTD = A0;
+// Targets (LOW when hit). Target 1 is wired but not used in this version of the game.
+const uint8_t TARGET1_PIN = 31;
+const uint8_t TARGET2_PIN = 37;
+const uint8_t TARGET1_LED_PIN = 33;
+const uint8_t TARGET2_LED_PIN = 35;
 
-// Anneaux des bumpers :
-const int ANNEAU_BUMPER_BAS = 26;
-const int ANNEAU_BUMPER_HAUTG = 24; 
-const int ANNEAU_BUMPER_HAUTD = 22;
+// Infrared sensors (LOW when the ball passes)
+const uint8_t DRAIN_SENSOR_PIN = 2;  // between the two flippers: the ball is lost
+const uint8_t LEFT_OUTLANE_SENSOR_PIN = 3;
+const uint8_t RIGHT_OUTLANE_SENSOR_PIN = 4;
+const uint8_t RAMP_SENSOR_PIN = 5;
+const uint8_t TUNNEL_SENSOR_PIN = 6;
+const uint8_t LEFT_LANE_SENSOR_PIN = 7;  // top lanes
+const uint8_t MIDDLE_LANE_SENSOR_PIN = 8;
+const uint8_t RIGHT_LANE_SENSOR_PIN = 9;
 
-// Micro switches des cibles :
-const int CIBLE1 = 31;
-const int CIBLE2 = 37;
-const int LED_CIBLE1=33;
-const int LED_CIBLE2=35;
+// Wheel of fortune
+const uint8_t WHEEL_LED_PIN = 13;
+const uint8_t BUZZER_PIN = 12;
+const uint8_t WHEEL_LED_COUNT = 6;
 
-// Capteurs infrarouges
-const int IR_SORTIEM = 2; // détecte si le joueur a perdu la bille entre ses 2 flippers
-const int IR_SORTIEG = 3; // IR permettant de détecter si le joueur a perdu la bille sur la sortie gauche
-const int IR_SORTIED = 4; // sortie droite
-const int IR_RAMPE = 5;
-const int IR_TUNNEL = 6;
-const int IR_COLONNEG = 7; // IR de la rangée gauche du haut de flipper
-const int IR_COLONNEM = 8; // rangée du milieu
-const int IR_COLONNED =9; // rangée droite
+// ---------------------------------------------------------------------------
+// Game settings
+// ---------------------------------------------------------------------------
 
-// ROUE DE LA FORTUNE
-int nombreLeds =6;
-int nombreTours = 5;
-int casefinale;
-float tempsPause=50.0;
-int dureeBip = 30;
-int buzzer=12;
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(nombreLeds, 13, NEO_GRB + NEO_KHZ800);
+const int BALLS_PER_GAME = 3;
 
-// Valeurs lues sur les interrupteurs des slingshots
-int valeur_slingshotG;
-int valeur_slingshotD;
-int anciennevaleur_slingshotG =1;
-int anciennevaleur_slingshotD =1;
+const long BUMPER_POINTS = 100;
+const long MIDDLE_LANE_POINTS = 500;
+const long SIDE_LANE_POINTS = 200;
+const long TARGET_POINTS = 300;
+const long WHEEL_SCORE_THRESHOLD = 3000;
 
-// Valeurs lues sur les anneaux des bumpers
-int valeur_anneau_bumperbas;
-int valeur_anneau_bumperhautG;
-int valeur_anneau_bumperhautD;
+const unsigned long SOLENOID_PULSE_MS = 100;
+const unsigned long LAUNCH_PULSE_MS = 25;
+const unsigned long DRAIN_DEBOUNCE_MS = 300;     // a slow ball must not be counted twice
+const unsigned long BALL_RETURN_DELAY_MS = 1500;
+const unsigned long LANE_DEBOUNCE_MS = 100;
+const unsigned long TARGET_DEBOUNCE_MS = 400;
+const unsigned long TARGET_LED_ON_MS = 1000;
+const unsigned long GAME_OVER_DELAY_MS = 1200;   // lets the player read the final score
 
-// Valeurs lues sur les interrupteurs des cibles :
-int valeur_cible1;
-int valeur_cible2;
-int anciennevaleur_cible1 =1;
-int anciennevaleur_cible2 =1;
-// stockent le temps écoulé depuis le début du programme jusqu'au dernier moment où les cibles ont été touchées 
-unsigned long dernierImpactCible1 = 0; 
-unsigned long dernierImpactCible2 = 0;
+// Wheel of fortune animation
+const uint8_t WHEEL_FULL_TURNS = 4;
+const float WHEEL_START_STEP_MS = 50.0;
+const float WHEEL_SLOWDOWN_FACTOR = 1.08;          // each step is 8 % slower during the full turns
+const unsigned long WHEEL_FINAL_STEP_INCREASE_MS = 100;
+const unsigned long WHEEL_LIGHT_UP_MS = 800;
+const uint8_t WHEEL_BLINK_COUNT = 5;
+const unsigned long WHEEL_BLINK_ON_MS = 200;
+const unsigned long WHEEL_BLINK_OFF_MS = 800;
+const uint8_t WHEEL_MAX_COLOR = 15;                // random colours stay dim
+const unsigned int BEEP_FREQUENCY_HZ = 1000;
+const unsigned long BEEP_MS = 30;
 
-boolean led_cible1_allumee = false; // permet de mémoriser si l'on a allumé la led afin de l'éteindre plus tard sans delay avec millis
+// LCD layout
+const uint8_t LCD_VALUE_COLUMN = 9;
+const uint8_t LCD_COLUMNS = 16;
 
-boolean led_cible2_allumee = false;
+// ---------------------------------------------------------------------------
+// Devices and game state
+// ---------------------------------------------------------------------------
 
+LiquidCrystal_I2C lcd(0x27, LCD_COLUMNS, 2);
+Adafruit_NeoPixel wheel(WHEEL_LED_COUNT, WHEEL_LED_PIN, NEO_GRB + NEO_KHZ800);
 
-// Variable permettant de mémoriser à quel moment un capteur a détecté le précédent passage
-unsigned long dernierPassageIR_sortieM = 0;
-unsigned long dernierPassageIR_sortieG = 0;
-unsigned long dernierPassageIR_sortieD = 0;
-unsigned long dernierPassageIR_rampe = 0;
-unsigned long dernierPassageIR_tunnel = 0;
-unsigned long dernierPassageIR_colonneGD = 0;
-unsigned long dernierPassageIR_colonneM = 0;
+long score = 0;  // long: the bonuses can push the score above the 32767 limit of an int
+int ballsLeft = BALLS_PER_GAME;
+bool ballLost = false;
+unsigned long ballLostTime = 0;
+bool wheelSpun = false;  // the wheel is spun only once per game
 
-// Variables permettant d'enregistrer le score et le nombre de billes restantes
-int score = 0;
-int nombre_billes = 3; // nombre de tentatives offertes au joueur (le nombre de lancers de bille qu'il va pouvoir faire)
-int billes_restantes = nombre_billes; // tentatives restantes
-boolean billeperdue = false; // permet de mémoriser si le joueur a perdu la bille le temps de déclencher un solénoide
-unsigned long temps_billeperdue = 0; // stocke le moment auquel le joueur a perdu la bille
+int previousLeftSlingshotSwitch = HIGH;
+int previousRightSlingshotSwitch = HIGH;
 
-boolean rouelancee = false;
+unsigned long lastDrainTime = 0;
+unsigned long lastMiddleLaneTime = 0;
+unsigned long lastSideLaneTime = 0;
+unsigned long lastTarget2HitTime = 0;
+bool target2LedOn = false;
 
-void setup() {
-  Serial.begin(115200); // Vitesse de communication avec l'arduino (volontairement élévée car sinon ralentit la fluidité du jeu)
+// ---------------------------------------------------------------------------
+// Display
+// ---------------------------------------------------------------------------
 
-  for (int led=0; led<nombreLeds; led++){
-    strip.setPixelColor(led, 0, 0, 0);
-    strip.show(); // on affiche 
+void displayScore() {
+  for (uint8_t column = LCD_VALUE_COLUMN; column < LCD_COLUMNS; column++) {
+    lcd.setCursor(column, 0);
+    lcd.print(' ');
   }
+  lcd.setCursor(LCD_VALUE_COLUMN, 0);
+  lcd.print(score);
+}
 
-  // ECRAN
-  LCD.init(); // initialisation de l'afficheur
-  LCD.backlight();
-  LCD.setCursor(1, 0);
-  LCD.print("SCORE:");
-  LCD.setCursor(1, 1);
-  LCD.print("Billes: ");
-  afficheScore(score); // on affiche le score de début de partie (normalement 0)
-  afficheNombreBilles(nombre_billes); // et le nombre de billes (tentatives) au début
-  
-  pinMode(SOLENOIDE_LANCEMENT, OUTPUT);
-  pinMode(SLINGSHOTG, OUTPUT);
-  pinMode(SLINGSHOTD, OUTPUT);
-  pinMode(BUMPER_BAS, OUTPUT);
-  pinMode(BUMPER_HAUTG, OUTPUT);
-  pinMode(BUMPER_HAUTD, OUTPUT);
+void displayBallsLeft() {
+  lcd.setCursor(LCD_VALUE_COLUMN, 1);
+  lcd.print(' ');
+  lcd.setCursor(LCD_VALUE_COLUMN, 1);
+  lcd.print(ballsLeft);
+}
 
-// Les interrupteurs utilisent la résistance de rappel de l'arduino
-  pinMode(SWITCH_SLINGSHOTG, INPUT_PULLUP);
-  pinMode(SWITCH_SLINGSHOTD, INPUT_PULLUP);
-  pinMode(ANNEAU_BUMPER_BAS, INPUT_PULLUP);
-  pinMode(ANNEAU_BUMPER_HAUTG, INPUT_PULLUP);
-  pinMode(ANNEAU_BUMPER_HAUTD, INPUT_PULLUP);;
+void addPoints(long points) {
+  score += points;
+  displayScore();
+}
 
-  // cibles
-  pinMode(CIBLE1, INPUT_PULLUP);
-  pinMode(CIBLE2, INPUT_PULLUP);
-  pinMode(LED_CIBLE1,OUTPUT);
-  pinMode(LED_CIBLE2,OUTPUT);
-  // on éteint les leds des cibles au début du jeu
-  digitalWrite(LED_CIBLE1,LOW);
-  digitalWrite(LED_CIBLE2,LOW);
-  
-  pinMode(IR_SORTIEG, INPUT);
-  pinMode(IR_SORTIEM, INPUT);
-  pinMode(IR_SORTIED, INPUT);
-  pinMode(IR_COLONNEG, INPUT);
-  pinMode(IR_COLONNEM, INPUT);
-  pinMode(IR_COLONNED, INPUT);
-  pinMode(IR_RAMPE, INPUT);
-  pinMode(IR_TUNNEL, INPUT);
+// ---------------------------------------------------------------------------
+// Actuators
+// ---------------------------------------------------------------------------
 
-  // Roue de la fortune
-  pinMode(buzzer, OUTPUT);
-  noTone(buzzer);
-  strip.begin();
-  strip.show(); // Initialise toute les led à 'off'
+void pulseSolenoid(uint8_t pin, unsigned long durationMs) {
+  digitalWrite(pin, LOW);  // energise the solenoid
+  delay(durationMs);
+  digitalWrite(pin, HIGH);  // then release it
+}
 
-  // On s'assure que tous les solénoides ne sont pas alimentés au début du jeu
-  for (int i=0; i<6; i++){
-    digitalWrite(solenoides[i], HIGH);
+void beep() {
+  tone(BUZZER_PIN, BEEP_FREQUENCY_HZ, BEEP_MS);
+  delay(BEEP_MS);
+  noTone(BUZZER_PIN);
+}
+
+// Lights one wheel LED in a random colour with a beep, waits, then turns it off.
+void flashWheelLed(uint8_t led, unsigned long pauseMs) {
+  wheel.setPixelColor(led, random(WHEEL_MAX_COLOR), random(WHEEL_MAX_COLOR), random(WHEEL_MAX_COLOR));
+  wheel.show();
+  beep();
+  delay(pauseMs);
+  wheel.setPixelColor(led, 0, 0, 0);
+  wheel.show();
+}
+
+// ---------------------------------------------------------------------------
+// Wheel of fortune
+// ---------------------------------------------------------------------------
+
+void lightUpWheel() {
+  for (uint8_t led = 0; led < WHEEL_LED_COUNT; led++) {
+    wheel.setPixelColor(led, 2, 4, 0);
+  }
+  wheel.show();
+  delay(WHEEL_LIGHT_UP_MS);
+  wheel.clear();
+  wheel.show();
+}
+
+void applyWheelReward(uint8_t slot) {
+  switch (slot) {
+    case 0: score *= 3;      displayScore();     break;
+    case 1: ballsLeft += 1;  displayBallsLeft(); break;
+    case 2: score += 3000;   displayScore();     break;
+    case 3: ballsLeft += 2;  displayBallsLeft(); break;
+    case 4: score *= 2;      displayScore();     break;
+    case 5: score += 10000;  displayScore();     break;
   }
 }
 
-// FONCTIONS D'AFFICHAGE ECRAN 
-void afficheScore(int score){
-  // on efface le score précédent
-  for (int i = 9; i < 16; i++)
-  {
-    LCD.setCursor(i, 0);
-    LCD.print(" ");
-  }
+void spinWheel() {
+  randomSeed(micros());  // the time at which the player reaches the threshold makes each game different
+  const uint8_t finalSlot = random(WHEEL_LED_COUNT);
+  float stepMs = WHEEL_START_STEP_MS;
 
-  // On écrit le nouveau score
-  LCD.setCursor(9, 0);
-  LCD.print(score);  
-}
-
-void afficheNombreBilles(int nombreBilles){
-  // on efface le nombre précédent
-  LCD.setCursor(9, 1);
-  LCD.print(" ");
-
-  // On écrit le nouveau score
-  LCD.setCursor(9, 1);
-  LCD.print(nombreBilles);  
-}
-
-// Fonctions pour utiliser la roue de la fortune :
-
-void allumeRoue(){
-  for (int led=0; led<nombreLeds; led++){
-    strip.setPixelColor(led, 2, 4, 0);
-    strip.show(); // on affiche 
-  }
-  delay(800);
-  for (int led=0; led<nombreLeds; led++){
-    strip.setPixelColor(led, 0, 0, 0);
-    strip.show(); // on affiche 
-  }
-  
-  strip.show();
-}
-
-void lanceRoue(){
-  casefinale = random(0, nombreLeds);
-  // on fait défiler les leds avec un nombre de tours égal à nombreTours
-  for(int tour=1; tour<nombreTours; tour++){
-    for (int led=0; led<nombreLeds; led++){
-      strip.setPixelColor(led, random(0, 15), random(0, 15), random(0, 15));
-      strip.show(); // on affiche 
-      tone(buzzer,1000,dureeBip);
-      delay(dureeBip);
-      noTone(buzzer);
-      delay(tempsPause);
-      strip.setPixelColor(led, 0, 0, 0);
-      strip.show();
-      tempsPause*=1.08;
+  // Full turns, slowing down a little at each step
+  for (uint8_t turn = 0; turn < WHEEL_FULL_TURNS; turn++) {
+    for (uint8_t led = 0; led < WHEEL_LED_COUNT; led++) {
+      flashWheelLed(led, (unsigned long)stepMs);
+      stepMs *= WHEEL_SLOWDOWN_FACTOR;
     }
   }
-  // On recommence un tour mais cette fois ci on s'arrête à la led de la case finale
-  for (int led=0; led<casefinale; led++){
-      strip.setPixelColor(led, random(0, 15), random(0, 15), random(0, 15));
-      strip.show(); // on affiche
-      tone(buzzer,1000,dureeBip);
-      delay(dureeBip);
-      noTone(buzzer);
-      delay(tempsPause);
-      strip.setPixelColor(led, 0, 0, 0);
-      strip.show();
-      tempsPause+=100;
+
+  // Last, slower turn that stops just before the final slot
+  for (uint8_t led = 0; led < finalSlot; led++) {
+    flashWheelLed(led, (unsigned long)stepMs);
+    stepMs += WHEEL_FINAL_STEP_INCREASE_MS;
   }
 
-  // On fait clignoter la led de la case en question
-  for (int clignote=0; clignote<5; clignote++){
-      strip.setPixelColor(casefinale, random(0, 15), random(0, 15), random(0, 15));
-      strip.show(); // on affiche
-      tone(buzzer,1000,dureeBip);
-      delay(dureeBip);
-      noTone(buzzer);
-      delay(200);
-      strip.setPixelColor(casefinale, 0, 0, 0);
-      strip.show();
-      delay(800);
+  // The final slot blinks
+  for (uint8_t blink = 0; blink < WHEEL_BLINK_COUNT; blink++) {
+    flashWheelLed(finalSlot, WHEEL_BLINK_ON_MS);
+    delay(WHEEL_BLINK_OFF_MS);
   }
-  tempsPause = 150;
 
-  Serial.println(casefinale);
-  if (casefinale==0){
-    score= score*3;
-    afficheScore(score);
+  Serial.println(finalSlot);
+  applyWheelReward(finalSlot);
+}
+
+// ---------------------------------------------------------------------------
+// Setup and main loop
+// ---------------------------------------------------------------------------
+
+void setup() {
+  // Set the solenoid outputs HIGH before enabling them, so that no solenoid fires at power-up
+  for (uint8_t pin : SOLENOID_PINS) {
+    digitalWrite(pin, HIGH);
+    pinMode(pin, OUTPUT);
   }
-  else if (casefinale ==1){
-    billes_restantes+=1;
-    afficheNombreBilles(billes_restantes);
-  }
-  else if (casefinale ==2){
-    score+=3000;
-    afficheScore(score);
-  }
-  else if (casefinale ==3){
-    billes_restantes+=2;
-    afficheNombreBilles(billes_restantes);
-  }
-  else if (casefinale ==4){
-    score=score*2;
-    afficheScore(score);
-  }
-  else if (casefinale==5){
-    score+=10000;
-    afficheScore(score);
-  }
+
+  Serial.begin(115200);  // fast, so that debug prints do not slow the game down
+
+  wheel.begin();
+  wheel.clear();
+  wheel.show();
+  pinMode(BUZZER_PIN, OUTPUT);
+  noTone(BUZZER_PIN);
+
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(1, 0);
+  lcd.print("SCORE:");
+  lcd.setCursor(1, 1);
+  lcd.print("Balls:");
+  displayScore();
+  displayBallsLeft();
+
+  pinMode(LEFT_SLINGSHOT_SWITCH_PIN, INPUT_PULLUP);
+  pinMode(RIGHT_SLINGSHOT_SWITCH_PIN, INPUT_PULLUP);
+  pinMode(LOWER_BUMPER_RING_PIN, INPUT_PULLUP);
+  pinMode(UPPER_LEFT_BUMPER_RING_PIN, INPUT_PULLUP);
+  pinMode(UPPER_RIGHT_BUMPER_RING_PIN, INPUT_PULLUP);
+
+  pinMode(TARGET1_PIN, INPUT_PULLUP);
+  pinMode(TARGET2_PIN, INPUT_PULLUP);
+  pinMode(TARGET1_LED_PIN, OUTPUT);
+  pinMode(TARGET2_LED_PIN, OUTPUT);
+  digitalWrite(TARGET1_LED_PIN, LOW);
+  digitalWrite(TARGET2_LED_PIN, LOW);
+
+  pinMode(DRAIN_SENSOR_PIN, INPUT);
+  pinMode(LEFT_OUTLANE_SENSOR_PIN, INPUT);
+  pinMode(RIGHT_OUTLANE_SENSOR_PIN, INPUT);
+  pinMode(RAMP_SENSOR_PIN, INPUT);
+  pinMode(TUNNEL_SENSOR_PIN, INPUT);
+  pinMode(LEFT_LANE_SENSOR_PIN, INPUT);
+  pinMode(MIDDLE_LANE_SENSOR_PIN, INPUT);
+  pinMode(RIGHT_LANE_SENSOR_PIN, INPUT);
 }
 
 void loop() {
-  // On lit les valeurs des anneaux et microswitches
-  valeur_slingshotG = digitalRead(SWITCH_SLINGSHOTG);
-  valeur_slingshotD = digitalRead(SWITCH_SLINGSHOTD);
-  valeur_anneau_bumperbas = digitalRead(ANNEAU_BUMPER_BAS);
-  valeur_anneau_bumperhautG = digitalRead(ANNEAU_BUMPER_HAUTG);
-  valeur_anneau_bumperhautD = digitalRead(ANNEAU_BUMPER_HAUTD);
+  const int leftSlingshotSwitch = digitalRead(LEFT_SLINGSHOT_SWITCH_PIN);
+  const int rightSlingshotSwitch = digitalRead(RIGHT_SLINGSHOT_SWITCH_PIN);
+  const int lowerBumperRing = digitalRead(LOWER_BUMPER_RING_PIN);
+  const int upperLeftBumperRing = digitalRead(UPPER_LEFT_BUMPER_RING_PIN);
+  const int upperRightBumperRing = digitalRead(UPPER_RIGHT_BUMPER_RING_PIN);
 
-  // Activation des slingshots slingshots
-  if (valeur_slingshotG == LOW && anciennevaleur_slingshotG == HIGH){
-    digitalWrite(SLINGSHOTG, LOW); // On active le solenoide
-    delay(100);
-    digitalWrite(SLINGSHOTG, HIGH); // puis le solenoide se rétracte presque immédiatement
+  // Slingshots fire once per press: only on the falling edge of their switch
+  if (leftSlingshotSwitch == LOW && previousLeftSlingshotSwitch == HIGH) {
+    pulseSolenoid(LEFT_SLINGSHOT_PIN, SOLENOID_PULSE_MS);
   }
-  if (valeur_slingshotD == LOW && anciennevaleur_slingshotD == HIGH){
-    digitalWrite(SLINGSHOTD, LOW);
-    delay(100);
-    digitalWrite(SLINGSHOTD, HIGH);
+  if (rightSlingshotSwitch == LOW && previousRightSlingshotSwitch == HIGH) {
+    pulseSolenoid(RIGHT_SLINGSHOT_PIN, SOLENOID_PULSE_MS);
   }
+  previousLeftSlingshotSwitch = leftSlingshotSwitch;
+  previousRightSlingshotSwitch = rightSlingshotSwitch;
 
-  // on stocke la valeur actuelle des interrupteur pour éviter un effet rebond
-  anciennevaleur_slingshotG = valeur_slingshotG;
-  anciennevaleur_slingshotD = valeur_slingshotD;
-
-  // Activation des bumpers
-  if (valeur_anneau_bumperbas == LOW){
-    score+=100;
-    afficheScore(score);
-    digitalWrite(BUMPER_BAS, LOW); // On active le solenoide
-    delay(100);
-    digitalWrite(BUMPER_BAS, HIGH); // puis le solenoide se rétracte presque immédiatement
+  // Bumpers score and kick the ball back while it touches their ring
+  if (lowerBumperRing == LOW) {
+    addPoints(BUMPER_POINTS);
+    pulseSolenoid(LOWER_BUMPER_PIN, SOLENOID_PULSE_MS);
+  }
+  if (upperLeftBumperRing == LOW) {
+    addPoints(BUMPER_POINTS);
+    pulseSolenoid(UPPER_LEFT_BUMPER_PIN, SOLENOID_PULSE_MS);
+  }
+  if (upperRightBumperRing == LOW) {
+    addPoints(BUMPER_POINTS);
+    pulseSolenoid(UPPER_RIGHT_BUMPER_PIN, SOLENOID_PULSE_MS);
   }
 
-  if (valeur_anneau_bumperhautG == LOW){
-    score+=100;
-    afficheScore(score);
-    digitalWrite(BUMPER_HAUTG, LOW); 
-    delay(100);
-    digitalWrite(BUMPER_HAUTG, HIGH);
+  // A drained ball is sent back to the launch lane after a short delay
+  if (digitalRead(DRAIN_SENSOR_PIN) == LOW && millis() - lastDrainTime >= DRAIN_DEBOUNCE_MS) {
+    ballLost = true;
+    ballLostTime = millis();
+    lastDrainTime = ballLostTime;
+  }
+  if (ballLost && millis() - ballLostTime >= BALL_RETURN_DELAY_MS) {
+    ballsLeft--;
+    displayBallsLeft();
+    ballLost = false;
+    pulseSolenoid(LAUNCH_SOLENOID_PIN, LAUNCH_PULSE_MS);
   }
 
-  if (valeur_anneau_bumperhautD == LOW){
-    score+=100;
-    afficheScore(score);
-    digitalWrite(BUMPER_HAUTD, LOW); 
-    delay(100);
-    digitalWrite(BUMPER_HAUTD, HIGH); 
+  // Top lanes
+  if (digitalRead(MIDDLE_LANE_SENSOR_PIN) == LOW && millis() - lastMiddleLaneTime >= LANE_DEBOUNCE_MS) {
+    addPoints(MIDDLE_LANE_POINTS);
+    lastMiddleLaneTime = millis();
+  }
+  if ((digitalRead(LEFT_LANE_SENSOR_PIN) == LOW || digitalRead(RIGHT_LANE_SENSOR_PIN) == LOW) &&
+      millis() - lastSideLaneTime >= LANE_DEBOUNCE_MS) {
+    addPoints(SIDE_LANE_POINTS);
+    lastSideLaneTime = millis();
   }
 
-  // Détection de passages de la bille avec les Capteurs Infrarouges
-  
-  // On teste si le capteur IR détecte un passage et on s'assure qu'aucun objet n'ait été détecté moins de 300 millisecondes plus tôt.
-  // Cela permet d'éviter qu'une bille passant à faible vitesse devant le capteur comptabilise plusieurs passages
-  if ( (digitalRead(IR_SORTIEM)==LOW )&& millis()-dernierPassageIR_sortieM>=300){ 
-    billeperdue = true;
-    temps_billeperdue = millis();
-    dernierPassageIR_sortieM = millis(); // Et on sauvegarde le temps écoulé entre le lancement du programme et ce passage
+  // Game over: show the final score for a moment, then start a new game
+  if (ballsLeft == 0) {
+    delay(GAME_OVER_DELAY_MS);
+    score = 0;
+    wheelSpun = false;
+    displayScore();
+    ballsLeft = BALLS_PER_GAME;
+    displayBallsLeft();
   }
 
-  // Si la bille est perdue on attend 1,5 secondes et on active un solenoide permettant de la ramener dans la zone de lancement
-  if (billeperdue && millis()-temps_billeperdue>=1500){
-    billes_restantes -=1;
-    afficheNombreBilles(billes_restantes);
-    billeperdue=false; // la bille n'est plus perdue puisque on a réduit le nombre de billes (tentatives restantes).
-    digitalWrite(SOLENOIDE_LANCEMENT, LOW);
-    delay(25);
-    digitalWrite(SOLENOIDE_LANCEMENT, HIGH);
+  // Target: score and light its LED, then turn the LED off after TARGET_LED_ON_MS
+  if (digitalRead(TARGET2_PIN) == LOW && millis() - lastTarget2HitTime >= TARGET_DEBOUNCE_MS) {
+    addPoints(TARGET_POINTS);
+    digitalWrite(TARGET2_LED_PIN, HIGH);
+    target2LedOn = true;
+    lastTarget2HitTime = millis();
+  }
+  if (target2LedOn && millis() - lastTarget2HitTime >= TARGET_LED_ON_MS) {
+    digitalWrite(TARGET2_LED_PIN, LOW);
+    target2LedOn = false;
   }
 
-  // COLONNES A POINTS (on ajoute un certain nombre de points en fonction de là ou passe la bille)
-  if ( (digitalRead(IR_COLONNEM)==LOW )&& millis()-dernierPassageIR_colonneM>=100){ 
-    score+=500;
-    afficheScore(score);
-    dernierPassageIR_colonneM = millis();
+  // Wheel of fortune bonus, once per game
+  if (score >= WHEEL_SCORE_THRESHOLD && !wheelSpun) {
+    wheelSpun = true;
+    lightUpWheel();
+    spinWheel();
   }
-  
-  if ( (digitalRead(IR_COLONNEG)==LOW || (digitalRead(IR_COLONNED)==LOW ))&& millis()-dernierPassageIR_colonneGD>=100){ 
-    score+=200;
-    afficheScore(score);
-    dernierPassageIR_colonneGD = millis();
-  }
-
-  // Lorsque le joueur a perdu toutes ses tentatives, nouvelle partie
-  if (billes_restantes==0){
-    delay(1200); // on attend un peu afin que le joueur puisse voir son score
-    // et on rénitialise la partie :
-    score=0;
-    rouelancee = false;
-    afficheScore(score);
-    billes_restantes = 3;
-    afficheNombreBilles(billes_restantes);
-  }
-
-  // Si une cible est touchée on allume sa led et on ajoute des points au score
-  // millis permet d'éviter l'effet rebond du microswitch
-  //valeur_cible1 = digitalRead(CIBLE1);
-  valeur_cible2 = digitalRead(CIBLE2);
-  /*if(valeur_cible1 == LOW && anciennevaleur_cible1 == HIGH && millis()-dernierImpactCible1>=400){
-     score+=300;
-     digitalWrite(LED_CIBLE1, LOW);
-     delay(300);
-     digitalWrite(LED_CIBLE1, HIGH);
-     led_cible1_allumee = true;
-     dernierImpactCible1 = millis();
-  }
-  */
-  if(valeur_cible2 == LOW && millis()-dernierImpactCible2>=400){
-     score+=300;
-     afficheScore(score);
-     digitalWrite(LED_CIBLE2, HIGH);
-     led_cible2_allumee = true;
-     dernierImpactCible2 = millis();
-  }
-  /*
-  if (led_cible1_allumee && led_cible2_allumee && millis-max(dernierImpactCible1,dernierImpactCible2)>=300 ){ // on éteint la led de la cible 300millisecondes après l'avoir allumé
-    digitalWrite(LED_CIBLE1,LOW);
-    digitalWrite(LED_CIBLE2,LOW);
-    led_cible1_allumee = false;
-    led_cible2_allumee = false;
-  }
-  */
-
-  if (led_cible2_allumee && millis-dernierImpactCible2>=1000 ){ // on éteint la led de la cible 1 SECONDE après l'avoir allumé
-    //digitalWrite(LED_CIBLE1,LOW);
-    digitalWrite(LED_CIBLE2,LOW);
-    //led_cible1_allumee = false;
-    led_cible2_allumee = false;
-  }
-
-  if (score>=3000 && rouelancee==false){
-    rouelancee = true;
-    allumeRoue();
-    lanceRoue();
-  }
-  
 }
