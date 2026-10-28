@@ -92,4 +92,4 @@ Here is the underside of the board with the wiring being installed (many wires s
 
 - Finishing touches and fixing possible bugs.
 
-The rest of the project is described in the [final report](../../final-report.fr.pdf) (in French).
+The rest of the project is described in the [final report](../../final-report.pdf) ([French version](../../french-version/final-report.pdf)).
