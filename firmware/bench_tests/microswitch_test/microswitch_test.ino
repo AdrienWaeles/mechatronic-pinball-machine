@@ -1,25 +1,20 @@
-const int microsw=3;
-int res=0;
-int score=0;
+// Microswitch test: increments a counter every 100 ms while the switch is closed.
 
+const uint8_t MICROSWITCH_PIN = 3;
+const unsigned long SAMPLE_PERIOD_MS = 100;
 
+unsigned long count = 0;
 
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(microsw,INPUT);
-  digitalWrite(microsw,LOW); 
+  pinMode(MICROSWITCH_PIN, INPUT);
   Serial.begin(9600);
-
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  res=digitalRead(microsw);
-  if (res==HIGH){
-    score++;
+  if (digitalRead(MICROSWITCH_PIN) == HIGH) {
+    count++;
   }
-  Serial.print("score :");
-  Serial.println(score);
-  delay(100);
-
+  Serial.print("count: ");
+  Serial.println(count);
+  delay(SAMPLE_PERIOD_MS);
 }

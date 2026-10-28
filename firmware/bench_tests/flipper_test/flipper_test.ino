@@ -1,23 +1,19 @@
-// Programme de test d'un flipper : envoie une tension au solénoïde lorsque le bouton est appuyé.
+// Flipper test: the flipper solenoid stays energised while the button is pressed.
+// The solenoid is driven through a relay module that is active LOW.
 
-const int FLIPPER1 = 2;
-const int BOUTON1 = 4;
-int valeurBouton = 0;
+const uint8_t FLIPPER_SOLENOID_PIN = 2;
+const uint8_t BUTTON_PIN = 4;
 
 void setup() {
-  pinMode(FLIPPER1, OUTPUT);
-  pinMode(BOUTON1, INPUT_PULLUP);
+  pinMode(FLIPPER_SOLENOID_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
   Serial.begin(9600);
-  digitalWrite(FLIPPER1, LOW);
+  digitalWrite(FLIPPER_SOLENOID_PIN, LOW);
 }
 
 void loop() {
-  valeurBouton = digitalRead(BOUTON1);
-  Serial.println(valeurBouton);
-  if (valeurBouton==LOW){ //si le bouton est enfoncé
-    digitalWrite(FLIPPER1, LOW); //on active le solenoide
-  }
-  else{
-    digitalWrite(FLIPPER1, HIGH);
-  }
+  const int button = digitalRead(BUTTON_PIN);
+  Serial.println(button);
+  // Button pressed (LOW): energise the solenoid; released: let it go
+  digitalWrite(FLIPPER_SOLENOID_PIN, button == LOW ? LOW : HIGH);
 }

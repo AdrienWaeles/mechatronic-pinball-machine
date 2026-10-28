@@ -1,32 +1,28 @@
-#include "Wire.h"
-#include "LiquidCrystal_I2C.h"
+// I2C LCD test: counts from 0 to 999 on a 16x2 display, one step per second.
 
-LiquidCrystal_I2C LCD(0x27,16,2); // définit le type d'écran lcd 16 x 2
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void showCount(int count) {
+  lcd.clear();
+  lcd.setCursor(1, 0);
+  lcd.print("SCORE :");
+  lcd.setCursor(10, 1);
+  lcd.print("POINTS");
+  lcd.setCursor(1, 1);
+  lcd.print(count);
+}
 
 void setup() {
-  LCD.init(); // initialisation de l'afficheur
-  LCD.backlight();
-  
-  LCD.setCursor(1, 0);
-  LCD.print("SCORE :");
-
-  LCD.setCursor(10, 1);
-  LCD.print("POINTS");
-  LCD.display();
-  LCD.setCursor(1, 1);
+  lcd.init();
+  lcd.backlight();
 }
 
 void loop() {
-  for (int i=0; i<1000; i++){
-    LCD.setCursor(1, 0);
-    LCD.print("SCORE :");
-    LCD.setCursor(10, 1);
-    LCD.print("POINTS");
-    LCD.setCursor(1, 1);    
-    LCD.print(i);
+  for (int count = 0; count < 1000; count++) {
+    showCount(count);
     delay(1000);
-    LCD.clear();
   }
-   
 }
-
