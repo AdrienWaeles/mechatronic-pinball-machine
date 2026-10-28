@@ -1,6 +1,6 @@
 # Session 3
 
-[🇫🇷 Version française](french-version/session-03.md)
+[🇫🇷 French version](french-version/session-03.md)
 
 When we arrived at this session, we had received new solenoids (model KK-0630B, 24V, 8 newtons, 10 mm stroke), more powerful than the solenoids we were using for the slingshots. These solenoids will be used to build our 3 bumpers. Bumpers are found on every pinball machine: they sit at the top of the playfield, arranged in a triangle, and they score points. They work as follows: when the ball touches a bumper, the player scores points and the ball is sent back in the opposite direction by a mechanism that comes down on the ball and immediately goes back up (see the diagram below).
 
