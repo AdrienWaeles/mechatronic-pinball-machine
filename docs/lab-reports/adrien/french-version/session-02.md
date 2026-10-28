@@ -5,24 +5,24 @@
 
 Après avoir reçu des élastiques et des billes adaptés au projet, j’ai créé un prototype d’un slingshot en perçant une planche et en y fixant des clous. Cette pièce située au-dessus des flippers permet de faire rebondir la balle sur un élastique lorsque celui-ci est touché afin de ramener la bille dans la zone de jeu. Elle est constituée d’un élastique tendu auquel sont collés des micro-interrupteurs et sous la planche se trouve un solénoïde. La référence du solénoïde actuellement utilisé est : JF-0730B (12V, 5N, 10mm de course).
 
-<img src="assets/session-02/prototype_slingshot.jpg" width="500">
+<img src="../assets/session-02/prototype_slingshot.jpg" width="500">
 
 Le fonctionnement est le suivant, lorsque la bille vient taper l’élastique celui-ci exerce une pression qui va déclencher au moins un des 2 interrupteurs disposés de chaque côté de l’élastique, une fois le signal reçu on enclenche immédiatement le solénoïde pour tendre l’élastique dans l’autre sens avec une petite pièce en plastique passant à travers la planche afin de repousser la balle. Voici la pièce en question modélisée en 3D :
 
-<img src="assets/session-02/bras_slingshot.jpg" width="300">
+<img src="../assets/session-02/bras_slingshot.jpg" width="300">
 
 J’ai testé différents micro-interrupteurs afin de choisir les plus sensibles pour que le slingshot se déclenche même si la balle arrive dessus avec une faible vitesse. Pour avoir une meilleure sensibilité, une astuce consiste à placer le bouton de façon à tendre légèrement l’élastique avec celui-ci sans que cela enclenche l'interrupteur. Finalement j’ai modélisé et imprimé une équerre permettant de fixer le solénoïde en dessous de la planche.
 
 Pour la création des cibles du pinball, nous avons modélisé sur Fusion 360 un support permettant d’y loger 3 micro-interrupteurs et 3 leds associées à chaque interrupteur qui s’allumeront lorsque leur interrupteur associé est touché. 3 trous en haut de l'objet permettent d'y insérer des leds, en dessous de la pièce, des trous permettent de passer les câbles de chaque led et interrupteur et 2 autres permettent de fixer le support à la planche.
 
 
-<img src="assets/session-02/support_cibles_vue3d.jpg" width="300">
-<img src="assets/session-02/support_cibles_vue3ddessous.jpg" width="300">
+<img src="../assets/session-02/support_cibles_vue3d.jpg" width="300">
+<img src="../assets/session-02/support_cibles_vue3ddessous.jpg" width="300">
 
 Finalement j’ai modélisé en 3d une poignée sur Blender. Cette poignée servira à créer le lanceur manuel de bille. Le lanceur sera constitué d'une tige en bois associée à un ressort avec d'un côté la poignée sur laquelle on va tirer pour propulser la balle en haut du pinball. 
 
-<img src="assets/session-02/poignee_blender_vue3d.jpg" width="300">
-<img src="assets/session-02/poignee_blender_vuedecote.jpg" width="300">
+<img src="../assets/session-02/poignee_blender_vue3d.jpg" width="300">
+<img src="../assets/session-02/poignee_blender_vuedecote.jpg" width="300">
 
 
 ## Durant la séance
@@ -30,7 +30,7 @@ Dans un premier temps, j’ai adapté le code réalisé lors de la première sé
 
 Puis nous avons fixé le solénoïde en dessous de la planche du prototype à l’aide de petites vis et de l’équerre préalablement imprimée en 3d (le solénoide sera mieux fixé à la planche par la suite, ceci reste un prototype). 
 
-<img src="assets/session-02/equerre_fixation_solenoide.jpg" width="300">
+<img src="../assets/session-02/equerre_fixation_solenoide.jpg" width="300">
 
 Le bras du solénoïde doit être placé un peu en retrait de l'élastique afin d’éviter que la bille ne frappe la pièce en plastique au lieu de l’élastique ce qui ne déclencherait pas les micro-interrupteurs mais tout en restant le plus proche de celui-ci pour que le mouvement du solénoïde tende l'élastique au maximum.
 
