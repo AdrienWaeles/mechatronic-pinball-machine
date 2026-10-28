@@ -1,3 +1,7 @@
+# Répartition des tâches
+
+[🇬🇧 English version](../task-distribution.md)
+
 Programme des 8 séances hebdomadaires dédiées au projet :
 Ce programme est susceptible de varier légèrement en fonction du délai de livraison des pièces commandées et des difficultés rencontrées.
 
