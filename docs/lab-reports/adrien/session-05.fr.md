@@ -26,7 +26,7 @@ Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans 
 
 Voici une vue de la planche de dessous de l’ensemble solénoide + attache_bras + bras de flipper : 
 
-<img src="assets/session-05/flipper_mecanisme+solénoïde.jpeg" width="300">
+<img src="assets/session-05/flipper_mecanisme+solenoide.jpeg" width="300">
 
 J’ai également modélisé une équerre permettant de fixer le solénoïde sous la planche. J'ai rencontré des difficultés pour placer correctement le solénoïde, en effet celui-ci doit être positionné précisément pour que l’axe de la pièce imprimée en 3d ne subisse aucune force supplémentaire, sans cela le solénoïde se bloque et ne revient pas en position initiale grâce à son ressort. Afin de régler le positionnement du solénoïde plus facilement j’ai décidé de remplacer les trous circulaires de la modélisation de l’équerre par des rainures. Il suffira alors d’utiliser des rondelles sous les vis pour s’assurer que la pièce soit correctement fixée. J'ai pu alors fixer le solénoïde sur la planche en y perçant un trou et en vissant l'équerre. 
 

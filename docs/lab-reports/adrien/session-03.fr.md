@@ -13,7 +13,7 @@ Ainsi durant cette séance nous avons effectué de nombreuses recherches sur les
 Nous avons trouvé ce modèle 3d qui correspond exactement à ce que l’on souhaite faire : https://www.thingiverse.com/thing:3286052.
 Nous devrons cependant l’adapter pour que les dimensions des pièces et des trous permettent d’y fixer nos solénoïdes qui ne sont pas les mêmes.
 
-<img src="assets/session-03/solénoïde_KK0630B.jpeg" width="300">
+<img src="assets/session-03/solenoide_KK0630B.jpeg" width="300">
 
 Nous avons mis un certain temps à trouver une alimentation pour ces nouveaux solénoïdes, en effet la première alimentation utilisée indiquait une tension de 24V alors que sa tension réelle mesurée avec un multimètre était de 60V. Nous avons finalement trouvé une alimentation délivrant une tension réelle de 24V et un courant de 2.2A, ce qui nous a permis de tester les nouveaux solénoïdes reçus. Cependant il y a un mauvais contact au niveau du connecteur de la nouvelle alimentation, nous devons donc trouver une solution à ce problème d’ici la prochaine séance. 
 
