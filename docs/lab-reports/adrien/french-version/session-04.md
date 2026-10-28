@@ -1,5 +1,7 @@
 # Séance 4
 
+[🇬🇧 English version](../session-04.md)
+
 ## Avant la séance
 Pour commencer j’ai fixé un des 2 micro-interrupteurs du slingshot (pièce constituée d’un élastique destinée à renvoyer la bille dans la direction opposée, voir comptes rendus précédents) sur la planche du prototype réalisé lors des séances précédentes. 
 
@@ -15,7 +17,7 @@ Il a fallu surélever légèrement le micro-interrupteur de la planche pour que 
 Après de nombreux tests pour fixer le micro-interrupteur de manière optimale voici le résultat : https://youtube.com/shorts/6lyibMg2PRw
 
 
-J’ai ensuite réalisé un prototype d’un bumper à l’aide d’un solénoide (KK-0630B, 24V, 10mm de course, 8Newtons) sur la planche de prototypage que j’avais utilisé pour créer le slingshot. Pour cela je me suis aidé de ce design : https://www.thingiverse.com/thing:3286052. Le bumper est constitué de deux pièces, le cône qui s’abaisse sur la balle et une pièce fixe qui permet de maintenir le cône droit, dans lequel la première pièce va coulisser.
+J’ai ensuite réalisé un prototype d’un bumper à l’aide d’un solénoïde (KK-0630B, 24V, 10mm de course, 8Newtons) sur la planche de prototypage que j’avais utilisé pour créer le slingshot. Pour cela je me suis aidé de ce design : https://www.thingiverse.com/thing:3286052. Le bumper est constitué de deux pièces, le cône qui s’abaisse sur la balle et une pièce fixe qui permet de maintenir le cône droit, dans lequel la première pièce va coulisser.
 
 <img src="../assets/session-04/bumper_prototype.jpg" width="300">
 
@@ -35,7 +37,7 @@ Voici la démonstration en vidéo : https://youtube.com/shorts/1k2h37szUpM
 Après avoir présenté l’avancée de notre projet lors d’un oral de 10 minutes, nous avons commencé à réaliser le système permettant de détecter le contact de la bille sur le bumper. Pour cela, nous avons coupé une fine plaque de métal au Fablab aux dimensions du bumper qui sera encastrée dans la planche juste en dessous de celui-ci. Nous avons trouvé un fil rigide que nous allons insérer dans une rainure sur l’extrémité haute de la pièce du bumper. Ainsi quand la bille roulera sur la plaque métallique et qu’elle sera en contact en même temps avec le fil, le bumper sera déclenché et l’Arduino recevra un signal permettant d’ajouter des points au joueur.
 
 
-J’ai pu remarquer que le mouvement vertical de la pièce conique du bumper imprimée en 3d est interrompu par la planche. Donc on ne profite pas de l'entièreté de la course qu'offre le piston du solénoide. Et cela puisque les pattes de la pièce conique ne sont pas assez longues. J’ai alors modifié la modélisation 3d pour prolonger celles-ci afin que le bumper puisse avoir une position initiale plus haute et donc pour que le solénoïde puisse effectuer sa course entièrement.
+J’ai pu remarquer que le mouvement vertical de la pièce conique du bumper imprimée en 3d est interrompu par la planche. Donc on ne profite pas de l'entièreté de la course qu'offre le piston du solénoïde. Et cela puisque les pattes de la pièce conique ne sont pas assez longues. J’ai alors modifié la modélisation 3d pour prolonger celles-ci afin que le bumper puisse avoir une position initiale plus haute et donc pour que le solénoïde puisse effectuer sa course entièrement.
 J’en ai profité pour ajouter la rainure qui permettra d’y insérer le bout de métal. 
 
 Finalement, je me suis intéressé au fonctionnement d’un écran lcd qui permettra d’afficher le score du joueur tout au long de la partie et éventuellement des messages relatifs au déroulement de la partie. L’écran lcd utilisé est “QAPASS 1602A”. Étant donné que nous avons besoin de garder un grand nombre de broches libres pour les nombreux composants de notre flipper, afin de réduire le nombre de connexions que nécessite un afficheur LCD, nous utilisons une interface série I2C (modèle HW-061) qui fait le lien entre l’Arduino et l’afficheur. 
