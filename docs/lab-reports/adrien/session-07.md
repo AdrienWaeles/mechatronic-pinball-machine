@@ -1,6 +1,6 @@
 # Session 7
 
-[🇫🇷 Version française](french-version/session-07.md)
+[🇫🇷 French version](french-version/session-07.md)
 
 ## Before the session
 

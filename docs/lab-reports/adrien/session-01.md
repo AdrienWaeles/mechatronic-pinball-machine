@@ -1,6 +1,6 @@
 # Session 1
 
-[🇫🇷 Version française](french-version/session-01.md)
+[🇫🇷 French version](french-version/session-01.md)
 
 Content of this session: 3D-printed flippers, testing a solenoid with a button, and detecting the ball with an infrared sensor.
 

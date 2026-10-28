@@ -1,6 +1,6 @@
 # Session 8
 
-[🇫🇷 Version française](french-version/session-08.md)
+[🇫🇷 French version](french-version/session-08.md)
 
 ## Before the session
 

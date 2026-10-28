@@ -1,6 +1,6 @@
 # Session 6
 
-[🇫🇷 Version française](french-version/session-06.md)
+[🇫🇷 French version](french-version/session-06.md)
 
 ## Before the session
 
