@@ -1,7 +1,7 @@
 # Séance 4
 
 ## Avant la séance
-Pour commencer j’ai fixé un des 2 micro-interrupteurs du slingshot (pièce constituée d’un élastique destinée à renvoyer la bille dans la direction opposée, voir compte rendus précédents) sur la planche du prototype réalisé lors des séances précédentes. 
+Pour commencer j’ai fixé un des 2 micro-interrupteurs du slingshot (pièce constituée d’un élastique destinée à renvoyer la bille dans la direction opposée, voir comptes rendus précédents) sur la planche du prototype réalisé lors des séances précédentes. 
 
 <img src="assets/session-04/slingshot_fixation_microInterrupteur.jpg" width="300">
 
@@ -25,20 +25,20 @@ J’ai importé ces pièces dans un logiciel de modélisation 3D, et j’ai modi
 
 Le fonctionnement est le même que celui expliqué dans le compte rendu de la séance 3 : la pièce conique qui est attachée au solénoïde va s'abaisser sur la balle pour la pousser dans la direction opposée. Pour fixer le bumper à la planche, j’ai percé un trou dans le prototype et à partir des dimensions mesurées, j’ai modélisé et imprimé une équerre qui permet de fixer le solénoïde sous la planche. 
 
-<img src="assets/session-04/équerre_solenoide.jpg" width="300">
+<img src="assets/session-04/équerre_solénoïde.jpg" width="300">
 
-Remarque : l’équerre sera modifiée par la suite étant donné en raison d’une erreur d’orientation de la pièce lors de la modélisation.
+Remarque : l’équerre sera modifiée par la suite en raison d’une erreur d’orientation de la pièce lors de la modélisation.
 
 Voici la démonstration en vidéo : https://youtube.com/shorts/1k2h37szUpM
 
 ## Durant la séance
-Après avoir présenté l’avancée de notre projet lors d’un oral de 10 minutes. Nous avons commencé à réaliser le système permettant de détecter le contact de la bille sur le bumper. Pour cela, nous avons coupé une fine plaque de métal au Fablab aux dimensions du bumper qui sera encastrée dans la planche juste en dessous de celui-ci. Nous avons trouvé un fil rigide que nous allons insérer dans une rainure sur l’extrémité haute de la pièce du bumper. Ainsi quand la bille roulera sur la plaque métallique et qu’elle sera en contact en même temps avec le fil, le bumper sera déclenché et l’arduino recevra un signal permettant d’ajouter des points au joueur.
+Après avoir présenté l’avancée de notre projet lors d’un oral de 10 minutes, nous avons commencé à réaliser le système permettant de détecter le contact de la bille sur le bumper. Pour cela, nous avons coupé une fine plaque de métal au Fablab aux dimensions du bumper qui sera encastrée dans la planche juste en dessous de celui-ci. Nous avons trouvé un fil rigide que nous allons insérer dans une rainure sur l’extrémité haute de la pièce du bumper. Ainsi quand la bille roulera sur la plaque métallique et qu’elle sera en contact en même temps avec le fil, le bumper sera déclenché et l’Arduino recevra un signal permettant d’ajouter des points au joueur.
 
 
 J’ai pu remarquer que le mouvement vertical de la pièce conique du bumper imprimée en 3d est interrompu par la planche. Donc on ne profite pas de l'entièreté de la course qu'offre le piston du solénoide. Et cela puisque les pattes de la pièce conique ne sont pas assez longues. J’ai alors modifié la modélisation 3d pour prolonger celles-ci afin que le bumper puisse avoir une position initiale plus haute et donc pour que le solénoïde puisse effectuer sa course entièrement.
 J’en ai profité pour ajouter la rainure qui permettra d’y insérer le bout de métal. 
 
-Finalement, je me suis intéressé au fonctionnement d’un écran lcd qui permettra d’afficher le score du joueur tout au long de la partie et éventuellement des messages relatifs au déroulement de la partie. L’écran lcd utilisé est “QAPASS 1602A”. Étant donné que nous avons besoin de garder un grand nombre de broches libres pour les nombreux composants de notre flipper, afin de réduire le nombre de connexions que nécessite un afficheur LCD, nous utilisons une interface série I2C (modèle HW-061) qui fait le lien entre l’arduino et l’afficheur. 
+Finalement, je me suis intéressé au fonctionnement d’un écran lcd qui permettra d’afficher le score du joueur tout au long de la partie et éventuellement des messages relatifs au déroulement de la partie. L’écran lcd utilisé est “QAPASS 1602A”. Étant donné que nous avons besoin de garder un grand nombre de broches libres pour les nombreux composants de notre flipper, afin de réduire le nombre de connexions que nécessite un afficheur LCD, nous utilisons une interface série I2C (modèle HW-061) qui fait le lien entre l’Arduino et l’afficheur. 
 
 <img src="assets/session-04/i2c-module_documentation.jpg" width="300">
 

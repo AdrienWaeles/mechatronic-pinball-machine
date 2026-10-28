@@ -8,14 +8,14 @@ Le grand trou rectangulaire permet de positionner une plaque de plexiglass sous 
 
 <img src="assets/session-06/haut_flipper_inskcape.png" width="300">
 
-Pour rappel, étant donné que notre planche de jeu de dimensions 414 x 800 x 5mm est trop grande pour rentrer dans la graveuse laser directement, nous avions décidé d’y coller dessus 3 petites planches de 3mm afin de pouvoir graver celles- ci. 
+Pour rappel, étant donné que notre planche de jeu de dimensions 414 x 800 x 5mm est trop grande pour rentrer dans la graveuse laser directement, nous avions décidé d’y coller dessus 3 petites planches de 3mm afin de pouvoir graver celles-ci. 
 Redha s’est occupé de la réalisation des fichiers svg de la partie haute et basse du flipper et je me suis occupé du positionnement des éléments à partir de la maquette virtuelle de notre flipper. 
 
 J’ai ensuite créé un fichier vectoriel pour graver un dessin au milieu du flipper en assemblant des images trouvées en ligne. Pour cela j’ai converti des images en svg puis je les ai importées dans inkscape en les positionnant et en les redimensionnant en fonction de la taille totale de la planche du milieu.
 
 <img src="assets/session-06/gravure_gameofthrones_inkscape.png" width="300">
 
-Nous avons décidé de thématiser votre flipper avec pour thème la série Game of Thrones et nous étions donc obligés d’anticiper la décoration par la gravure de cette planche car une fois collée sur la planche épaisse il sera impossible d’effectuer de nouvelles gravures.
+Nous avons décidé de thématiser notre flipper avec pour thème la série Game of Thrones et nous étions donc obligés d’anticiper la décoration par la gravure de cette planche car une fois collée sur la planche épaisse il sera impossible d’effectuer de nouvelles gravures.
 
 Et voici le résultat final de la gravure de la partie haute du flipper avec le positionnement d’une des plaques métalliques : 
 
@@ -58,12 +58,12 @@ Ensuite je les ai importées dans Blender pour les transformer en fichiers 2D ve
 <img src="assets/session-06/inkscape_bordures.png" width="300">
 
 
-Etant donné que la graveuse laser du fablab est limitée à la découpe de planches de 5 mm maximum. Nous allons découper chaque pièce du contour en 4 exemplaires sur des planches de 5 mm. Puis il faudra coller les 4 morceaux de 5mm les uns sur les autres pour avoir une bordure d’une épaisseur totale de 20mm.
+Étant donné que la graveuse laser du Fablab est limitée à la découpe de planches de 5 mm maximum, nous allons découper chaque pièce du contour en 4 exemplaires sur des planches de 5 mm. Puis il faudra coller les 4 morceaux de 5mm les uns sur les autres pour avoir une bordure d’une épaisseur totale de 20mm.
 
 
 J’ai dessiné l'emplacement des différents capteurs infrarouges, afin d'insérer des plaques de plexiglass à ces emplacements et Redha les a tracés sur Inkscape. (Les emplacements sont désignés par des cercles sur l'image de la maquette en bas du compte rendu).
 
-Il y en a 5 sur la planche, dont 3 qui sont positionnées aux sorties du jeu, et permettent de détecter si le joueur à perdu la bille. En effet on distingue si la bille sort au centre du flipper (le joueur n’a pas réussi à la réceptionner) et les pertes de billes sur les extrémités du flipper qui ne sont pas la faute du joueur. Cela peut permettre par exemple d’offrir un nouvel essai au joueur si une bille est perdue sans l’intervention du joueur quelques secondes après l’avoir lancée. C’est ce que l’on retrouve sur certains vrais flippers avec le message “bille sauvée” et l’ajout d’un nouvel essai. 
+Il y en a 5 sur la planche, dont 3 qui sont positionnées aux sorties du jeu, et permettent de détecter si le joueur a perdu la bille. En effet on distingue si la bille sort au centre du flipper (le joueur n’a pas réussi à la réceptionner) et les pertes de billes sur les extrémités du flipper qui ne sont pas la faute du joueur. Cela peut permettre par exemple d’offrir un nouvel essai au joueur si une bille est perdue sans l’intervention du joueur quelques secondes après l’avoir lancée. C’est ce que l’on retrouve sur certains vrais flippers avec le message “bille sauvée” et l’ajout d’un nouvel essai. 
 
 Les deux autres trous sont placés sur la partie haute du flipper, ils sont situés à l’entrée des futures rampes que la bille pourra emprunter.
 

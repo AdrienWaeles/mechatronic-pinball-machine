@@ -11,13 +11,13 @@ Sur cette capture d’écran de notre maquette on peut voir en haut à droite le
 
 Il a fallu donc découper des morceaux de largeur 10mm de différentes longueurs et d’une hauteur de 20 mm. Puis pour des raisons de sécurité, les découpes ont été effectuées par un professeur au FabLab à la scie circulaire sur table.
 
-Etant donné que certaines pièces arrondies ont légèrement brûlé lors de la découpe, nous avons décidé de peindre tout le contour en noir. J’ai alors appris à utiliser une bombe de peinture et retenu quelques conseils : secouer la bombe de peinture avant utilisation, commencer le mouvement avec la bombe en dehors de la surface à peindre afin d’avoir une peinture plus homogène et éviter des gouttes de peinture, purger la bombe de peinture en fin d’utilisation en la retournant et en pulvérisant pendant quelques secondes.
+Étant donné que certaines pièces arrondies ont légèrement brûlé lors de la découpe, nous avons décidé de peindre tout le contour en noir. J’ai alors appris à utiliser une bombe de peinture et retenu quelques conseils : secouer la bombe de peinture avant utilisation, commencer le mouvement avec la bombe en dehors de la surface à peindre afin d’avoir une peinture plus homogène et éviter des gouttes de peinture, purger la bombe de peinture en fin d’utilisation en la retournant et en pulvérisant pendant quelques secondes.
 
 Voici le résultat avec toutes les pièces du contour disposées sur la planche (rien n’est encore vissé ou collé pour le moment, cela sera fait pendant la semaine des vacances) : 
 
 <img src="assets/session-07/planche_avec_bordures.jpg" width="300">
 
-Ensuite, j’ai utilisé le logiciel Fritzing pour réaliser un schéma du câblage du Flipper afin de s’assurer de tout brancher correctement et de gagner du temps le jour du câblage. 
+Ensuite, j’ai utilisé le logiciel Fritzing pour réaliser un schéma du câblage du Flipper afin de nous assurer de tout brancher correctement et de gagner du temps le jour du câblage. 
 Pour le moment j’ai cherché et importé tous les composants dans le logiciel et les ai disposés selon leurs emplacements sur notre flipper. Puis j’ai branché les solénoïdes aux relais. Cependant, nous nous sommes aperçus que les brancher en série risque d’engendrer une perte de puissance (3 solénoïdes pouvant être activés en même temps dans le pire des cas), il faudra alors les brancher en parallèle.
 
 
@@ -40,7 +40,7 @@ https://youtube.com/shorts/hx9wgBHNqKs?feature=share
 
 
 J’ai choisi de réaliser un assemblage de planches de bois découpées au laser en 3 planches de 3 mm. 
-La première partie est celle visible par le joueur, c’est un cercle de 140mm sur laquelle sont inscrits les bonus à remporter et elle comporte 6 trous pour y placer les néo pixels. 
+La première partie est celle visible par le joueur, c’est un cercle de 140mm sur lequel sont inscrits les bonus à remporter et elle comporte 6 trous pour y placer les néo pixels. 
 La 2ème est un simple cercle de la même taille sur lequel je vais coller chaque néo pixel en face de son trou présent sur la première pièce. Entre ces deux pièces, toujours avec la découpeuse laser j’ai fabriqué un 3ème cercle plus petit (100mm de diamètre) qui sera collé entre les deux et permettra de laisser la place pour passer les câbles reliant les 6 néo pixels en série.
 
 Le tout sera fixé sur le rebord haut du flipper grâce à un support imprimé en 3D dans lequel je réaliserai un trou pour y passer les 3 câbles de branchement.
@@ -63,12 +63,12 @@ Voici les bonus choisis :
 
 - +1 bille : rajoute un essai au joueur en lui offrant une bille supplémentaire qu’il pourra lancer depuis la zone de lancement une fois que les autres billes auront été perdues.
 
-J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisque je le maitrise bien mieux que Inkscape. Les cases sont séparées avec un angle de 60° par des rectangles de 2 mm de largeur. J’ai placé 6 carrés de côté 20 mm qui permettront de laisser passer les néo pixels.
+J’ai pour cela utilisé le logiciel Blender afin d’être plus efficace puisque je le maîtrise bien mieux que Inkscape. Les cases sont séparées avec un angle de 60° par des rectangles de 2 mm de largeur. J’ai placé 6 carrés de côté 20 mm qui permettront de laisser passer les néo pixels.
 
 <img src="assets/session-07/rouefortune_blender.png" width="300">
 
 Pour ce qui est du texte j’ai utilisé une police d’écriture liée au thème du flipper. J’ai ensuite utilisé une extension nommée ‘freestyle svg export’ activable directement dans les paramètres du logiciel. Celle-ci permet d’exporter les contours d’un modèle 3D selon une vue en vecteurs dans un fichier svg. Pour l’utiliser il suffit de placer une caméra de rendu dans la vue désirée puis de lancer un rendu image avec l’extension activée.
-Finalement dans inkscape, après avoir corrigé quelques erreurs d’exportation en svg avec l’aide de Redha Abderrahmane, j’ai ajouté un remplissage de couleur noir à l’intérieur des lettres afin qu'ils soient interprétés comme des gravures par le logiciel de découpe, puis j'ai placé des dessins vectoriels trouvés sur internet sur chaque case.
+Finalement dans inkscape, après avoir corrigé quelques erreurs d’exportation en svg avec l’aide de Redha Abderrahmane, j’ai ajouté un remplissage de couleur noir à l’intérieur des lettres afin qu'elles soient interprétées comme des gravures par le logiciel de découpe, puis j'ai placé des dessins vectoriels trouvés sur internet sur chaque case.
 
 <img src="assets/session-07/rouedelafortune_avecdeco_inkscape.png" width="400">
 <img src="assets/session-07/roueintermediaire_inkscape.png" width="150">
@@ -78,7 +78,7 @@ Et le résultat final après découpe et gravure au laser:
 <img src="assets/session-07/rouefortune_gravure.jpg" width="300">
 
 
-J’ai également mis à jour la maquette sketchup en y ajoutant la roue de fortune avec l’image svg créée pour m’assurer du résultat : 
+J’ai également mis à jour la maquette sketchup en y ajoutant la roue de la fortune avec l’image svg créée pour m’assurer du résultat : 
 <img src="assets/session-07/maquette_sketchup_rouefortune.png" width="300">
 
 Finalement j’ai commencé à modéliser un support qui viendra se visser avec le reste des éléments sur la roue pour la fixer au-dessus d’un rebord du flipper.

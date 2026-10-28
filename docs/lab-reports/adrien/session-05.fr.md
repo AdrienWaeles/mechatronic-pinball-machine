@@ -1,7 +1,7 @@
 # Séance 5
 
 ## Avant la séance
-Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'actualiser le nombre de points. L'écran est branché à un module I2C ainsi il ne suffit que de 2 câbles de communication branchés aux entrées analogiques de l'arduino en plus de son alimentation: (sur une carte Arduino Uno la broche SDA est connectée au port analogique A4 de la carte et la broche SCL au port A5). Au début l’écran ne semblait pas fonctionner, aucun message ne s'affichait, mais il suffisait de tourner la petite vis au dos pour ajuster le contraste. Voici un programme simple de test :
+Tout d’abord j’ai pu tester l'écran LCD afin d'afficher des messages et d'actualiser le nombre de points. L'écran est branché à un module I2C ainsi il suffit de 2 câbles de communication branchés aux entrées analogiques de l'Arduino en plus de son alimentation: (sur une carte Arduino Uno la broche SDA est connectée au port analogique A4 de la carte et la broche SCL au port A5). Au début l’écran ne semblait pas fonctionner, aucun message ne s'affichait, mais il suffisait de tourner la petite vis au dos pour ajuster le contraste. Voici un programme simple de test :
 
 <img src="assets/session-05/code_test_lcd.jpg" width="500">
 
@@ -26,9 +26,9 @@ Pour cela j'insère cette 3eme pièce dans la 2eme en effectuant une pause dans 
 
 Voici une vue de la planche de dessous de l’ensemble solénoide + attache_bras + bras de flipper : 
 
-<img src="assets/session-05/flipper_mecanisme+solenoide.jpeg" width="300">
+<img src="assets/session-05/flipper_mecanisme+solénoïde.jpeg" width="300">
 
-J’ai également modélisé une équerre permettant de fixer le solénoïde sous la planche. J'ai rencontré des difficultés pour placer correctement le solénoïde, en effet celui-ci doit être positionné précisément pour que l’axe de la pièce imprimée en 3d ne subisse aucune force supplémentaire, sans cela le solénoïde se bloque et ne revient pas en position initiale grâce à son ressort. Afin de régler le positionnement du solénoïde plus facilement j’ai décidé de remplacer les trous circulaires sur la modélisation de l’équerre pour les remplacer par des rainures. Il suffira alors d’utiliser des rondelles sous les vis pour s’assurer que la pièce soit correctement fixée. J'ai pu alors fixer le solénoïde sur la planche en y perçant un trou et en vissant l'équerre. 
+J’ai également modélisé une équerre permettant de fixer le solénoïde sous la planche. J'ai rencontré des difficultés pour placer correctement le solénoïde, en effet celui-ci doit être positionné précisément pour que l’axe de la pièce imprimée en 3d ne subisse aucune force supplémentaire, sans cela le solénoïde se bloque et ne revient pas en position initiale grâce à son ressort. Afin de régler le positionnement du solénoïde plus facilement j’ai décidé de remplacer les trous circulaires de la modélisation de l’équerre par des rainures. Il suffira alors d’utiliser des rondelles sous les vis pour s’assurer que la pièce soit correctement fixée. J'ai pu alors fixer le solénoïde sur la planche en y perçant un trou et en vissant l'équerre. 
 
 <img src="assets/session-05/flipper_equerre.jpg" width="300">
 
@@ -43,12 +43,12 @@ J’ai ensuite ajouté une encoche circulaire dans la pièce de modélisation du
 <img src="assets/session-05/bumper_encoche_fil.jpeg" width="300">
 
 
-Etant donné que le slingshot (pièce dotée d'un élastique qui va renvoyer la bille dans la zone de jeu en tendant l'élastique) ne renvoyait pas la bille assez fort en raison de la faible course du solénoïde utilisé (10mm) et de sa force peu élevée (8 Newton). 
-Suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement et une force plus élevée. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai effectué plusieurs trous pour tester l’emplacement et la longueur optimaux de la barre sur laquelle le levier va effectuer son pivot. 
+Étant donné que le slingshot (pièce dotée d'un élastique qui va renvoyer la bille dans la zone de jeu en tendant l'élastique) ne renvoyait pas la bille assez fort en raison de la faible course du solénoïde utilisé (10mm) et de sa force peu élevée (8 newtons), 
+suite aux conseils de nos professeurs, j’ai complètement repensé le modèle 3d du slingshot pour y intégrer un système de levier. Celui-ci permet d’avoir une plus grande amplitude de mouvement et une force plus élevée. Pour cela j’ai d’abord réalisé un prototype dans lequel j’ai effectué plusieurs trous pour tester l’emplacement et la longueur optimaux de la barre sur laquelle le levier va effectuer son pivot. 
 Voici le résultat après de nombreux essais et modifications de la pièce imprimée :
 https://youtube.com/shorts/K7FTkk97wYo
 
-J’ai finalement remodifié la pièce imprimée en tenant des compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. 
+J’ai finalement remodifié la pièce imprimée en tenant compte des améliorations effectuées pour avoir une pièce propre que je puisse réimprimer également pour le 2ème slingshot. 
 Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
 
 <img src="assets/session-05/equerre_slingshot.jpg" width="300">
@@ -56,7 +56,7 @@ Voici l’équerre du solénoide du slingshot modélisée ainsi que le levier :
 <img src="assets/session-05/levier_slingshot.jpg" width="300">
 
 
-Etant donné qu’il il a fallu passer un temps énorme sur les prototypes pour placer correctement les composants sur la planche. J’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision sur la version finale. J’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes pour déterminer la position exacte de chaque composant. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette.
+Étant donné qu’il a fallu passer un temps énorme sur les prototypes pour placer correctement les composants sur la planche, j’ai décidé de créer une maquette en 3D du pinball sur Sketchup afin d’avoir toutes les mesures nécessaires et gagner en temps et précision sur la version finale. J’ai effectué de nombreuses mesures en me basant sur les différents prototypes réalisés lors des séances précédentes pour déterminer la position exacte de chaque composant. J’ai donc importé toutes les pièces précédemment modélisées afin de les placer. Il reste encore quelques éléments qui seront ajoutés bientôt à la maquette.
 
 <img src="assets/session-05/maquette_flipper_dessus.jpg" width="200"> <img src="assets/session-05/maquette_flipper_dessous.jpg" width="200">
 
@@ -69,7 +69,7 @@ Et voici le tout assemblé (sans utiliser de vis ou de colle puisque tout se vis
 
 <img src="assets/session-05/poignee_montee.jpeg" width="300">
 
-Cette poignée m’a demandé beaucoup de temps car Fusion 360 n’est pas très adapté pour traiter des maillages avec beaucoup de points. J’ai donc dû faire le filetage à part puis l’importer dans blender pour l’insérer dans la poignée en comblant les trous dans la géométrie de la pièce. J’ai également appris à créer des filetages sur Fusion 360. Pour que les 2 pièces puissent se visser facilement après impression il est très important de modifier une des 2 pièces pour réduire l'épaisseur de son filetage (d’environ 1mm) car il y a des écarts de précisions entre une pièce usinée et l’impression en 3D.
+Cette poignée m’a demandé beaucoup de temps car Fusion 360 n’est pas très adapté pour traiter des maillages avec beaucoup de points. J’ai donc dû faire le filetage à part puis l’importer dans blender pour l’insérer dans la poignée en comblant les trous dans la géométrie de la pièce. J’ai également appris à créer des filetages sur Fusion 360. Pour que les 2 pièces puissent se visser facilement après impression il est très important de modifier une des 2 pièces pour réduire l'épaisseur de son filetage (d’environ 1mm) car il y a des écarts de précision entre une pièce usinée et l’impression en 3D.
 
 
 
@@ -80,14 +80,14 @@ Pour commencer il a fallu découper la planche du jeu aux dimensions 414 x 800 x
 Pour placer les capteurs infrarouges, nous utilisons une fine plaque de plexiglas posée à ras de la planche grâce à nouveau à une gravure. J’ai effectué des tests avec un capteur infrarouge en dessous de la plaque de plexiglas pour vérifier que la bille soit toujours détectée à travers la plaque transparente. La bille est correctement détectée si le capteur est positionné à ras de la plaque de plexiglass.
 
 Puis j'ai déterminé les dimensions et la position de cette plaque en fonction de la position des séparateurs de colonnes (pièces noires en haut du flipper sur la maquette).
-Redha a ensuite réalisé un fichier vectoriel svg sur Inkscape pour graver et perçer des trous dans la partie supérieure du flipper.
+Redha a ensuite réalisé un fichier vectoriel svg sur Inkscape pour graver et percer des trous dans la partie supérieure du flipper.
 
 J’ai ensuite continué la modélisation de la maquette 3d du  pinball afin d’y dessiner le contour du flipper ainsi que la zone de lancement. Cela permettra de découper des morceaux de bois aux dimensions voulues plus facilement par la suite.
 Pour cela je me suis aidé de différents schémas de construction de vrais flippers afin de créer les arrondis en haut du flipper qui permettront à la balle de sortir de la zone de lancement pour arriver dans la zone de jeu.
 
 
 
-J’ai ensuite dessiné la rampe de sortie de billes, celle-ci doit permettre de diriger les billes jusqu’à la zone de lancement. Etant donné que la sortie de jeu des billes (située au niveau des flippers) est bien plus basse que l’emplacement de la bille avant lancement (juste au dessus de la tige de la poignée), nous avons décidé d’utiliser un solénoïde pour pousser la bille et l’amener jusqu’à la zone de lancement. Ce solénoïde sera déclenché à chaque sortie de bille (qui sera détectée grâce à un capteur infrarouge). Celui ci poussera la balle grâce au même bras imprimé en 3d utilisé dans l'ancien prototype du slingshot (pièce noire sur l'image ci dessous) et sera placé au niveau du trou en bas à droite de la maquette.
+J’ai ensuite dessiné la rampe de sortie de billes, celle-ci doit permettre de diriger les billes jusqu’à la zone de lancement. Étant donné que la sortie de jeu des billes (située au niveau des flippers) est bien plus basse que l’emplacement de la bille avant lancement (juste au dessus de la tige de la poignée), nous avons décidé d’utiliser un solénoïde pour pousser la bille et l’amener jusqu’à la zone de lancement. Ce solénoïde sera déclenché à chaque sortie de bille (qui sera détectée grâce à un capteur infrarouge). Celui ci poussera la balle grâce au même bras imprimé en 3d utilisé dans l'ancien prototype du slingshot (pièce noire sur l'image ci-dessous) et sera placé au niveau du trou en bas à droite de la maquette.
 
 <img src="assets/session-05/rampe_sortie_bille.jpg" width="300">
 
