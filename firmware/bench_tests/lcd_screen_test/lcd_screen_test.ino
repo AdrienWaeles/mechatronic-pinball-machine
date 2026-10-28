@@ -1,50 +1,48 @@
-#include "Wire.h"
-#include "LiquidCrystal_I2C.h"
+// LCD layout test for the game display: shows a score and the number of balls left,
+// and updates both every second.
 
-LiquidCrystal_I2C LCD(0x27,16,2); // définit le type d'écran lcd 16 x 2
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+
+const uint8_t LCD_VALUE_COLUMN = 9;
+const uint8_t LCD_COLUMNS = 16;
+
+LiquidCrystal_I2C lcd(0x27, LCD_COLUMNS, 2);
+
+void displayScore(long score) {
+  for (uint8_t column = LCD_VALUE_COLUMN; column < LCD_COLUMNS; column++) {
+    lcd.setCursor(column, 0);
+    lcd.print(' ');
+  }
+  lcd.setCursor(LCD_VALUE_COLUMN, 0);
+  lcd.print(score);
+}
+
+void displayBallsLeft(int balls) {
+  lcd.setCursor(LCD_VALUE_COLUMN, 1);
+  lcd.print(' ');
+  lcd.setCursor(LCD_VALUE_COLUMN, 1);
+  lcd.print(balls);
+}
 
 void setup() {
-  LCD.init(); // initialisation de l'afficheur
-  LCD.backlight();
-  LCD.setCursor(1, 0);
-  LCD.print("SCORE:");
-  LCD.setCursor(1, 1);
-  LCD.print("Billes: ");
-  afficheScore(0);
-  afficheNombreBilles(3);
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(1, 0);
+  lcd.print("SCORE:");
+  lcd.setCursor(1, 1);
+  lcd.print("Balls:");
+  displayScore(0);
+  displayBallsLeft(3);
 }
-
-void afficheScore(int score){
-  // on efface le score précédent
-  for (int i = 9; i < 16; i++)
-  {
-    LCD.setCursor(i, 0);
-    LCD.print(" ");
-  }
-
-  // On écrit le nouveau score
-  LCD.setCursor(9, 0);
-  LCD.print(score);  
-}
-
-void afficheNombreBilles(int nombreBilles){
-  // on efface le nombre précédent
-  LCD.setCursor(9, 1);
-  LCD.print(" ");
-
-  // On écrit le nouveau score
-  LCD.setCursor(9, 1);
-  LCD.print(nombreBilles);  
-}
-
 
 void loop() {
-  for (int points=0; points<=500; points+=100){
-      afficheScore(points);
-      delay(1000);
+  for (long points = 0; points <= 500; points += 100) {
+    displayScore(points);
+    delay(1000);
   }
-  for (int nombreBilles = 3; nombreBilles>=0; nombreBilles--){
-    afficheNombreBilles(nombreBilles);
+  for (int balls = 3; balls >= 0; balls--) {
+    displayBallsLeft(balls);
     delay(1000);
   }
 }

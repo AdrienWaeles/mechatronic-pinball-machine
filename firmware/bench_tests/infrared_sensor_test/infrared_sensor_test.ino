@@ -1,24 +1,23 @@
-// Permet de compter le nombre de passages de la bille devant le capteur infrarouge
+// Infrared sensor test: counts how many times the ball passes in front of the sensor.
 
-const int infrarouge1= 10;
-int nombrePassages = 0;
-unsigned long dernierPassage = 0;
-unsigned long temps = 100; // Contiendra le temps écoulé depuis le début du programme
+const uint8_t IR_SENSOR_PIN = 10;
+const unsigned long DEBOUNCE_MS = 100;  // a slow ball must not be counted twice
 
-void setup(){
-  pinMode(infrarouge1,INPUT);
-  Serial.begin(9600); // vitesse de communication avec l'arduino
+unsigned int passCount = 0;
+unsigned long lastPassTime = 0;
+
+void setup() {
+  pinMode(IR_SENSOR_PIN, INPUT);
+  Serial.begin(9600);
 }
 
-void loop(){
-  // On teste si le capteur infrarouge détecte un passage 
-  // et on s'assure qu'aucun objet n'ait été détecté moins de 100millisecondes plus tôt.
-  // En effet cela permet d'éviter que une bille passant à faible vitesse devant le capteur comptabilise plusieurs passages
-  if (digitalRead(infrarouge1)==LOW && millis()-dernierPassage>=100){ 
-    Serial.println("Bille détectée");
-    nombrePassages+=1; // Le nombre de passages détectés par le capteur augmente
-    dernierPassage = millis(); // Et on sauvegarde le temps écoulé entre le lancement du programme et ce passage
-    Serial.print("Nombre de Passages :"); // Finalement on affiche le nombre de passages sur le moniteur série
-    Serial.println(nombrePassages);
+void loop() {
+  // The sensor output is LOW while the ball is in front of it
+  if (digitalRead(IR_SENSOR_PIN) == LOW && millis() - lastPassTime >= DEBOUNCE_MS) {
+    passCount++;
+    lastPassTime = millis();
+    Serial.println("Ball detected");
+    Serial.print("Number of passes: ");
+    Serial.println(passCount);
   }
 }
