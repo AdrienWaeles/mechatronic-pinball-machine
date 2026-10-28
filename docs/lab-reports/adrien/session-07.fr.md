@@ -1,5 +1,6 @@
-**Avant la séance :**
+# Séance 7
 
+## Avant la séance
 Nous avons finalisé la réalisation des bordures du flipper. Lors de la séance précédente nous avions déjà réalisé les bordures arrondies en transformant des modèles 3D en un fichier 2D svg utilisable avec la découpeuse laser. Pour rappel, chaque pièce devant mesurer 20mm de hauteur et la découpeuse laser étant actuellement limitée à des planches d’une épaisseur de 5mm, il a fallu coller 4 planches de 5 mm les unes sur les autres pour chaque pièce. 
 
 Cette fois-ci nous avons découpé les pièces restantes du contour, qui sont 5 morceaux de bois coupés en ligne droite. 
@@ -46,8 +47,7 @@ Le tout sera fixé sur le rebord haut du flipper grâce à un support imprimé e
 
 
 
-**Pendant la séance :**
-
+## Pendant la séance
 Cette séance m’a permis de créer les pièces de bois de la roue de la fortune. 
 Pour cela j’ai commencé par effectuer une esquisse sur papier pour déterminer le nombre de cases de la roue, l’emplacement des leds et les bonus que j’y inscrirai (j’ai donc cherché le mode de comptabilisation de points d’un vrai flipper).
 

@@ -1,6 +1,6 @@
-**Avant la séance :**
+# Séance 4
 
-
+## Avant la séance
 Pour commencer j’ai fixé un des 2 micro-interrupteurs du slingshot (pièce constituée d’un élastique destinée à renvoyer la bille dans la direction opposée, voir compte rendus précédents) sur la planche du prototype réalisé lors des séances précédentes. 
 
 <img src="assets/session-04/slingshot_fixation_microInterrupteur.jpg" width="300">
@@ -31,7 +31,7 @@ Remarque : l’équerre sera modifiée par la suite étant donné en raison d’
 
 Voici la démonstration en vidéo : https://youtube.com/shorts/1k2h37szUpM
 
-**Durant la séance :**
+## Durant la séance
 Après avoir présenté l’avancée de notre projet lors d’un oral de 10 minutes. Nous avons commencé à réaliser le système permettant de détecter le contact de la bille sur le bumper. Pour cela, nous avons coupé une fine plaque de métal au Fablab aux dimensions du bumper qui sera encastrée dans la planche juste en dessous de celui-ci. Nous avons trouvé un fil rigide que nous allons insérer dans une rainure sur l’extrémité haute de la pièce du bumper. Ainsi quand la bille roulera sur la plaque métallique et qu’elle sera en contact en même temps avec le fil, le bumper sera déclenché et l’arduino recevra un signal permettant d’ajouter des points au joueur.
 
 
