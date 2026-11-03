@@ -80,11 +80,13 @@ const unsigned long GAME_OVER_DELAY_MS = 1200;   // lets the player read the fin
 
 // Wheel of fortune animation
 const uint8_t WHEEL_FULL_TURNS = 4;
+const uint8_t WHEEL_ALL_LEDS = 255;                // first step: the whole wheel is lit
 const float WHEEL_START_STEP_MS = 50.0;
 const float WHEEL_SLOWDOWN_FACTOR = 1.08;          // each step is 8 % slower during the full turns
 const unsigned long WHEEL_FINAL_STEP_INCREASE_MS = 100;
 const unsigned long WHEEL_LIGHT_UP_MS = 800;
 const uint8_t WHEEL_BLINK_COUNT = 5;
+const uint8_t WHEEL_MAX_STEPS = 1 + WHEEL_FULL_TURNS * WHEEL_LED_COUNT + WHEEL_LED_COUNT + WHEEL_BLINK_COUNT;
 const unsigned long WHEEL_BLINK_ON_MS = 200;
 const unsigned long WHEEL_BLINK_OFF_MS = 800;
 const uint8_t WHEEL_MAX_COLOR = 15;                // random colours stay dim
@@ -107,6 +109,21 @@ int ballsLeft = BALLS_PER_GAME;
 bool ballLost = false;
 unsigned long ballLostTime = 0;
 bool wheelSpun = false;  // the wheel is spun only once per game
+
+// Wheel animation: the steps are listed once, then played one by one from loop()
+struct WheelStep {
+  uint8_t led;
+  unsigned int onMs;   // how long the LED stays lit
+  unsigned int offMs;  // pause after it
+};
+WheelStep wheelSteps[WHEEL_MAX_STEPS];
+uint8_t wheelStepCount = 0;
+uint8_t wheelStepIndex = 0;
+uint8_t wheelFinalSlot = 0;
+bool wheelSpinning = false;
+bool wheelLedOn = false;
+unsigned long wheelWaitStart = 0;
+unsigned long wheelWaitMs = 0;
 
 int previousLeftSlingshotSwitch = HIGH;
 int previousRightSlingshotSwitch = HIGH;
@@ -162,22 +179,6 @@ void pulseSolenoid(uint8_t pin, unsigned long durationMs) {
   digitalWrite(pin, HIGH);  // then release it
 }
 
-void beep() {
-  tone(BUZZER_PIN, BEEP_FREQUENCY_HZ, BEEP_MS);
-  delay(BEEP_MS);
-  noTone(BUZZER_PIN);
-}
-
-// Lights one wheel LED in a random colour with a beep, waits, then turns it off.
-void flashWheelLed(uint8_t led, unsigned long pauseMs) {
-  wheel.setPixelColor(led, random(WHEEL_MAX_COLOR), random(WHEEL_MAX_COLOR), random(WHEEL_MAX_COLOR));
-  wheel.show();
-  beep();
-  delay(pauseMs);
-  wheel.setPixelColor(led, 0, 0, 0);
-  wheel.show();
-}
-
 // ---------------------------------------------------------------------------
 // Targets
 // ---------------------------------------------------------------------------
@@ -200,16 +201,6 @@ void updateTarget(Target &target) {
 // Wheel of fortune
 // ---------------------------------------------------------------------------
 
-void lightUpWheel() {
-  for (uint8_t led = 0; led < WHEEL_LED_COUNT; led++) {
-    wheel.setPixelColor(led, 2, 4, 0);
-  }
-  wheel.show();
-  delay(WHEEL_LIGHT_UP_MS);
-  wheel.clear();
-  wheel.show();
-}
-
 void applyWheelReward(uint8_t slot) {
   switch (slot) {
     case 0: score *= 3;      displayScore();     break;
@@ -221,33 +212,85 @@ void applyWheelReward(uint8_t slot) {
   }
 }
 
-void spinWheel() {
+void addWheelStep(uint8_t led, unsigned int onMs, unsigned int offMs) {
+  wheelSteps[wheelStepCount++] = {led, onMs, offMs};
+}
+
+void startWheel() {
   randomSeed(micros());  // the time at which the player reaches the threshold makes each game different
-  const uint8_t finalSlot = random(WHEEL_LED_COUNT);
+  wheelFinalSlot = random(WHEEL_LED_COUNT);
   float stepMs = WHEEL_START_STEP_MS;
 
+  // BEEP_MS: the LED stays lit during the beep
+  wheelStepCount = 0;
+  addWheelStep(WHEEL_ALL_LEDS, WHEEL_LIGHT_UP_MS, 0);
+
   // Full turns, slowing down a little at each step
-  for (uint8_t turn = 0; turn < WHEEL_FULL_TURNS; turn++) {
-    for (uint8_t led = 0; led < WHEEL_LED_COUNT; led++) {
-      flashWheelLed(led, (unsigned long)stepMs);
-      stepMs *= WHEEL_SLOWDOWN_FACTOR;
-    }
+  for (uint8_t step = 0; step < WHEEL_FULL_TURNS * WHEEL_LED_COUNT; step++) {
+    addWheelStep(step % WHEEL_LED_COUNT, BEEP_MS + (unsigned int)stepMs, 0);
+    stepMs *= WHEEL_SLOWDOWN_FACTOR;
   }
 
   // Last, slower turn that stops just before the final slot
-  for (uint8_t led = 0; led < finalSlot; led++) {
-    flashWheelLed(led, (unsigned long)stepMs);
+  for (uint8_t led = 0; led < wheelFinalSlot; led++) {
+    addWheelStep(led, BEEP_MS + (unsigned int)stepMs, 0);
     stepMs += WHEEL_FINAL_STEP_INCREASE_MS;
   }
 
   // The final slot blinks
   for (uint8_t blink = 0; blink < WHEEL_BLINK_COUNT; blink++) {
-    flashWheelLed(finalSlot, WHEEL_BLINK_ON_MS);
-    delay(WHEEL_BLINK_OFF_MS);
+    addWheelStep(wheelFinalSlot, BEEP_MS + WHEEL_BLINK_ON_MS, WHEEL_BLINK_OFF_MS);
   }
 
-  Serial.println(finalSlot);
-  applyWheelReward(finalSlot);
+  wheelStepIndex = 0;
+  wheelLedOn = false;
+  wheelWaitMs = 0;
+  wheelSpinning = true;
+}
+
+void setWheelWait(unsigned int ms) {
+  wheelWaitStart = millis();
+  wheelWaitMs = ms;
+}
+
+// Called at each loop, does nothing until the current wait is over
+void updateWheel() {
+  if (!wheelSpinning || millis() - wheelWaitStart < wheelWaitMs) {
+    return;
+  }
+
+  if (wheelLedOn) {
+    wheel.clear();
+    wheel.show();
+    wheelLedOn = false;
+    setWheelWait(wheelSteps[wheelStepIndex].offMs);
+    wheelStepIndex++;
+  } else if (wheelStepIndex < wheelStepCount) {
+    const WheelStep &step = wheelSteps[wheelStepIndex];
+    if (step.led == WHEEL_ALL_LEDS) {
+      for (uint8_t led = 0; led < WHEEL_LED_COUNT; led++) {
+        wheel.setPixelColor(led, 2, 4, 0);
+      }
+    } else {
+      wheel.setPixelColor(step.led, random(WHEEL_MAX_COLOR), random(WHEEL_MAX_COLOR), random(WHEEL_MAX_COLOR));
+      tone(BUZZER_PIN, BEEP_FREQUENCY_HZ, BEEP_MS);
+    }
+    wheel.show();
+    wheelLedOn = true;
+    setWheelWait(step.onMs);
+  } else {
+    wheelSpinning = false;
+    Serial.println(wheelFinalSlot);
+    applyWheelReward(wheelFinalSlot);
+  }
+}
+
+void stopWheel() {
+  wheelSpinning = false;
+  wheelLedOn = false;
+  wheel.clear();
+  wheel.show();
+  noTone(BUZZER_PIN);
 }
 
 // ---------------------------------------------------------------------------
@@ -357,6 +400,7 @@ void loop() {
 
   // Game over: show the final score for a moment, then start a new game
   if (ballsLeft == 0) {
+    stopWheel();
     delay(GAME_OVER_DELAY_MS);
     score = 0;
     wheelSpun = false;
@@ -372,7 +416,7 @@ void loop() {
   // Wheel of fortune bonus, once per game
   if (score >= WHEEL_SCORE_THRESHOLD && !wheelSpun) {
     wheelSpun = true;
-    lightUpWheel();
-    spinWheel();
+    startWheel();
   }
+  updateWheel();
 }
