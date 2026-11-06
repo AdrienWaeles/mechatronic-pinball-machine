@@ -26,7 +26,7 @@ A fully functional pinball machine designed and built from scratch by two studen
 | **Mechanics** | Flippers, bumpers, slingshots, targets, plunger and ball return, all designed in 3D and prototyped on test boards |
 | **Fabrication** | 3D printing (PLA), laser cutting and engraving of the playfield and borders |
 | **Electronics** | Arduino Mega, 24V solenoids switched by relays, 24V → 5V step-down converter, infrared sensors, microswitches |
-| **Game logic** | Near-real-time, non-blocking Arduino firmware for scoring, automatic ball return, an I2C LCD scoreboard and a NeoPixel wheel of fortune |
+| **Game logic** | Near-real-time Arduino firmware for scoring, automatic ball return, an I2C LCD scoreboard and a NeoPixel wheel of fortune |
 | **Context** | Robotics course, 2nd year of the integrated preparatory program at Polytech Nice-Sophia, 2022–2023 |
 
 ## Mechanisms designed from scratch
@@ -104,10 +104,11 @@ The wiring diagram, drawn in Fritzing, is in [electronics/](electronics/).
 
 ## Firmware
 
-The [game firmware](firmware/pinball_game/pinball_game.ino) handles scoring, the ball return, the LCD and the wheel
-of fortune. It is **non-blocking**: it uses `millis()` timestamps instead of long delays, so the game keeps reacting
-to the ball at all times, and it debounces the sensors so that a slow ball is counted only once. Each component was
-first brought up with its own test sketch, in [firmware/bench_tests/](firmware/bench_tests/).
+The [game firmware](firmware/pinball_game/pinball_game.ino) handles scoring, the ball return, the LCD and the wheel of
+fortune. It is **mostly non-blocking**: it uses `millis()` timestamps instead of long delays, so the game keeps
+reacting to the ball, except during the short solenoid pulses (100 ms) and the game-over pause, and it debounces the
+sensors so that a slow ball is counted only once. Each component was first brought up with its own test sketch, in
+[firmware/bench_tests/](firmware/bench_tests/).
 
 ## Wheel of fortune
 
